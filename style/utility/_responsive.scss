@@ -1,0 +1,39 @@
+// Appeler ces mixins au lieu des media queries
+@mixin responsive($breakpoint) {
+  // Mobile portrait
+  @if ($breakpoint == "xs") {
+    @media (min-width: 0px) {
+      @content;
+    }
+  }
+  // Mobile paysage
+  @if ($breakpoint == "sm") {
+    @media (min-width: 480px) {
+      @content;
+    }
+  }
+  // Tablette portrait
+  @if ($breakpoint == "md") {
+    @media (min-width: 768px) {
+      @content;
+    }
+  }
+  // Tablette paysage
+  @if ($breakpoint == "lg") {
+    @media (min-width: 992px) {
+      @content;
+    }
+  }
+  // Laptop
+  @if ($breakpoint == "xl") {
+    @media (min-width: 1200px) {
+      @content;
+    }
+  }
+  // Grand ecran
+  @if ($breakpoint == "2xl") {
+    @media (min-width: 1440px) {
+      @content;
+    }
+  }
+}

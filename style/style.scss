@@ -1,0 +1,794 @@
+// Feuille de style principale
+@import "./normalize";
+@import "./resetperso";
+@import "./library";
+@import "./utility";
+
+// Styles generales
+body {
+  @extend .font-sans;
+  background-color: color($gray, 100);
+}
+
+// Image de header
+.header-image {
+  background: linear-gradient(180deg, rgba(0, 23, 36, 0) 0%, rgba(0, 0, 0, 0.3695166925465838) 49%),
+    url("../images/assets/header-xs.jpg");
+  height: 300px;
+  background-position: center;
+  background-size: cover;
+  @include responsive(md) {
+    background: linear-gradient(
+        180deg,
+        rgba(0, 23, 36, 0) 0%,
+        rgba(0, 0, 0, 0.3695166925465838) 49%
+      ),
+      url("../images/assets/header-md.jpg");
+    height: 300px;
+    background-position: center;
+    background-size: cover;
+  }
+  @include responsive(lg) {
+    background: linear-gradient(
+        180deg,
+        rgba(0, 23, 36, 0) 0%,
+        rgba(0, 0, 0, 0.3695166925465838) 49%
+      ),
+      url("../images/assets/header-lg.jpg");
+    height: 300px;
+    background-position: center;
+    background-size: cover;
+  }
+}
+
+// Barre de navigation en haut
+.topnav {
+  @extend .shadow-md;
+  display: flex;
+  position: fixed;
+  z-index: 1;
+  align-items: center;
+  align-content: center;
+  justify-content: space-around;
+  background-color: rgb(255, 255, 255);
+  overflow: hidden;
+  width: 100%;
+  height: 50px;
+  .topnav__link {
+    &:not(.topnav__logo) {
+      @extend .text-lg, .font-bold;
+      color: color($gray, 600);
+      display: none;
+      @include responsive(lg) {
+        display: block;
+      }
+      &:hover {
+        color: color($green, 700);
+      }
+    }
+    border-radius: 0.5rem;
+  }
+  .topnav__icon {
+    margin-right: $space-2;
+    vertical-align: baseline;
+  }
+  .topnav__hamburger {
+    @extend .text-3xl;
+    cursor: pointer;
+    position: absolute;
+    left: $space-2-5;
+    color: color($gray, 700);
+    &:hover {
+      color: color($gray, 500);
+    }
+    @include responsive(lg) {
+      display: none;
+    }
+  }
+  .topnav__cogs {
+    @extend .text-3xl;
+    cursor: pointer;
+    position: absolute;
+    right: $space-2-5;
+    color: color($gray, 700);
+    &:hover {
+      @extend .animation-spin;
+      color: color($gray, 500);
+    }
+    @include responsive(lg) {
+      display: none;
+    }
+  }
+}
+
+// Barre de navigation sur le cote
+.sidenav {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 50%;
+  margin-left: 50%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.5);
+  .sidenav__content {
+    height: 100%;
+    width: 50%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: $white;
+    overflow: hidden;
+  }
+  .sidenav__link {
+    @extend .text-lg, .font-bold;
+    color: color($gray, 600);
+    display: block;
+    border-bottom: 2px solid color($gray, 100);
+    padding: $space-3 0 $space-2 $space-2;
+    &:hover {
+      background-color: color($gray, 100);
+    }
+    i {
+      @extend .text-xl;
+      vertical-align: middle;
+    }
+  }
+  .sidenav__icon {
+    color: color($gray, 600);
+    margin-right: $space-2;
+    vertical-align: baseline;
+  }
+  .sidenav__close {
+    @extend .text-3xl;
+    cursor: pointer;
+    margin-left: $space-2-5;
+    margin-top: $space-1-5;
+    color: color($gray, 700);
+    &:hover {
+      color: color($gray, 500);
+    }
+  }
+}
+
+// Barre de recherche
+.search {
+  @extend .shadow-md;
+  border-radius: 1rem 1rem 1rem 1rem;
+  overflow: hidden;
+  margin: auto;
+  margin-top: -$space-5;
+  margin-bottom: $space-5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  max-width: 50rem;
+  height: 3rem;
+  background-color: $white;
+  position: relative;
+  .search__input {
+    padding: 0px;
+    border-radius: 1rem 1rem 1rem 1rem;
+    padding-left: $space-3;
+    padding-right: $space-3;
+    width: 100%;
+    height: 100%;
+    &:focus {
+      box-shadow: inset 0px 0px 0px 2.5px rgba(0, 0, 0, 0.5);
+    }
+  }
+  .search__button-list {
+    position: absolute;
+    right: 0.05rem;
+    display: flex;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+    width: 5rem;
+    height: 2.5rem;
+  }
+  .search__button {
+    @extend .text-xl, .rounded-full;
+    color: color($gray, 400);
+    background-color: $white;
+    width: 50%;
+    height: 100%;
+    cursor: pointer;
+    &:hover {
+      color: color($green, 700);
+    }
+    &:focus {
+      box-shadow: inset 0px 0px 0px 2.5px rgba(0, 0, 0, 0.5);
+    }
+  }
+}
+
+// Resultat vide
+.noresult {
+  margin: auto;
+  .noresult__image {
+    display: block;
+    margin: auto;
+    width: 80%;
+    max-width: 40rem;
+    margin-bottom: $space-12;
+  }
+  .noresult__texte {
+    @extend .text-2xl;
+    width: 80%;
+    max-width: 40rem;
+    display: block;
+    margin: auto;
+    text-align: center;
+    margin-bottom: $space-5;
+  }
+  .noresult__link {
+    cursor: pointer;
+    color: color($green, 800);
+    border-bottom: 3px solid color($green, 500);
+    &:hover {
+      color: color($green, 700);
+    }
+  }
+}
+
+// Sauvegardes vide
+.nobookmark {
+  .nobookmark__image {
+    display: block;
+    margin: auto;
+    width: 80%;
+    max-width: 40rem;
+    margin-bottom: $space-12;
+  }
+  .nobookmark__texte {
+    @extend .text-2xl;
+    width: 75%;
+    max-width: 40rem;
+    display: block;
+    margin: auto;
+    text-align: center;
+    margin-bottom: $space-5;
+  }
+  .nobookmark__link {
+    cursor: pointer;
+    color: color($green, 800);
+    border-bottom: 3px solid color($green, 500);
+    &:hover {
+      color: color($green, 700);
+    }
+  }
+}
+
+// Liste des recettes
+.recipe-list {
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+.recipe {
+  @extend .rounded-lg, .shadow-md;
+  background-color: $white;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: $space-2;
+  width: 15rem;
+  height: 15rem;
+  .recipe__top {
+    position: relative;
+    overflow: hidden;
+    height: 60%;
+    .recipe__image {
+      width: 100%;
+      position: center;
+    }
+    .recipe__bookmark-btn {
+      @extend .text-2xl;
+      color: $white;
+      position: absolute;
+      top: $space-2;
+      right: $space-2;
+      background: none;
+      &:hover {
+        @extend .transition;
+        color: color($gray, 200);
+      }
+      &:active {
+        @extend .animation-shrink;
+        transition: 100ms;
+      }
+    }
+  }
+  .recipe__bottom {
+    position: relative;
+    height: 40%;
+    width: 100%;
+    .recipe__title {
+      margin: auto;
+      margin: $space-2;
+    }
+    .recipe__info {
+      margin: $space-2;
+      overflow: hidden;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .recipe__difficulty {
+      @extend .text-sm;
+      color: color($gray, 500);
+    }
+    .recipe__time {
+      @extend .text-sm;
+      margin-left: $space-4;
+      color: color($gray, 600);
+    }
+    .recipe__btn {
+      @extend .button;
+      display: inline-block;
+      margin-left: $space-3;
+      background-color: color($green, 400);
+      color: $black;
+      i {
+        color: color($gray, 800);
+        margin-left: $space-1-5;
+      }
+      &:hover {
+        background-color: color($green, 500);
+        color: $black;
+      }
+      &:active {
+        @extend .animation-shrink;
+        transition: 100ms;
+      }
+    }
+  }
+}
+
+// Modal reglages
+.settings {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  padding-top: 20vh;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.5);
+  .settings__content {
+    @extend .rounded-lg, .shadow-xl;
+    position: relative;
+    background-color: $white;
+    margin: auto;
+    width: 90%;
+    max-width: 30rem;
+    height: 60%;
+    max-height: 20rem;
+    overflow: auto;
+  }
+  .settings__title {
+    padding-left: $space-5;
+  }
+  .settings__closebtn {
+    position: absolute;
+    right: 0px;
+    display: inline;
+    cursor: pointer;
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    &:hover {
+      background-color: color($gray, 200);
+    }
+    span {
+      margin: auto;
+    }
+  }
+  .settings__item {
+    display: flex;
+    padding-left: $space-5;
+    align-items: center;
+    color: color($gray, 700);
+    position: relative;
+  }
+  .settings__item:not(:last-child):after {
+    content: "";
+    background: color($gray, 200);
+    position: absolute;
+    top: 100%;
+    height: 2px;
+    width: 90%;
+  }
+  .settings__item-texte {
+    margin: $space-2 $space-4 $space-2 0;
+  }
+  .settings__language {
+    display: flex;
+    align-items: center;
+    margin-right: $space-3;
+  }
+  .settings__flag {
+    width: 2rem;
+    cursor: pointer;
+    margin-right: $space-3;
+    border-radius: 0.25rem;
+    &:hover {
+      @extend .animation-grow, .transition;
+    }
+  }
+  .settings__flag--active {
+    box-shadow: 0px 0px 0px 0.2rem rgba(16, 119, 30, 0.5);
+    transform: scale(1.2);
+  }
+}
+.switch {
+  margin-right: 0.5rem;
+  position: relative;
+  display: inline-block;
+  width: 45px;
+  height: 25.5px;
+  input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+  }
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 19.5px;
+    width: 19.5px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+  }
+  input:checked + .slider {
+    background-color: color($green, 600);
+  }
+  input:focus + .slider {
+    box-shadow: 0 0 1px color($green, 600);
+  }
+  input:checked + .slider:before {
+    -webkit-transform: translateX(19.5px);
+    -ms-transform: translateX(19.5px);
+    transform: translateX(19.5px);
+  }
+  .slider.round {
+    border-radius: 25.5px;
+  }
+  .slider.round:before {
+    border-radius: 50%;
+  }
+}
+
+// Formulaire
+.submit-image {
+  padding-top: $space-20;
+  display: block;
+  margin: auto;
+  width: 90%;
+  margin-bottom: -$space-1;
+  @include responsive(sm) {
+    width: 100%;
+    max-width: 30rem;
+  }
+}
+.form {
+  .form__section {
+    @extend .shadow-md;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: auto;
+    background-color: $white;
+    margin-bottom: $space-5;
+    padding: $space-2 0 $space-4 0;
+    @include responsive(sm) {
+      width: 100%;
+      max-width: 30rem;
+    }
+    .form__section-title {
+      width: 100%;
+      text-align: center;
+      margin: 0;
+    }
+    .form__input-text {
+      @extend .rounded-lg;
+      border: 1px solid color($gray, 200);
+      background-color: color($gray, 100);
+      width: 80%;
+      padding: $space-2;
+      margin: $space-1;
+      margin-top: $space-2;
+      @include responsive(sm) {
+        width: 11rem;
+      }
+    }
+    #recipeName {
+      width: 80%;
+    }
+  }
+  .form__selection {
+    @extend .rounded-lg;
+    box-sizing: content-box;
+    border: 1px solid color($gray, 200);
+    background-color: color($gray, 100);
+    width: 80%;
+    padding: $space-2;
+    margin: $space-1;
+  }
+  .form__file-input {
+    @extend .rounded-lg;
+    box-sizing: content-box;
+    border: 1px solid color($gray, 200);
+    background-color: color($gray, 100);
+    width: 80%;
+    padding: $space-2;
+    margin: $space-1;
+    color: color($gray, 500);
+    @include responsive(sm) {
+      width: 80%;
+    }
+  }
+  .form__checkbox {
+    margin: auto;
+    width: 90%;
+    margin-bottom: $space-5;
+    padding: 0 0 0 $space-2;
+    @include responsive(sm) {
+      width: 100%;
+      max-width: 30rem;
+    }
+    input[type="checkbox"] {
+      transform: scale(1.5);
+      cursor: pointer;
+      margin-right: $space-2;
+      color: green;
+    }
+  }
+  .form__buttons {
+    display: flex;
+    margin: auto;
+    width: 100%;
+    margin-bottom: $space-5;
+    @include responsive(sm) {
+      width: 90%;
+      max-width: 30rem;
+    }
+    .button--submit-form {
+      background-color: color($green, 600);
+      color: $white;
+      margin-left: $space-3;
+      &:hover {
+        background-color: color($green, 700);
+        color: $white;
+      }
+    }
+    .button--reset-form {
+      background-color: color($gray, 500);
+      color: $white;
+      margin: 0;
+      &:hover {
+        background-color: color($gray, 600);
+        color: $white;
+      }
+    }
+  }
+  .form__label {
+    margin-top: 0.8rem;
+    color: color($gray, 700);
+    width: 80%;
+  }
+  .form__label-icon {
+    color: color($gray, 500);
+    margin-right: $space-2;
+  }
+  .form__text-area {
+    @extend .rounded-lg, .text-sm;
+    border: 1px solid color($gray, 200);
+    background-color: color($gray, 100);
+    padding: $space-2;
+    width: 80%;
+  }
+  .form__number-input {
+    @extend .rounded-lg, .text-sm;
+    border: 1px solid color($gray, 200);
+    background-color: color($gray, 100);
+    padding: $space-2;
+    width: 80%;
+    @include responsive(sm) {
+    }
+  }
+  .form__ingrediants-div {
+    width: 85%;
+  }
+  .form__ingrediants-buttons {
+    width: 85%;
+    display: flex;
+    justify-content: space-around;
+    .form__ingrediant-add {
+      @extend .button;
+      width: 48%;
+      background-color: color($blue, 100);
+      color: color($blue, 900);
+      &:hover {
+        background-color: color($blue, 200);
+        color: color($blue, 900);
+      }
+    }
+    .form__ingrediant-delete {
+      @extend .button;
+      width: 48%;
+      background-color: color($red, 100);
+      color: color($red, 900);
+      &:hover {
+        background-color: color($red, 200);
+        color: color($red, 900);
+      }
+    }
+  }
+  .form__ingrediant {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    .form__ingrediant-name {
+      @extend .rounded-lg;
+      border: 1px solid color($gray, 200);
+      background-color: color($gray, 100);
+      width: 80%;
+      padding: $space-2;
+      margin: $space-1;
+      margin-top: $space-2;
+    }
+    .form__ingrediant-quantity {
+      @extend .rounded-lg;
+      border: 1px solid color($gray, 200);
+      background-color: color($gray, 100);
+      width: 20%;
+      padding: $space-2;
+      margin: $space-1;
+      margin-top: $space-2;
+    }
+  }
+}
+
+// Details de recette
+.details {
+  width: 90%;
+  max-width: 50rem;
+  margin: auto;
+  margin-bottom: $space-32;
+  padding-top: $space-20;
+  .details__top {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .details__backBtn {
+    background: none;
+    @extend .font-bold;
+    color: color($gray, 800);
+    &:hover {
+      color: color($green, 700);
+    }
+  }
+  .details__backIcon {
+    margin-right: $space-2;
+  }
+  .details__share {
+    display: flex;
+    align-items: center;
+    padding: 0;
+  }
+  .details__shareIcon {
+    font-size: 2rem;
+    padding: 0.5rem;
+    color: color($gray, 700);
+    &:hover {
+      color: color($gray, 500);
+    }
+  }
+  .details__img {
+    @extend .rounded-lg;
+    overflow: hidden;
+    display: flex;
+    width: 100%;
+    margin: auto;
+    margin-top: $space-2;
+    img {
+      margin: auto;
+      width: 100%;
+    }
+  }
+  .details__title {
+    @extend .text-4xl;
+    text-align: center;
+  }
+  .details__header {
+    @extend .text-xl;
+    text-align: left;
+    padding: 0;
+    margin: 0px;
+  }
+  .details__infolist {
+    margin-top: $space-2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    i {
+      color: color($green, 800);
+      margin-right: $space-1;
+    }
+    flex-wrap: wrap;
+  }
+  .details__info {
+    margin-right: $space-4;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+}
+.bookmark__header {
+  text-align: center;
+  margin: auto;
+  max-width: 80%;
+}
+.styled-table {
+  @extend .text-lg, .shadow-md;
+  border-collapse: collapse;
+  margin: 25px 0;
+  min-width: 400px;
+}
+.styled-table thead tr {
+  background-color: color($green, 700);
+  color: #ffffff;
+  text-align: left;
+}
+.styled-table th,
+.styled-table td {
+  padding: 12px 15px;
+}
+.styled-table tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+  background-color: #eeeeee;
+}
+
+.styled-table tbody tr:last-of-type {
+  border-bottom: 2px solid color($green, 700);
+}
+.styled-table tbody tr.active-row {
+  font-weight: bold;
+  color: color($green, 700);
+}

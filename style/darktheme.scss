@@ -1,0 +1,268 @@
+// Feuille de style pour le mode nuit
+@import "./utility/colors";
+
+// Styles generales
+body {
+  background-color: color($gray, 900);
+  color: color($gray, 200);
+}
+
+// Outline personnalise
+* {
+  border: none;
+  outline: none;
+  &:focus-visible {
+    -webkit-box-shadow: 0px 0px 0px 2.5px rgba(255, 255, 255, 0.5);
+    -moz-box-shadow: 0px 0px 0px 2.5px rgba(255, 255, 255, 0.5);
+    box-shadow: 0px 0px 0px 2.5px rgba(255, 255, 255, 0.5);
+  }
+}
+
+// Barre de navigation en haut
+.topnav {
+  background-color: color($gray, 800);
+  .topnav__link {
+    &:not(.topnav__logo) {
+      color: color($gray, 300);
+      &:hover {
+        color: color($green, 400);
+      }
+    }
+  }
+  .topnav__hamburger {
+    color: color($gray, 300);
+    &:hover {
+      color: color($gray, 400);
+    }
+  }
+  .topnav__cogs {
+    color: color($gray, 300);
+  }
+}
+
+// Barre de navigation sur le cote
+.sidenav {
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.75);
+  .sidenav__content {
+    background-color: color($gray, 900);
+  }
+  .sidenav__link {
+    color: color($gray, 300);
+    border-bottom: 2px solid color($gray, 800);
+    &:hover {
+      background-color: color($gray, 800);
+    }
+  }
+  .sidenav__icon {
+    color: color($gray, 300);
+  }
+  .sidenav__close {
+    color: color($gray, 300);
+    &:hover {
+      color: ccolor($gray, 500);
+    }
+  }
+}
+
+// Barre de recherche
+.search {
+  background-color: color($gray, 800);
+  .search__input {
+    color: $white;
+    background-color: color($gray, 800);
+    &:focus {
+      box-shadow: inset 0px 0px 0px 2.5px rgba(255, 255, 255, 0.5);
+    }
+  }
+  ::placeholder {
+    color: color($gray, 400);
+    opacity: 1;
+  }
+  :-ms-input-placeholder {
+    color: color($gray, 400);
+  }
+  ::-ms-input-placeholder {
+    color: color($gray, 400);
+  }
+  .search__button {
+    color: color($gray, 400);
+    background-color: color($gray, 800);
+    &:hover {
+      color: color($green, 400);
+    }
+    &:focus {
+      box-shadow: inset 0px 0px 0px 2.5px rgba(200, 200, 200, 0.5);
+    }
+  }
+}
+
+// Resultat vide
+.noresult {
+  .noresult__texte {
+    color: color($gray, 300);
+  }
+  .noresult__link {
+    color: color($green, 600);
+    border-bottom: 3px solid color($green, 400);
+    &:hover {
+      color: color($green, 500);
+    }
+  }
+}
+
+// Sauvegardes vide
+.nobookmark {
+  .nobookmark__texte {
+    color: color($gray, 300);
+  }
+  .nobookmark__link {
+    color: color($green, 600);
+    border-bottom: 3px solid color($green, 400);
+    &:hover {
+      color: color($green, 500);
+    }
+  }
+}
+
+.recipe {
+  background-color: color($gray, 800);
+  .recipe__top {
+    .recipe__bookmark-btn {
+      color: $white;
+      &:hover {
+        color: color($gray, 200);
+      }
+    }
+  }
+  .recipe__bottom {
+    .recipe__title {
+      color: color($gray, 300);
+    }
+    .recipe__info {
+      color: color($gray, 300);
+    }
+    .recipe__difficulty {
+      color: color($gray, 300);
+    }
+    .recipe__time {
+      color: color($gray, 300);
+    }
+    .recipe__btn {
+      background-color: color($green, 700);
+      color: $white;
+      i {
+        color: color($gray, 200);
+      }
+      &:hover {
+        background-color: color($green, 600);
+        color: $white;
+      }
+    }
+  }
+}
+
+// Modal reglages
+.settings {
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.75);
+  .settings__content {
+    background-color: color($gray, 800);
+  }
+  .settings__title {
+    color: color($gray, 200);
+  }
+  .settings__closebtn {
+    &:hover {
+      background-color: color($gray, 700);
+    }
+    span {
+      color: color($gray, 200);
+    }
+  }
+  .settings__item {
+    color: color($gray, 200);
+  }
+  .settings__item:not(:last-child):after {
+    background: color($gray, 700);
+  }
+  .settings__flag--active {
+    box-shadow: 0px 0px 0px 0.2rem rgba(54, 182, 71, 0.5);
+  }
+}
+
+// Formulaire
+.form {
+  ::placeholder {
+    color: color($gray, 400);
+    opacity: 1;
+  }
+  :-ms-input-placeholder {
+    color: color($gray, 400);
+  }
+  ::-ms-input-placeholder {
+    color: color($gray, 400);
+  }
+  .form__section {
+    background-color: color($gray, 800);
+    .form__section-title {
+      color: color($gray, 200);
+    }
+    .form__input-text {
+      color: color($gray, 200);
+      border: 1px solid color($gray, 800);
+      background-color: color($gray, 700);
+    }
+  }
+  .form__selection {
+    border: 1px solid color($gray, 800);
+    background-color: color($gray, 700);
+    color: color($gray, 200);
+  }
+  .form__file-input {
+    border: 1px solid color($gray, 800);
+    background-color: color($gray, 700);
+    color: color($gray, 400);
+  }
+  .form__checkbox {
+    color: color($gray, 200);
+    input[type="checkbox"] {
+      color: green;
+    }
+  }
+  .form__buttons {
+    .button--submit-form {
+      background-color: color($green, 600);
+      color: $white;
+      &:hover {
+        background-color: color($green, 700);
+        color: $white;
+      }
+    }
+    .button--reset-form {
+      background-color: color($gray, 500);
+      color: $white;
+      margin: 0;
+      &:hover {
+        background-color: color($gray, 600);
+        color: $white;
+      }
+    }
+  }
+  .form__label {
+    color: color($gray, 300);
+  }
+  .form__label-icon {
+    color: color($gray, 200);
+  }
+  .form__text-area {
+    border: 1px solid color($gray, 800);
+    background-color: color($gray, 700);
+    color: color($gray, 200);
+  }
+  .form__number-input {
+    border: 1px solid color($gray, 800);
+    background-color: color($gray, 700);
+    color: color($gray, 200);
+  }
+}

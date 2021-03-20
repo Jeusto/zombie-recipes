@@ -1,0 +1,330 @@
+body {
+  background-color: #18181b;
+  color: #e4e4e7;
+}
+
+* {
+  border: none;
+  outline: none;
+}
+
+*:focus-visible {
+  -webkit-box-shadow: 0px 0px 0px 2.5px rgba(255, 255, 255, 0.5);
+  box-shadow: 0px 0px 0px 2.5px rgba(255, 255, 255, 0.5);
+}
+
+.topnav {
+  background-color: #27272a;
+}
+
+.topnav .topnav__link:not(.topnav__logo) {
+  color: #d4d4d8;
+}
+
+.topnav .topnav__link:not(.topnav__logo):hover {
+  color: #4ade80;
+}
+
+.topnav .topnav__hamburger {
+  color: #d4d4d8;
+}
+
+.topnav .topnav__hamburger:hover {
+  color: #a1a1aa;
+}
+
+.topnav .topnav__cogs {
+  color: #d4d4d8;
+}
+
+.sidenav {
+  background-color: black;
+  background-color: rgba(0, 0, 0, 0.75);
+}
+
+.sidenav .sidenav__content {
+  background-color: #18181b;
+}
+
+.sidenav .sidenav__link {
+  color: #d4d4d8;
+  border-bottom: 2px solid #27272a;
+}
+
+.sidenav .sidenav__link:hover {
+  background-color: #27272a;
+}
+
+.sidenav .sidenav__icon {
+  color: #d4d4d8;
+}
+
+.sidenav .sidenav__close {
+  color: #d4d4d8;
+}
+
+.sidenav .sidenav__close:hover {
+  color: ccolor((50: #fafafa, 100: #f4f4f5, 200: #e4e4e7, 300: #d4d4d8, 400: #a1a1aa, 500: #71717a, 600: #52525b, 700: #3f3f46, 800: #27272a, 900: #18181b), 500);
+}
+
+.search {
+  background-color: #27272a;
+}
+
+.search .search__input {
+  color: #fff;
+  background-color: #27272a;
+}
+
+.search .search__input:focus {
+  -webkit-box-shadow: inset 0px 0px 0px 2.5px rgba(255, 255, 255, 0.5);
+          box-shadow: inset 0px 0px 0px 2.5px rgba(255, 255, 255, 0.5);
+}
+
+.search ::-webkit-input-placeholder {
+  color: #a1a1aa;
+  opacity: 1;
+}
+
+.search :-ms-input-placeholder {
+  color: #a1a1aa;
+  opacity: 1;
+}
+
+.search ::-ms-input-placeholder {
+  color: #a1a1aa;
+  opacity: 1;
+}
+
+.search ::placeholder {
+  color: #a1a1aa;
+  opacity: 1;
+}
+
+.search :-ms-input-placeholder {
+  color: #a1a1aa;
+}
+
+.search ::-ms-input-placeholder {
+  color: #a1a1aa;
+}
+
+.search .search__button {
+  color: #a1a1aa;
+  background-color: #27272a;
+}
+
+.search .search__button:hover {
+  color: #4ade80;
+}
+
+.search .search__button:focus {
+  -webkit-box-shadow: inset 0px 0px 0px 2.5px rgba(200, 200, 200, 0.5);
+          box-shadow: inset 0px 0px 0px 2.5px rgba(200, 200, 200, 0.5);
+}
+
+.noresult .noresult__texte {
+  color: #d4d4d8;
+}
+
+.noresult .noresult__link {
+  color: #16a34a;
+  border-bottom: 3px solid #4ade80;
+}
+
+.noresult .noresult__link:hover {
+  color: #22c55e;
+}
+
+.nobookmark .nobookmark__texte {
+  color: #d4d4d8;
+}
+
+.nobookmark .nobookmark__link {
+  color: #16a34a;
+  border-bottom: 3px solid #4ade80;
+}
+
+.nobookmark .nobookmark__link:hover {
+  color: #22c55e;
+}
+
+.recipe {
+  background-color: #27272a;
+}
+
+.recipe .recipe__top .recipe__bookmark-btn {
+  color: #fff;
+}
+
+.recipe .recipe__top .recipe__bookmark-btn:hover {
+  color: #e4e4e7;
+}
+
+.recipe .recipe__bottom .recipe__title {
+  color: #d4d4d8;
+}
+
+.recipe .recipe__bottom .recipe__info {
+  color: #d4d4d8;
+}
+
+.recipe .recipe__bottom .recipe__difficulty {
+  color: #d4d4d8;
+}
+
+.recipe .recipe__bottom .recipe__time {
+  color: #d4d4d8;
+}
+
+.recipe .recipe__bottom .recipe__btn {
+  background-color: #15803d;
+  color: #fff;
+}
+
+.recipe .recipe__bottom .recipe__btn i {
+  color: #e4e4e7;
+}
+
+.recipe .recipe__bottom .recipe__btn:hover {
+  background-color: #16a34a;
+  color: #fff;
+}
+
+.settings {
+  background-color: black;
+  background-color: rgba(0, 0, 0, 0.75);
+}
+
+.settings .settings__content {
+  background-color: #27272a;
+}
+
+.settings .settings__title {
+  color: #e4e4e7;
+}
+
+.settings .settings__closebtn:hover {
+  background-color: #3f3f46;
+}
+
+.settings .settings__closebtn span {
+  color: #e4e4e7;
+}
+
+.settings .settings__item {
+  color: #e4e4e7;
+}
+
+.settings .settings__item:not(:last-child):after {
+  background: #3f3f46;
+}
+
+.settings .settings__flag--active {
+  -webkit-box-shadow: 0px 0px 0px 0.2rem rgba(54, 182, 71, 0.5);
+          box-shadow: 0px 0px 0px 0.2rem rgba(54, 182, 71, 0.5);
+}
+
+.form ::-webkit-input-placeholder {
+  color: #a1a1aa;
+  opacity: 1;
+}
+
+.form :-ms-input-placeholder {
+  color: #a1a1aa;
+  opacity: 1;
+}
+
+.form ::-ms-input-placeholder {
+  color: #a1a1aa;
+  opacity: 1;
+}
+
+.form ::placeholder {
+  color: #a1a1aa;
+  opacity: 1;
+}
+
+.form :-ms-input-placeholder {
+  color: #a1a1aa;
+}
+
+.form ::-ms-input-placeholder {
+  color: #a1a1aa;
+}
+
+.form .form__section {
+  background-color: #27272a;
+}
+
+.form .form__section .form__section-title {
+  color: #e4e4e7;
+}
+
+.form .form__section .form__input-text {
+  color: #e4e4e7;
+  border: 1px solid #27272a;
+  background-color: #3f3f46;
+}
+
+.form .form__selection {
+  border: 1px solid #27272a;
+  background-color: #3f3f46;
+  color: #e4e4e7;
+}
+
+.form .form__file-input {
+  border: 1px solid #27272a;
+  background-color: #3f3f46;
+  color: #a1a1aa;
+}
+
+.form .form__checkbox {
+  color: #e4e4e7;
+}
+
+.form .form__checkbox input[type="checkbox"] {
+  color: green;
+}
+
+.form .form__buttons .button--submit-form {
+  background-color: #16a34a;
+  color: #fff;
+}
+
+.form .form__buttons .button--submit-form:hover {
+  background-color: #15803d;
+  color: #fff;
+}
+
+.form .form__buttons .button--reset-form {
+  background-color: #71717a;
+  color: #fff;
+  margin: 0;
+}
+
+.form .form__buttons .button--reset-form:hover {
+  background-color: #52525b;
+  color: #fff;
+}
+
+.form .form__label {
+  color: #d4d4d8;
+}
+
+.form .form__label-icon {
+  color: #e4e4e7;
+}
+
+.form .form__text-area {
+  border: 1px solid #27272a;
+  background-color: #3f3f46;
+  color: #e4e4e7;
+}
+
+.form .form__number-input {
+  border: 1px solid #27272a;
+  background-color: #3f3f46;
+  color: #e4e4e7;
+}
+/*# sourceMappingURL=darktheme.css.map */

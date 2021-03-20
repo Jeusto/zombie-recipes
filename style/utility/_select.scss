@@ -1,0 +1,13 @@
+// Selectionne tout
+.select-all {
+  -webkit-user-select: all;
+  -moz-user-select: all;
+  user-select: all;
+}
+
+// Impossible de selectionner
+.selectionner-nothing {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
