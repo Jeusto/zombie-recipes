@@ -19,6 +19,7 @@ function setCookie(name, cvalue, expiration) {
   document.cookie = name + "=" + cvalue + ";" + expires + ";path=/";
 }
 
+// Fonctions pour mettre a jour les drapeaux visuellement
 function frenchSwitch() {
   frLanguage.classList.add("settings__flag--active");
   enLanguage.classList.remove("settings__flag--active");

@@ -283,7 +283,7 @@ body {
   align-items: center;
   justify-content: center;
   margin: $space-2;
-  width: 15rem;
+  width: 20rem;
   height: 15rem;
   .recipe__top {
     position: relative;
@@ -317,6 +317,10 @@ body {
     .recipe__title {
       margin: auto;
       margin: $space-2;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      width: 90%;
+      white-space: nowrap;
     }
     .recipe__info {
       margin: $space-2;
@@ -338,15 +342,15 @@ body {
     .recipe__btn {
       @extend .button;
       display: inline-block;
-      margin-left: $space-3;
-      background-color: color($green, 400);
+      margin-left: $space-4;
+      background-color: color($gray, 300);
       color: $black;
       i {
-        color: color($gray, 800);
-        margin-left: $space-1-5;
+        color: color($gray, 700);
+        margin-left: $space-1;
       }
       &:hover {
-        background-color: color($green, 500);
+        background-color: color($gray, 400);
         color: $black;
       }
       &:active {
@@ -516,26 +520,26 @@ body {
       width: 100%;
       max-width: 30rem;
     }
-    .form__section-title {
-      width: 100%;
-      text-align: center;
-      margin: 0;
+  }
+  .form__section-title {
+    width: 100%;
+    text-align: center;
+    margin: 0;
+  }
+  .form__input-text {
+    @extend .rounded-lg;
+    border: 1px solid color($gray, 200);
+    background-color: color($gray, 100);
+    width: 80%;
+    padding: $space-2;
+    margin: $space-1;
+    margin-top: $space-2;
+    @include responsive(sm) {
+      width: 11rem;
     }
-    .form__input-text {
-      @extend .rounded-lg;
-      border: 1px solid color($gray, 200);
-      background-color: color($gray, 100);
-      width: 80%;
-      padding: $space-2;
-      margin: $space-1;
-      margin-top: $space-2;
-      @include responsive(sm) {
-        width: 11rem;
-      }
-    }
-    #recipeName {
-      width: 80%;
-    }
+  }
+  #recipeName {
+    width: 80%;
   }
   .form__selection {
     @extend .rounded-lg;
@@ -557,22 +561,6 @@ body {
     color: color($gray, 500);
     @include responsive(sm) {
       width: 80%;
-    }
-  }
-  .form__checkbox {
-    margin: auto;
-    width: 90%;
-    margin-bottom: $space-5;
-    padding: 0 0 0 $space-2;
-    @include responsive(sm) {
-      width: 100%;
-      max-width: 30rem;
-    }
-    input[type="checkbox"] {
-      transform: scale(1.5);
-      cursor: pointer;
-      margin-right: $space-2;
-      color: green;
     }
   }
   .form__buttons {
@@ -648,11 +636,11 @@ body {
     .form__ingrediant-delete {
       @extend .button;
       width: 48%;
-      background-color: color($red, 100);
-      color: color($red, 900);
+      background-color: color($orange, 100);
+      color: color($orange, 900);
       &:hover {
-        background-color: color($red, 200);
-        color: color($red, 900);
+        background-color: color($orange, 200);
+        color: color($orange, 900);
       }
     }
   }
@@ -678,6 +666,33 @@ body {
       margin: $space-1;
       margin-top: $space-2;
     }
+  }
+  #form__success {
+    @extend .shadow-sm;
+    box-sizing: border-box;
+    display: none;
+    word-wrap: break-word;
+    width: 100%;
+    margin: auto;
+    height: auto;
+    padding: $space-0-5 $space-4 $space-0-5 $space-4;
+    margin-bottom: $space-4;
+    background-color: color($green, 100);
+    color: color($green, 900);
+    @include responsive(sm) {
+      width: 100%;
+      max-width: 30rem;
+    }
+  }
+  #form__error {
+    @extend #form__success;
+    display: none;
+    background-color: color($red, 100);
+    color: color($red, 900);
+  }
+  .error {
+    border: 1px solid color($red, 200);
+    background-color: color($red, 100);
   }
 }
 

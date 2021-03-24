@@ -20,6 +20,8 @@
     $recipeQuantities = ($rows[$i]['Quantities']);
     $ingrediants = explode(";", $recipeIngrediants);
     $quantities = explode(";", $recipeQuantities);
+    $userFirstName = ($rows[$i]['FirstName']);
+    $userLastName = ($rows[$i]['LastName']);
 
   }
 ?>

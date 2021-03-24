@@ -59,7 +59,17 @@ $lang = array (
   "ingrediants" => "Ingrédients et quantités",
   "formCheckbox" => "Francais lorem ipsum dolor sit amet consectetur.",
 
-  "details" => "Détails"
+  "details" => "Voir cette recette",
+  "by" => "par",
+  "ingrediantsTable" => "Ingrédiants",
+  "quantitiesTable" => "Quantités",
+  "backLastPage" => "Revenir à la page précèdente",
+  "checkboxMessage" => "En soumettant ce formulaire, j'accepte que mes informations soient utilisées exclusivement dans le cadre de ma demande.",
+  "success" => "Succès",
+  "error" => "Erreur",
+  "successMessage" => "Le formulaire a été envoyé avec succès.",
+  "errorMessage" => "Merci de vérifier vos informations et d'essayer à nouveau."
+
 );
 
 ?>

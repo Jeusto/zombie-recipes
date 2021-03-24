@@ -18,7 +18,7 @@
 
 // Bouton
 .button {
-  @extend .text-sm, .rounded-lg, .transition;
+  @extend .text-sm, .rounded-md, .transition;
   background-color: color($gray, 200);
   color: color($gray, 700);
   padding: $space-2 $space-3;

@@ -2,7 +2,7 @@
 <?php include "backend/language.php";?>
 
 <!DOCTYPE html>
-<html lang="<?php echo $lang['language'] ?>">
+<html lang="<?= $lang['language'] ?>">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -16,71 +16,79 @@
     />
     <link rel="stylesheet" href="./style/style.css" />
     <?php if (isset($_COOKIE['theme']) && $_COOKIE["theme"]=="dark") {echo "<link rel=\"stylesheet\" href=\"./style/darktheme.css\" />";}?>
-    <title><?php echo $lang['formPage'] ?></title>
+    <title><?= $lang['formPage'] ?></title>
   </head>
   <body>
+    <!--Navigation-->
     <?php include "backend/components/navigation.php";?>
-
+    
     <!--Image de formulaire-->
     <img class="submit-image" src="images/assets/submit-recipe.svg" alt="" />
 
     <!--Formulaire-->
-    <form action="backend/form.php" method="post" class="form" enctype="multipart/form-data">
+    <form action="submit.php" method="post" class="form" id="recipeForm" enctype="multipart/form-data">
       <div class="form__section">
-        <h2 class="form__section-title"><?php echo $lang['personalInfo'] ?></h2>
+        <h2 class="form__section-title"><?= $lang['personalInfo']?></h2>
         <input
           class="form__input-text"
           type="text"
           id="userLastName"
           name="userLastName"
-          placeholder="<?php echo $lang['lastName'] ?>"
+          placeholder="<?= $lang['lastName']." *"?>"
+          required
+          maxlength="40"
         />
         <input
           class="form__input-text"
           type="text"
           id="userFirstName"
           name="userFirstName"
-          placeholder="<?php echo $lang['firstName'] ?>"
+          placeholder="<?= $lang['firstName']." *"?>"
+          required
+          maxlength="40"
         />
-        <input class="form__input-text" type="text" id="userEmail" name="userEmail" placeholder="<?php echo $lang['email'] ?>" />
+        <input class="form__input-text" type="text" id="userEmail" name="userEmail" placeholder="<?= $lang['email'] ?>" required/>
         <input
           class="form__input-text"
           type="text"
           id="userOrganisation"
           name="userOrganisation"
-          placeholder="<?php echo $lang['organisation'] ?>"
+          placeholder="<?= $lang['organisation'] ?>"
+          maxlength="40"
         />
       </div>
       <div class="form__section">
-        <h2 class="form__section-title"><?php echo $lang['recipeGeneralInfo'] ?></h2>
+        <h2 class="form__section-title"><?= $lang['recipeGeneralInfo'] ?></h2>
         <label class="form__label" for="recipeName"
-          ><i class="form__label-icon fas fa-paragraph"></i><?php echo $lang['recipeName'] ?></label
+          ><i class="form__label-icon fas fa-paragraph"></i><?= $lang['recipeName']." *" ?></label
         >
         <input
           class="form__input-text"
           type="text"
           id="recipeName"
           name="recipeName"
-          placeholder="<?php echo $lang['recipeName'] ?>"
+          placeholder="<?= $lang['recipeName'] ?>"
+          required
+          maxlength="40"
         />
         <label class="form__label" for="recipeName"
-          ><i class="form__label-icon fas fa-folder-open"></i><?php echo $lang['recipeType'] ?></label
+          ><i class="form__label-icon fas fa-folder-open"></i><?= $lang['recipeType'] ?></label
         >
         <select class="form__selection" name="recipeType" id="recipeType">
-          <option value="aperitif"><?php echo $lang['appetizer'] ?></option>
-          <option value="drink"><?php echo $lang['drink'] ?></option>
-          <option value="dessert"><?php echo $lang['dessert'] ?></option>
-          <option value="mainDish"><?php echo $lang['mainDish'] ?></option>
+          <option value="appetizer"><?= $lang['appetizer'] ?></option>
+          <option value="drink"><?= $lang['drink'] ?></option>
+          <option value="dessert"><?= $lang['dessert'] ?></option>
+          <option value="mainDish"><?= $lang['mainDish'] ?></option>
         </select>
         <label class="form__label" for="recipeName"
-          ><i class="form__label-icon fas fa-image"></i><?php echo $lang['recipePresentationPhoto'] ?></label
+          ><i class="form__label-icon fas fa-image"></i><?= $lang['recipePresentationPhoto']." *" ?></label
         >
-        <input class="form__file-input" type="file" name="recipeImage" id="recipeImage" />
+        <input class="form__file-input" type="file" name="recipeImage" id="recipeImage" required/>
       </div>
       <div class="form__section">
-        <h2 class="form__section-title"><?php echo $lang['recipeDetails'] ?></h2>
+        <h2 class="form__section-title"><?= $lang['recipeDetails'] ?></h2>
         <label class="form__label" for="recipeDescription"
-          ><i class="form__label-icon fas fa-utensils"></i><?php echo $lang['recipeRealization'] ?></label
+          ><i class="form__label-icon fas fa-utensils"></i><?= $lang['recipeRealization']." *" ?></label
         >
         <textarea
           class="form__text-area"
@@ -88,34 +96,37 @@
           name="recipeDescription"
           rows="4"
           cols="50"
+          maxlength="1000"
           required
-        ><?php echo $lang['recipeRealizationPlaceholder'] ?></textarea>
+          placeholder="<?= $lang['recipeRealizationPlaceholder']?>"
+        ></textarea>
         <label class="form__label" for="recipeDifficulty"
-          ><i class="form__label-icon fas fa-brain"></i><?php echo $lang['difficultyLevel'] ?></label
+          ><i class="form__label-icon fas fa-brain"></i><?= $lang['difficultyLevel'] ?></label
         >
         <select class="form__selection" name="recipeDifficulty" id="recipeDifficulty">
-          <option value="beginner"><?php echo $lang['beginner'] ?></option>
-          <option value="intermediate"><?php echo $lang['intermediate'] ?></option>
-          <option value="advanced"><?php echo $lang['advanced'] ?></option>
+          <option value="beginner"><?= $lang['beginner'] ?></option>
+          <option value="intermediate"><?= $lang['intermediate'] ?></option>
+          <option value="advanced"><?= $lang['advanced'] ?></option>
         </select>
         <label class="form__label" for="recipePreparationTime"
-          ><i class="form__label-icon fas fa-clock"></i><?php echo $lang['preparationTime'] ?> </label
+          ><i class="form__label-icon fas fa-clock"></i><?= $lang['preparationTime'] ?> </label
         >
-        <input class="form__number-input" id="recipePreparationTime" name="recipePreparationTime" type="number" min="0" value="60" />
-        <label class="form__label" for="recipeRealization"><i class="form__label-icon fas fa-sticky-note"></i><?php echo $lang['precisions'] ?></label>
+        <input class="form__number-input" id="recipePreparationTime" name="recipePreparationTime" type="number" min="0" value="0" max="960" />
+        <label class="form__label" for="recipeRealization"><i class="form__label-icon fas fa-sticky-note"></i><?= $lang['precisions'] ?></label>
         <textarea
           class="form__text-area"
           id="recipeDetails"
           name="recipeDetails"
           rows="4"
           cols="50"
-          required><?php echo $lang['precisionsPlaceholder'] ?></textarea>
+          maxlength="1000"
+          placeholder="<?= $lang['precisionsPlaceholder'] ?>"></textarea>
         <label class="form__label" for="recipeRealization"
-          ><i class="form__label-icon fas fa-lemon"></i><?php echo $lang['ingrediants'] ?></label
+          ><i class="form__label-icon fas fa-lemon"></i><?= $lang['ingrediants'] ?></label
         >
         <div class="form__ingrediants-buttons">
-          <button type="button" class="form__ingrediant-add" id="addBtn">Ajouter</button>
-          <button type="button" class="form__ingrediant-delete" id="deleteBtn">Supprimer</button>
+          <button type="button" class="form__ingrediant-add" id="addBtn"><i class="fas fa-plus"></i> Ajouter</button>
+          <button type="button" class="form__ingrediant-delete" id="deleteBtn"><i class="fas fa-trash-alt"></i> Supprimer</button>
         </div>
         <div class="form__ingrediants-div" id="formIngrediants">  
           <div class="form__ingrediant">       
@@ -124,35 +135,37 @@
               type="text"
               name="ingrediantName1"
               placeholder="Ingrediant name"
+              maxlength="40"
             />
             <input
               class="form__ingrediant-quantity"
               type="text"
               name="ingrediantQuantity1"
               placeholder="Quantity"
+              maxlength="25"
             /> 
           </div>
         </div>
       </div>
-      <div class="form__checkbox">
-        <input
-          class="checkbox-form"
-          type="checkbox"
-          id="confirmCheckbox"
-          name="confirmed"
-          value="yes"
-        />
-        <label for="checkbox-form"> Lorem ipsum dolor sit amet consectetur.</label><br />
+      <div id="form__success">
+        <h2><i class="fas fa-check"></i> <?= $lang['success'] ?></h2>
+        <p><?= $lang['successMessage'] ?></p>
+      </div>
+      <div id="form__error" >
+        <h2><i class="fas fa-exclamation-triangle"></i> <?= $lang['error'] ?></h2>
+        <p><?= $lang['errorMessage'] ?></p>
       </div>
       <div class="form__buttons">
         <input class="button button--reset-form" type="reset" />
-        <input class="button button--submit-form" name="submit" type="submit" />
+        <button class="button button--submit-form" id="formSubmitBtn" name="submitButton" type="submit">Envoyer</button>
       </div>
     </form>
+    <?php include "backend/form.php";?>
 
     <!--Modal reglages-->
     <?php include "backend/components/settings.php";?>
 
+    <script src="./javascript/form.js"></script>
     <script src="./javascript/ingrediants.js"></script>
     <script src="./javascript/language.js"></script>
     <script src="./javascript/theme.js"></script>

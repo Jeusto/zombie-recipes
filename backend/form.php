@@ -1,7 +1,9 @@
 <?php 
 
+  // if(isset($_POST['submitButton'])) 
+
 // On ouvre la base de donnees
-$recipeDataBase = new PDO('sqlite:database/recipes.db');
+$recipeDataBase = new PDO('sqlite:backend/database/recipes.db');
 $statement = $recipeDataBase -> query("SELECT * FROM Recipes");
 $rows = $statement -> fetchAll(PDO::FETCH_ASSOC); 
 
@@ -27,7 +29,7 @@ for ($i=0; $i < 15 ; $i++) {
 }
 
 // On sauvegarde l'image envoye dans le formulaire
-$target_dir = "../images/recipes/";
+$target_dir = "images/recipes/";
 $target_file = $target_dir . basename($_FILES["recipeImage"]["name"]);
 $uploadOk = 1;
 $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));

@@ -3,9 +3,9 @@
     <div class="settings__closebtn" id="settingsModalClose">
       <span class="fas fa-times"></span>
     </div>
-    <h1 class="settings__title"><?php echo $lang['settings'] ?></h1>
+    <h1 class="settings__title"><?= $lang['settings'] ?></h1>
     <div class="settings__item">
-      <h3 class="settings__item-texte"><?php echo $lang['darkMode'] ?></h3>
+      <h3 class="settings__item-texte"><?= $lang['darkMode'] ?></h3>
       <label class="switch">
         <input id="darkmodeCheckbox" type="checkbox"         
         <?php 
@@ -17,7 +17,7 @@
       </label>
     </div>
     <div class="settings__item">
-      <h3 class="settings__item-texte"><?php echo $lang['chooseLanguage'] ?></h3>
+      <h3 class="settings__item-texte"><?= $lang['chooseLanguage'] ?></h3>
       <div class="settings__language">
         <img id="frLanguage" class="settings__flag 
         <?php 

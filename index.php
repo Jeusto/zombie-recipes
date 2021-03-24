@@ -2,7 +2,7 @@
 <?php include "backend/language.php";?>
 
 <!DOCTYPE html>
-<html lang="<?php echo $lang['language'] ?>">
+<html lang="<?= $lang['language'] ?>">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -16,11 +16,12 @@
     />
     <link rel="stylesheet" href="./style/style.css" />
     <?php if (isset($_COOKIE['theme']) && $_COOKIE["theme"]=="dark") {echo "<link rel=\"stylesheet\" href=\"./style/darktheme.css\" />";}?>
-    <title><?php echo $lang['mainPage'] ?></title>
+    <title><?= $lang['mainPage'] ?></title>
   </head>
   <body>
+    <!--Navigation-->
     <?php include "backend/components/navigation.php";?>
-
+    
     <!--Image de header-->
     <div class="header-image"></div>
 
@@ -29,7 +30,7 @@
       <input
         class="search__input"
         type="text"
-        placeholder="<?php echo $lang['searchRecipe']?>"
+        placeholder="<?= $lang['searchRecipe']?>"
         maxlength="60"
         name ="search"
       />
@@ -51,7 +52,6 @@
     <!--Modal reglages-->
     <?php include "backend/components/settings.php";?>
 
-    <script src="./javascript/recipe.js"></script>
     <script src="./javascript/bookmark.js"></script>
     <script src="./javascript/language.js"></script>
     <script src="./javascript/theme.js"></script>

@@ -2,7 +2,7 @@
 <?php include "backend/language.php";?>
 
 <!DOCTYPE html>
-<html lang="<?php echo $lang['language'] ?>">
+<html lang="<?= $lang['language'] ?>">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -22,47 +22,47 @@
     <title>Test</title>
   </head>
   <body>
+    <!--Navigation-->
     <?php include "backend/components/navigation.php";?>
 
-    <?php include "backend/recipeDetails.php";?>
-
     <!--Details du recette -->
-    <div class="details" data-id="recipe<?php echo $recipeId ?>">
+    <?php include "backend/recipeDetails.php";?>
+    <div class="details" data-id="recipe<?= $recipeId ?>">
       <div class="details__top">
         <button class="details__backBtn" onclick="history.go(-1);">
-          <i class="details__backIcon fas fa-arrow-left"></i>Revenir à la page précèdente
+          <i class="details__backIcon fas fa-arrow-left"></i><?= $lang["backLastPage"] ?>
         </button>
         <!--<div class="details__share">        
-          <a class="details__shareLink" href="https://facebook.com/sharer/sharer.php?u=<?php echo $currentLink ?>" target="_blank" rel="noopener" aria-label="Share on Facebook">
+          <a class="details__shareLink" href="https://facebook.com/sharer/sharer.php?u=<?= $currentLink ?>" target="_blank" rel="noopener" aria-label="Share on Facebook">
             <i class="details__shareIcon fab fa-facebook-square"></i>
           </a>
-          <a class="details__shareLink" href="https://twitter.com/intent/tweet/?text=Message%20ici:&amp;url=<?php echo $currentLink ?>" target="_blank" rel="noopener" aria-label="Share on Twitter">
+          <a class="details__shareLink" href="https://twitter.com/intent/tweet/?text=Message%20ici:&amp;url=<?= $currentLink ?>" target="_blank" rel="noopener" aria-label="Share on Twitter">
             <i class="details__shareIcon fab fa-twitter-square"></i>
           </a>
         </div>!-->
       </div>
       <div class="details__img">
-        <img src="images/recipes/<?php echo $recipeImageUrl ?>" alt="Recipe image" />
+        <img src="images/recipes/<?= $recipeImageUrl ?>" alt="Recipe image" />
       </div>
       <div class="">
         <div class="details__infolist">
-          <div class="details__info"><i class="fas fa-user"></i> <span>par Arhun Saday</span></div>
-          <div class="details__info"><i class="fas fa-utensils"></i> <span>Dessert</span></div>
-          <div class="details__info"><i class="fas fa-brain"></i> <span>Debutant</span></div>
+          <div class="details__info"><i class="fas fa-user"></i> <span><?= $lang['by'] ." ". $userFirstName." ".$userLastName?></span></div>
+          <div class="details__info"><i class="fas fa-utensils"></i> <span><?= $lang[$recipeType] ?></span></div>
+          <div class="details__info"><i class="fas fa-brain"></i> <span><?= $lang[$recipeDifficulty] ?></span></div>
           <div class="details__info">
             <i class="fas fa-clock"></i>
-            <span><?php echo $recipePreparationTime ?>min</span>
+            <span><?= $recipePreparationTime." " ?>min</span>
           </div>
         </div>
-        <h2 class="details__title"><?php echo $recipeName ?></h2>
-        <h4 class="details__header">Réalisation du recette</h4>
-        <p><?php echo $recipeDescription ?></p>
-        <h4 class="details__header">Ingrédiants</h4>
+        <h2 class="details__title"><?= $recipeName ?></h2>
+        <h4 class="details__header"><?= $lang["recipeRealization"] ?></h4>
+        <p><?= $recipeDescription ?></p>
+        <h4 class="details__header"><?= $lang["ingrediants"] ?></h4>
         <table class="styled-table">
           <thead>
             <tr>
-              <th>Ingrédiants</th>
-              <th>Quantité</th>
+              <th><?= $lang["ingrediantsTable"] ?></th>
+              <th><?= $lang["quantitiesTable"] ?></th>
             </tr>
           </thead>
           <tbody>
@@ -72,8 +72,8 @@
             ?>
           </tbody>
         </table>
-        <h4 class="details__header">Details</h4>
-        <p><?php echo $recipeDetails ?></p>
+        <h4 class="details__header"><?= $lang["precisions"] ?></h4>
+        <p><?= $recipeDetails ?></p>
       </div>
     </div>
 

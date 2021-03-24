@@ -6,6 +6,16 @@ if ((allCookies = document.cookie).includes("theme") == false) {
   setCookie("theme", "light", 10000);
 }
 
+// Fonction pour changer le theme
+function switchTheme() {
+  if (getCookie("theme") == "light") {
+    setCookie("theme", "dark", 10000);
+    location.reload();
+  } else {
+    setCookie("theme", "light", 10000);
+    location.reload();
+  }
+}
 
 // Fonction pour mettre le cookie
 function setCookie(name, cvalue, expiration) {
@@ -30,14 +40,4 @@ function getCookie(cname) {
     }
   }
   return "";
-}
-
-function switchTheme() {
-  if (getCookie("theme") == "light") {
-    setCookie("theme", "dark", 10000);
-    location.reload();
-  } else {
-    setCookie("theme", "light", 10000);
-    location.reload();
-  }
 }

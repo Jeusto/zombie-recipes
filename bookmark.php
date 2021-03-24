@@ -2,7 +2,7 @@
 <?php include "backend/language.php";?>
 
 <!DOCTYPE html>
-<html lang="<?php echo $lang['language'] ?>">
+<html lang="<?= $lang['language'] ?>">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -16,11 +16,11 @@
     />
     <link rel="stylesheet" href="./style/style.css" />
     <?php if (isset($_COOKIE['theme']) && $_COOKIE["theme"]=="dark") {echo "<link rel=\"stylesheet\" href=\"./style/darktheme.css\" />";}?>
-    <title><?php echo $lang['bookmarkPage'] ?></title>
+    <title><?= $lang['bookmarkPage'] ?></title>
   </head>
   <body>
+    <!--Navigation-->
     <?php include "backend/components/navigation.php";?>
-
     <div style="height: 5rem;"></div>
     
     <!--Liste de recettes-->
