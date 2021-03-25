@@ -1,5 +1,8 @@
 <?php
-
+function error($msg) {
+  $response = array("success" => false, "message" => $msg);
+  return json_encode($response);
+}
 // On ouvre la base de donnees
 $recipeDataBase = new PDO('sqlite:backend/database/recipes.db');
 

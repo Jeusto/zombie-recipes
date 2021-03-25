@@ -1,7 +1,7 @@
 <!--Navigation en haut-->
 <div class="topnav">
-  <span class="topnav__hamburger fas fa-bars" id="topnavHamburger"></span>
-  <span class="topnav__cogs fas fa-cog" id="topnavCogs"></span>
+  <button class="topnav__hamburger fas fa-bars" id="topnavHamburger"></button>
+  <button class="topnav__cogs fas fa-cog" id="topnavCogs"></button>
   <a class="topnav__link" href="about.php"
     ><i class="topnav__icon fas fa-info-circle fa-fw"></i><?= $lang['about'] ?></a
   >
@@ -22,7 +22,7 @@
 <!--Navigation mobile a gauche-->
 <div class="sidenav" id="sidenav">
   <div class="sidenav__content" id="sidenavContent">
-    <span class="sidenav__close fas fa-times" id="sidenavClose"></span>
+    <button class="sidenav__close fas fa-times" id="sidenavClose"></button>
     <a class="sidenav__link" href="about.php"
       ><i class="sidenav__icon fas fa-info-circle fa-fw"></i><?= $lang['about'] ?></a
     >

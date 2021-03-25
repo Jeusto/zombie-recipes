@@ -78,6 +78,7 @@ body {
     position: absolute;
     left: $space-2-5;
     color: color($gray, 700);
+    background-color: transparent;
     &:hover {
       color: color($gray, 500);
     }
@@ -91,6 +92,7 @@ body {
     position: absolute;
     right: $space-2-5;
     color: color($gray, 700);
+    background-color: transparent;
     &:hover {
       @extend .animation-spin;
       color: color($gray, 500);
@@ -148,6 +150,7 @@ body {
     cursor: pointer;
     margin-left: $space-2-5;
     margin-top: $space-1-5;
+    background-color: transparent;
     color: color($gray, 700);
     &:hover {
       color: color($gray, 500);
@@ -202,7 +205,7 @@ body {
     &:hover {
       color: color($green, 700);
     }
-    &:focus {
+    &:focus-visible {
       box-shadow: inset 0px 0px 0px 2.5px rgba(0, 0, 0, 0.5);
     }
   }
@@ -351,7 +354,6 @@ body {
       }
       &:hover {
         background-color: color($gray, 400);
-        color: $black;
       }
       &:active {
         @extend .animation-shrink;
@@ -755,10 +757,12 @@ body {
     margin: 0px;
   }
   .details__infolist {
+    @extend .rounded-md;
     margin-top: $space-2;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: $space-2;
     i {
       color: color($green, 800);
       margin-right: $space-1;

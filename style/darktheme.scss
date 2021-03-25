@@ -148,6 +148,17 @@ body {
     .recipe__time {
       color: color($gray, 300);
     }
+    .recipe__btn {
+      background-color: color($gray, 600);
+      color: $white;
+      &:hover {
+        color: $white;
+        background-color: color($gray, 500);
+      }
+      i {
+        color: $white;
+      }
+    }
   }
 }
 

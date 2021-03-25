@@ -32,14 +32,14 @@
         <button class="details__backBtn" onclick="history.go(-1);">
           <i class="details__backIcon fas fa-arrow-left"></i><?= $lang["backLastPage"] ?>
         </button>
-        <!--<div class="details__share">        
+        <div class="details__share">        
           <a class="details__shareLink" href="https://facebook.com/sharer/sharer.php?u=<?= $currentLink ?>" target="_blank" rel="noopener" aria-label="Share on Facebook">
             <i class="details__shareIcon fab fa-facebook-square"></i>
           </a>
           <a class="details__shareLink" href="https://twitter.com/intent/tweet/?text=Message%20ici:&amp;url=<?= $currentLink ?>" target="_blank" rel="noopener" aria-label="Share on Twitter">
             <i class="details__shareIcon fab fa-twitter-square"></i>
           </a>
-        </div>!-->
+        </div>
       </div>
       <div class="details__img">
         <img src="images/recipes/<?= $recipeImageUrl ?>" alt="Recipe image" />
@@ -72,8 +72,10 @@
             ?>
           </tbody>
         </table>
-        <h4 class="details__header"><?= $lang["precisions"] ?></h4>
-        <p><?= $recipeDetails ?></p>
+        <?php if (!empty($recipeDetails)) 
+        {echo "<h4 class=\"details__header\">" . $lang["precisions"] . "</h4><p>" . $recipeDetails . "</p>";}
+        ?>
+        
       </div>
     </div>
 

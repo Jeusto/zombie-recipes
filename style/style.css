@@ -49,7 +49,7 @@ h1 {
  */
 hr {
   -webkit-box-sizing: content-box;
-          box-sizing: content-box;
+  box-sizing: content-box;
   /* 1 */
   height: 0;
   /* 1 */
@@ -89,7 +89,7 @@ abbr[title] {
   text-decoration: underline;
   /* 2 */
   -webkit-text-decoration: underline dotted;
-          text-decoration: underline dotted;
+  text-decoration: underline dotted;
   /* 2 */
 }
 
@@ -237,7 +237,7 @@ fieldset {
  */
 legend {
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   /* 1 */
   color: inherit;
   /* 2 */
@@ -272,7 +272,7 @@ textarea {
 [type="checkbox"],
 [type="radio"] {
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   /* 1 */
   padding: 0;
   /* 2 */
@@ -349,7 +349,7 @@ template {
 
 img:not([alt]) {
   -webkit-box-shadow: 0 0 5px red;
-          box-shadow: 0 0 5px red;
+  box-shadow: 0 0 5px red;
 }
 
 a {
@@ -376,15 +376,16 @@ html {
   line-height: 1.61803398875;
 }
 
-.animation-spin, .topnav .topnav__cogs:hover {
+.animation-spin,
+.topnav .topnav__cogs:hover {
   -webkit-animation-name: spin;
-          animation-name: spin;
+  animation-name: spin;
   -webkit-animation-duration: 5s;
-          animation-duration: 5s;
+  animation-duration: 5s;
   -webkit-animation-timing-function: linear;
-          animation-timing-function: linear;
+  animation-timing-function: linear;
   -webkit-animation-iteration-count: infinite;
-          animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
   -webkit-transition: 10s linear;
   transition: 10s linear;
 }
@@ -392,35 +393,35 @@ html {
 @-webkit-keyframes spin {
   from {
     -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
+    transform: rotate(0deg);
   }
   to {
     -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
+    transform: rotate(360deg);
   }
 }
 
 @keyframes spin {
   from {
     -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
+    transform: rotate(0deg);
   }
   to {
     -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
+    transform: rotate(360deg);
   }
 }
 
 .animation-ping {
   -webkit-animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
-          animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+  animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
 }
 
 @-webkit-keyframes ping {
   75%,
   100% {
     -webkit-transform: scale(2);
-            transform: scale(2);
+    transform: scale(2);
     opacity: 0;
   }
 }
@@ -429,14 +430,14 @@ html {
   75%,
   100% {
     -webkit-transform: scale(2);
-            transform: scale(2);
+    transform: scale(2);
     opacity: 0;
   }
 }
 
 .animation-pulse {
   -webkit-animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-          animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
 @-webkit-keyframes pulse {
@@ -461,19 +462,19 @@ html {
 
 .animation-bounce {
   -webkit-animation: bounce 1s infinite;
-          animation: bounce 1s infinite;
+  animation: bounce 1s infinite;
 }
 
 @-webkit-keyframes bounce {
   0%,
   100% {
     -webkit-transform: translateY(-25%);
-            transform: translateY(-25%);
+    transform: translateY(-25%);
     animationtimingfunction: cubic-bezier(0.8, 0, 1, 1);
   }
   50% {
     -webkit-transform: translateY(0);
-            transform: translateY(0);
+    transform: translateY(0);
     animationtimingfunction: cubic-bezier(0, 0, 0.2, 1);
   }
 }
@@ -482,22 +483,28 @@ html {
   0%,
   100% {
     -webkit-transform: translateY(-25%);
-            transform: translateY(-25%);
+    transform: translateY(-25%);
     animationtimingfunction: cubic-bezier(0.8, 0, 1, 1);
   }
   50% {
     -webkit-transform: translateY(0);
-            transform: translateY(0);
+    transform: translateY(0);
     animationtimingfunction: cubic-bezier(0, 0, 0.2, 1);
   }
 }
 
-.animation-shrink, .button:active, .recipe .recipe__bottom .recipe__btn:active, .form .form__ingrediants-buttons .form__ingrediant-add:active, .form .form__ingrediants-buttons .form__ingrediant-delete:active, .recipe .recipe__top .recipe__bookmark-btn:active {
+.animation-shrink,
+.button:active,
+.recipe .recipe__bottom .recipe__btn:active,
+.form .form__ingrediants-buttons .form__ingrediant-add:active,
+.form .form__ingrediants-buttons .form__ingrediant-delete:active,
+.recipe .recipe__top .recipe__bookmark-btn:active {
   -webkit-transform: scale(0.8);
   transform: scale(0.8);
 }
 
-.animation-grow, .settings .settings__flag:hover {
+.animation-grow,
+.settings .settings__flag:hover {
   -webkit-transform: scale(1.2);
   transform: scale(1.2);
 }
@@ -510,11 +517,26 @@ html {
   border-radius: 0.25rem;
 }
 
-.rounded-md, .button, .recipe .recipe__bottom .recipe__btn, .form .form__ingrediants-buttons .form__ingrediant-add, .form .form__ingrediants-buttons .form__ingrediant-delete {
+.rounded-md,
+.button,
+.recipe .recipe__bottom .recipe__btn,
+.form .form__ingrediants-buttons .form__ingrediant-add,
+.form .form__ingrediants-buttons .form__ingrediant-delete,
+.details .details__infolist {
   border-radius: 0.375rem;
 }
 
-.rounded-lg, .recipe, .settings .settings__content, .form .form__input-text, .form .form__selection, .form .form__file-input, .form .form__text-area, .form .form__number-input, .form .form__ingrediant .form__ingrediant-name, .form .form__ingrediant .form__ingrediant-quantity, .details .details__img {
+.rounded-lg,
+.recipe,
+.settings .settings__content,
+.form .form__input-text,
+.form .form__selection,
+.form .form__file-input,
+.form .form__text-area,
+.form .form__number-input,
+.form .form__ingrediant .form__ingrediant-name,
+.form .form__ingrediant .form__ingrediant-quantity,
+.details .details__img {
   border-radius: 0.5rem;
 }
 
@@ -530,7 +552,9 @@ html {
   border-radius: 1.5rem;
 }
 
-.rounded-full, .label, .search .search__button {
+.rounded-full,
+.label,
+.search .search__button {
   border-radius: 9999px;
 }
 
@@ -538,48 +562,60 @@ html {
   -webkit-user-select: all;
   -moz-user-select: all;
   -ms-user-select: all;
-      user-select: all;
+  user-select: all;
 }
 
-.selectionner-nothing, .label {
+.selectionner-nothing,
+.label {
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
-      user-select: none;
+  user-select: none;
 }
 
-.shadow-sm, .form #form__success, .form #form__error {
+.shadow-sm,
+.form #form__success,
+.form #form__error {
   -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
-          box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
 }
 
-.shadow-md, .topnav, .search, .recipe, .form .form__section, .styled-table {
+.shadow-md,
+.topnav,
+.search,
+.recipe,
+.form .form__section,
+.styled-table {
   -webkit-box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-          box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 
 .shadow-lg {
   -webkit-box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-          box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
 
-.shadow-xl, .settings .settings__content {
+.shadow-xl,
+.settings .settings__content {
   -webkit-box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-          box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
 
 .shadow-2xl {
   -webkit-box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-          box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
 }
 
 .shadow-inner {
   -webkit-box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
-          box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+  box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
 }
 
-.font-sans, body {
-  font-family: "Inter", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+.font-sans,
+body {
+  font-family: "Inter", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol", "Noto Color Emoji";
 }
 
 .font-serif {
@@ -587,7 +623,8 @@ html {
 }
 
 .font-mono {
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+    "Courier New", monospace;
 }
 
 .font-thin {
@@ -614,7 +651,10 @@ html {
   font-weight: 600;
 }
 
-.font-bold, .topnav .topnav__link:not(.topnav__logo), .sidenav .sidenav__link, .details .details__backBtn {
+.font-bold,
+.topnav .topnav__link:not(.topnav__logo),
+.sidenav .sidenav__link,
+.details .details__backBtn {
   font-weight: 700;
 }
 
@@ -631,7 +671,16 @@ html {
   line-height: 1rem;
 }
 
-.text-sm, .label, .button, .recipe .recipe__bottom .recipe__btn, .form .form__ingrediants-buttons .form__ingrediant-add, .form .form__ingrediants-buttons .form__ingrediant-delete, .recipe .recipe__bottom .recipe__difficulty, .recipe .recipe__bottom .recipe__time, .form .form__text-area, .form .form__number-input {
+.text-sm,
+.label,
+.button,
+.recipe .recipe__bottom .recipe__btn,
+.form .form__ingrediants-buttons .form__ingrediant-add,
+.form .form__ingrediants-buttons .form__ingrediant-delete,
+.recipe .recipe__bottom .recipe__difficulty,
+.recipe .recipe__bottom .recipe__time,
+.form .form__text-area,
+.form .form__number-input {
   font-size: 0.875rem;
   line-height: 1.25rem;
 }
@@ -641,27 +690,40 @@ html {
   line-height: 1.5rem;
 }
 
-.text-lg, .topnav .topnav__link:not(.topnav__logo), .sidenav .sidenav__link, .styled-table {
+.text-lg,
+.topnav .topnav__link:not(.topnav__logo),
+.sidenav .sidenav__link,
+.styled-table {
   font-size: 1.125rem;
   line-height: 1.75rem;
 }
 
-.text-xl, .sidenav .sidenav__link i, .search .search__button, .details .details__header {
+.text-xl,
+.sidenav .sidenav__link i,
+.search .search__button,
+.details .details__header {
   font-size: 1.25rem;
   line-height: 1.75rem;
 }
 
-.text-2xl, .noresult .noresult__texte, .nobookmark .nobookmark__texte, .recipe .recipe__top .recipe__bookmark-btn {
+.text-2xl,
+.noresult .noresult__texte,
+.nobookmark .nobookmark__texte,
+.recipe .recipe__top .recipe__bookmark-btn {
   font-size: 1.5rem;
   line-height: 2rem;
 }
 
-.text-3xl, .topnav .topnav__hamburger, .topnav .topnav__cogs, .sidenav .sidenav__close {
+.text-3xl,
+.topnav .topnav__hamburger,
+.topnav .topnav__cogs,
+.sidenav .sidenav__close {
   font-size: 1.875rem;
   line-height: 2.25rem;
 }
 
-.text-4xl, .details .details__title {
+.text-4xl,
+.details .details__title {
   font-size: 2.25rem;
   line-height: 2.5rem;
 }
@@ -747,7 +809,14 @@ html {
   line-height: 2;
 }
 
-.transition, .button, .recipe .recipe__bottom .recipe__btn, .form .form__ingrediants-buttons .form__ingrediant-add, .form .form__ingrediants-buttons .form__ingrediant-delete, .button:hover, .recipe .recipe__top .recipe__bookmark-btn:hover, .settings .settings__flag:hover {
+.transition,
+.button,
+.recipe .recipe__bottom .recipe__btn,
+.form .form__ingrediants-buttons .form__ingrediant-add,
+.form .form__ingrediants-buttons .form__ingrediant-delete,
+.button:hover,
+.recipe .recipe__top .recipe__bookmark-btn:hover,
+.settings .settings__flag:hover {
   -webkit-transition: 150ms ease-in-out;
   transition: 150ms ease-in-out;
 }
@@ -767,32 +836,42 @@ html {
   margin-left: 0.25rem;
 }
 
-.button, .recipe .recipe__bottom .recipe__btn, .form .form__ingrediants-buttons .form__ingrediant-add, .form .form__ingrediants-buttons .form__ingrediant-delete {
+.button,
+.recipe .recipe__bottom .recipe__btn,
+.form .form__ingrediants-buttons .form__ingrediant-add,
+.form .form__ingrediants-buttons .form__ingrediant-delete {
   background-color: #e4e4e7;
   color: #3f3f46;
   padding: 0.5rem 0.75rem;
   cursor: pointer;
 }
 
-.button:hover, .recipe .recipe__bottom .recipe__btn:hover, .form .form__ingrediants-buttons .form__ingrediant-add:hover, .form .form__ingrediants-buttons .form__ingrediant-delete:hover {
+.button:hover,
+.recipe .recipe__bottom .recipe__btn:hover,
+.form .form__ingrediants-buttons .form__ingrediant-add:hover,
+.form .form__ingrediants-buttons .form__ingrediant-delete:hover {
   background-color: #d4d4d8;
   color: #18181b;
 }
 
-.button:active, .recipe .recipe__bottom .recipe__btn:active, .form .form__ingrediants-buttons .form__ingrediant-add:active, .form .form__ingrediants-buttons .form__ingrediant-delete:active {
+.button:active,
+.recipe .recipe__bottom .recipe__btn:active,
+.form .form__ingrediants-buttons .form__ingrediant-add:active,
+.form .form__ingrediants-buttons .form__ingrediant-delete:active {
   -webkit-transition: 100ms;
   transition: 100ms;
 }
 
-.animation-spin, .topnav .topnav__cogs:hover {
+.animation-spin,
+.topnav .topnav__cogs:hover {
   -webkit-animation-name: spin;
-          animation-name: spin;
+  animation-name: spin;
   -webkit-animation-duration: 5s;
-          animation-duration: 5s;
+  animation-duration: 5s;
   -webkit-animation-timing-function: linear;
-          animation-timing-function: linear;
+  animation-timing-function: linear;
   -webkit-animation-iteration-count: infinite;
-          animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
   -webkit-transition: 10s linear;
   transition: 10s linear;
 }
@@ -800,31 +879,31 @@ html {
 @keyframes spin {
   from {
     -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
+    transform: rotate(0deg);
   }
   to {
     -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
+    transform: rotate(360deg);
   }
 }
 
 .animation-ping {
   -webkit-animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
-          animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+  animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
 }
 
 @keyframes ping {
   75%,
   100% {
     -webkit-transform: scale(2);
-            transform: scale(2);
+    transform: scale(2);
     opacity: 0;
   }
 }
 
 .animation-pulse {
   -webkit-animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-          animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
 @keyframes pulse {
@@ -839,29 +918,35 @@ html {
 
 .animation-bounce {
   -webkit-animation: bounce 1s infinite;
-          animation: bounce 1s infinite;
+  animation: bounce 1s infinite;
 }
 
 @keyframes bounce {
   0%,
   100% {
     -webkit-transform: translateY(-25%);
-            transform: translateY(-25%);
+    transform: translateY(-25%);
     animationtimingfunction: cubic-bezier(0.8, 0, 1, 1);
   }
   50% {
     -webkit-transform: translateY(0);
-            transform: translateY(0);
+    transform: translateY(0);
     animationtimingfunction: cubic-bezier(0, 0, 0.2, 1);
   }
 }
 
-.animation-shrink, .button:active, .recipe .recipe__bottom .recipe__btn:active, .form .form__ingrediants-buttons .form__ingrediant-add:active, .form .form__ingrediants-buttons .form__ingrediant-delete:active, .recipe .recipe__top .recipe__bookmark-btn:active {
+.animation-shrink,
+.button:active,
+.recipe .recipe__bottom .recipe__btn:active,
+.form .form__ingrediants-buttons .form__ingrediant-add:active,
+.form .form__ingrediants-buttons .form__ingrediant-delete:active,
+.recipe .recipe__top .recipe__bookmark-btn:active {
   -webkit-transform: scale(0.8);
   transform: scale(0.8);
 }
 
-.animation-grow, .settings .settings__flag:hover {
+.animation-grow,
+.settings .settings__flag:hover {
   -webkit-transform: scale(1.2);
   transform: scale(1.2);
 }
@@ -874,11 +959,26 @@ html {
   border-radius: 0.25rem;
 }
 
-.rounded-md, .button, .recipe .recipe__bottom .recipe__btn, .form .form__ingrediants-buttons .form__ingrediant-add, .form .form__ingrediants-buttons .form__ingrediant-delete {
+.rounded-md,
+.button,
+.recipe .recipe__bottom .recipe__btn,
+.form .form__ingrediants-buttons .form__ingrediant-add,
+.form .form__ingrediants-buttons .form__ingrediant-delete,
+.details .details__infolist {
   border-radius: 0.375rem;
 }
 
-.rounded-lg, .recipe, .settings .settings__content, .form .form__input-text, .form .form__selection, .form .form__file-input, .form .form__text-area, .form .form__number-input, .form .form__ingrediant .form__ingrediant-name, .form .form__ingrediant .form__ingrediant-quantity, .details .details__img {
+.rounded-lg,
+.recipe,
+.settings .settings__content,
+.form .form__input-text,
+.form .form__selection,
+.form .form__file-input,
+.form .form__text-area,
+.form .form__number-input,
+.form .form__ingrediant .form__ingrediant-name,
+.form .form__ingrediant .form__ingrediant-quantity,
+.details .details__img {
   border-radius: 0.5rem;
 }
 
@@ -894,7 +994,9 @@ html {
   border-radius: 1.5rem;
 }
 
-.rounded-full, .label, .search .search__button {
+.rounded-full,
+.label,
+.search .search__button {
   border-radius: 9999px;
 }
 
@@ -902,48 +1004,60 @@ html {
   -webkit-user-select: all;
   -moz-user-select: all;
   -ms-user-select: all;
-      user-select: all;
+  user-select: all;
 }
 
-.selectionner-nothing, .label {
+.selectionner-nothing,
+.label {
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
-      user-select: none;
+  user-select: none;
 }
 
-.shadow-sm, .form #form__success, .form #form__error {
+.shadow-sm,
+.form #form__success,
+.form #form__error {
   -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
-          box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
 }
 
-.shadow-md, .topnav, .search, .recipe, .form .form__section, .styled-table {
+.shadow-md,
+.topnav,
+.search,
+.recipe,
+.form .form__section,
+.styled-table {
   -webkit-box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-          box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 
 .shadow-lg {
   -webkit-box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-          box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
 
-.shadow-xl, .settings .settings__content {
+.shadow-xl,
+.settings .settings__content {
   -webkit-box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-          box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
 
 .shadow-2xl {
   -webkit-box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-          box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
 }
 
 .shadow-inner {
   -webkit-box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
-          box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+  box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
 }
 
-.font-sans, body {
-  font-family: "Inter", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+.font-sans,
+body {
+  font-family: "Inter", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol", "Noto Color Emoji";
 }
 
 .font-serif {
@@ -951,7 +1065,8 @@ html {
 }
 
 .font-mono {
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+    "Courier New", monospace;
 }
 
 .font-thin {
@@ -978,7 +1093,10 @@ html {
   font-weight: 600;
 }
 
-.font-bold, .topnav .topnav__link:not(.topnav__logo), .sidenav .sidenav__link, .details .details__backBtn {
+.font-bold,
+.topnav .topnav__link:not(.topnav__logo),
+.sidenav .sidenav__link,
+.details .details__backBtn {
   font-weight: 700;
 }
 
@@ -995,7 +1113,16 @@ html {
   line-height: 1rem;
 }
 
-.text-sm, .label, .button, .recipe .recipe__bottom .recipe__btn, .form .form__ingrediants-buttons .form__ingrediant-add, .form .form__ingrediants-buttons .form__ingrediant-delete, .recipe .recipe__bottom .recipe__difficulty, .recipe .recipe__bottom .recipe__time, .form .form__text-area, .form .form__number-input {
+.text-sm,
+.label,
+.button,
+.recipe .recipe__bottom .recipe__btn,
+.form .form__ingrediants-buttons .form__ingrediant-add,
+.form .form__ingrediants-buttons .form__ingrediant-delete,
+.recipe .recipe__bottom .recipe__difficulty,
+.recipe .recipe__bottom .recipe__time,
+.form .form__text-area,
+.form .form__number-input {
   font-size: 0.875rem;
   line-height: 1.25rem;
 }
@@ -1005,27 +1132,40 @@ html {
   line-height: 1.5rem;
 }
 
-.text-lg, .topnav .topnav__link:not(.topnav__logo), .sidenav .sidenav__link, .styled-table {
+.text-lg,
+.topnav .topnav__link:not(.topnav__logo),
+.sidenav .sidenav__link,
+.styled-table {
   font-size: 1.125rem;
   line-height: 1.75rem;
 }
 
-.text-xl, .sidenav .sidenav__link i, .search .search__button, .details .details__header {
+.text-xl,
+.sidenav .sidenav__link i,
+.search .search__button,
+.details .details__header {
   font-size: 1.25rem;
   line-height: 1.75rem;
 }
 
-.text-2xl, .noresult .noresult__texte, .nobookmark .nobookmark__texte, .recipe .recipe__top .recipe__bookmark-btn {
+.text-2xl,
+.noresult .noresult__texte,
+.nobookmark .nobookmark__texte,
+.recipe .recipe__top .recipe__bookmark-btn {
   font-size: 1.5rem;
   line-height: 2rem;
 }
 
-.text-3xl, .topnav .topnav__hamburger, .topnav .topnav__cogs, .sidenav .sidenav__close {
+.text-3xl,
+.topnav .topnav__hamburger,
+.topnav .topnav__cogs,
+.sidenav .sidenav__close {
   font-size: 1.875rem;
   line-height: 2.25rem;
 }
 
-.text-4xl, .details .details__title {
+.text-4xl,
+.details .details__title {
   font-size: 2.25rem;
   line-height: 2.5rem;
 }
@@ -1111,7 +1251,14 @@ html {
   line-height: 2;
 }
 
-.transition, .button, .recipe .recipe__bottom .recipe__btn, .form .form__ingrediants-buttons .form__ingrediant-add, .form .form__ingrediants-buttons .form__ingrediant-delete, .button:hover, .recipe .recipe__top .recipe__bookmark-btn:hover, .settings .settings__flag:hover {
+.transition,
+.button,
+.recipe .recipe__bottom .recipe__btn,
+.form .form__ingrediants-buttons .form__ingrediant-add,
+.form .form__ingrediants-buttons .form__ingrediant-delete,
+.button:hover,
+.recipe .recipe__top .recipe__bookmark-btn:hover,
+.settings .settings__flag:hover {
   -webkit-transition: 150ms ease-in-out;
   transition: 150ms ease-in-out;
 }
@@ -1121,8 +1268,16 @@ body {
 }
 
 .header-image {
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 23, 36, 0)), color-stop(49%, rgba(0, 0, 0, 0.369517))), url("../images/assets/header-xs.jpg");
-  background: linear-gradient(180deg, rgba(0, 23, 36, 0) 0%, rgba(0, 0, 0, 0.369517) 49%), url("../images/assets/header-xs.jpg");
+  background: -webkit-gradient(
+      linear,
+      left top,
+      left bottom,
+      from(rgba(0, 23, 36, 0)),
+      color-stop(49%, rgba(0, 0, 0, 0.369517))
+    ),
+    url("../images/assets/header-xs.jpg");
+  background: linear-gradient(180deg, rgba(0, 23, 36, 0) 0%, rgba(0, 0, 0, 0.369517) 49%),
+    url("../images/assets/header-xs.jpg");
   height: 300px;
   background-position: center;
   background-size: cover;
@@ -1130,8 +1285,16 @@ body {
 
 @media (min-width: 768px) {
   .header-image {
-    background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 23, 36, 0)), color-stop(49%, rgba(0, 0, 0, 0.369517))), url("../images/assets/header-md.jpg");
-    background: linear-gradient(180deg, rgba(0, 23, 36, 0) 0%, rgba(0, 0, 0, 0.369517) 49%), url("../images/assets/header-md.jpg");
+    background: -webkit-gradient(
+        linear,
+        left top,
+        left bottom,
+        from(rgba(0, 23, 36, 0)),
+        color-stop(49%, rgba(0, 0, 0, 0.369517))
+      ),
+      url("../images/assets/header-md.jpg");
+    background: linear-gradient(180deg, rgba(0, 23, 36, 0) 0%, rgba(0, 0, 0, 0.369517) 49%),
+      url("../images/assets/header-md.jpg");
     height: 300px;
     background-position: center;
     background-size: cover;
@@ -1140,8 +1303,16 @@ body {
 
 @media (min-width: 992px) {
   .header-image {
-    background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 23, 36, 0)), color-stop(49%, rgba(0, 0, 0, 0.369517))), url("../images/assets/header-lg.jpg");
-    background: linear-gradient(180deg, rgba(0, 23, 36, 0) 0%, rgba(0, 0, 0, 0.369517) 49%), url("../images/assets/header-lg.jpg");
+    background: -webkit-gradient(
+        linear,
+        left top,
+        left bottom,
+        from(rgba(0, 23, 36, 0)),
+        color-stop(49%, rgba(0, 0, 0, 0.369517))
+      ),
+      url("../images/assets/header-lg.jpg");
+    background: linear-gradient(180deg, rgba(0, 23, 36, 0) 0%, rgba(0, 0, 0, 0.369517) 49%),
+      url("../images/assets/header-lg.jpg");
     height: 300px;
     background-position: center;
     background-size: cover;
@@ -1155,12 +1326,12 @@ body {
   position: fixed;
   z-index: 1;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -ms-flex-line-pack: center;
-      align-content: center;
+  align-content: center;
   -ms-flex-pack: distribute;
-      justify-content: space-around;
+  justify-content: space-around;
   background-color: white;
   overflow: hidden;
   width: 100%;
@@ -1196,6 +1367,7 @@ body {
   position: absolute;
   left: 0.625rem;
   color: #3f3f46;
+  background-color: transparent;
 }
 
 .topnav .topnav__hamburger:hover {
@@ -1213,6 +1385,7 @@ body {
   position: absolute;
   right: 0.625rem;
   color: #3f3f46;
+  background-color: transparent;
 }
 
 .topnav .topnav__cogs:hover {
@@ -1275,6 +1448,7 @@ body {
   cursor: pointer;
   margin-left: 0.625rem;
   margin-top: 0.375rem;
+  background-color: transparent;
   color: #3f3f46;
 }
 
@@ -1292,11 +1466,11 @@ body {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   width: 80%;
   max-width: 50rem;
   height: 3rem;
@@ -1315,7 +1489,7 @@ body {
 
 .search .search__input:focus {
   -webkit-box-shadow: inset 0px 0px 0px 2.5px rgba(0, 0, 0, 0.5);
-          box-shadow: inset 0px 0px 0px 2.5px rgba(0, 0, 0, 0.5);
+  box-shadow: inset 0px 0px 0px 2.5px rgba(0, 0, 0, 0.5);
 }
 
 .search .search__button-list {
@@ -1326,11 +1500,11 @@ body {
   display: flex;
   overflow: hidden;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   width: 5rem;
   height: 2.5rem;
 }
@@ -1347,9 +1521,9 @@ body {
   color: #15803d;
 }
 
-.search .search__button:focus {
+.search .search__button:focus-visible {
   -webkit-box-shadow: inset 0px 0px 0px 2.5px rgba(0, 0, 0, 0.5);
-          box-shadow: inset 0px 0px 0px 2.5px rgba(0, 0, 0, 0.5);
+  box-shadow: inset 0px 0px 0px 2.5px rgba(0, 0, 0, 0.5);
 }
 
 .noresult {
@@ -1417,16 +1591,16 @@ body {
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .recipe {
@@ -1437,14 +1611,14 @@ body {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   margin: 0.5rem;
   width: 20rem;
   height: 15rem;
@@ -1501,13 +1675,13 @@ body {
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .recipe .recipe__bottom .recipe__difficulty {
@@ -1533,7 +1707,6 @@ body {
 
 .recipe .recipe__bottom .recipe__btn:hover {
   background-color: #a1a1aa;
-  color: #000;
 }
 
 .recipe .recipe__bottom .recipe__btn:active {
@@ -1596,8 +1769,8 @@ body {
   display: flex;
   padding-left: 1.25rem;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   color: #3f3f46;
   position: relative;
 }
@@ -1620,8 +1793,8 @@ body {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   margin-right: 0.75rem;
 }
 
@@ -1634,9 +1807,9 @@ body {
 
 .settings .settings__flag--active {
   -webkit-box-shadow: 0px 0px 0px 0.2rem rgba(16, 119, 30, 0.5);
-          box-shadow: 0px 0px 0px 0.2rem rgba(16, 119, 30, 0.5);
+  box-shadow: 0px 0px 0px 0.2rem rgba(16, 119, 30, 0.5);
   -webkit-transform: scale(1.2);
-          transform: scale(1.2);
+  transform: scale(1.2);
 }
 
 .switch {
@@ -1683,7 +1856,7 @@ body {
 
 .switch input:focus + .slider {
   -webkit-box-shadow: 0 0 1px #16a34a;
-          box-shadow: 0 0 1px #16a34a;
+  box-shadow: 0 0 1px #16a34a;
 }
 
 .switch input:checked + .slider:before {
@@ -1719,13 +1892,13 @@ body {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   width: 100%;
   margin: auto;
   background-color: #fff;
@@ -1767,7 +1940,7 @@ body {
 
 .form .form__selection {
   -webkit-box-sizing: content-box;
-          box-sizing: content-box;
+  box-sizing: content-box;
   border: 1px solid #e4e4e7;
   background-color: #f4f4f5;
   width: 80%;
@@ -1777,7 +1950,7 @@ body {
 
 .form .form__file-input {
   -webkit-box-sizing: content-box;
-          box-sizing: content-box;
+  box-sizing: content-box;
   border: 1px solid #e4e4e7;
   background-color: #f4f4f5;
   width: 80%;
@@ -1865,7 +2038,7 @@ body {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: distribute;
-      justify-content: space-around;
+  justify-content: space-around;
 }
 
 .form .form__ingrediants-buttons .form__ingrediant-add {
@@ -1896,8 +2069,8 @@ body {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .form .form__ingrediant .form__ingrediant-name {
@@ -1918,9 +2091,10 @@ body {
   margin-top: 0.5rem;
 }
 
-.form #form__success, .form #form__error {
+.form #form__success,
+.form #form__error {
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   display: none;
   word-wrap: break-word;
   width: 100%;
@@ -1933,7 +2107,8 @@ body {
 }
 
 @media (min-width: 480px) {
-  .form #form__success, .form #form__error {
+  .form #form__success,
+  .form #form__error {
     width: 100%;
     max-width: 30rem;
   }
@@ -1963,10 +2138,10 @@ body {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 
 .details .details__backBtn {
@@ -1987,8 +2162,8 @@ body {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   padding: 0;
 }
 
@@ -2033,13 +2208,14 @@ body {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 0.5rem;
   -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 
 .details .details__infolist i {
@@ -2053,11 +2229,11 @@ body {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .bookmark__header {

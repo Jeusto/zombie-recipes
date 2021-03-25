@@ -177,6 +177,20 @@ body {
   color: #d4d4d8;
 }
 
+.recipe .recipe__bottom .recipe__btn {
+  background-color: #52525b;
+  color: #fff;
+}
+
+.recipe .recipe__bottom .recipe__btn:hover {
+  color: #fff;
+  background-color: #71717a;
+}
+
+.recipe .recipe__bottom .recipe__btn i {
+  color: #fff;
+}
+
 .settings {
   background-color: black;
   background-color: rgba(0, 0, 0, 0.75);

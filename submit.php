@@ -83,7 +83,7 @@
         <label class="form__label" for="recipeName"
           ><i class="form__label-icon fas fa-image"></i><?= $lang['recipePresentationPhoto']." *" ?></label
         >
-        <input class="form__file-input" type="file" name="recipeImage" id="recipeImage" required/>
+        <input class="form__file-input" type="file" name="recipeImage" id="recipeImage" accept=".jpg, .png, .jpeg" required/>
       </div>
       <div class="form__section">
         <h2 class="form__section-title"><?= $lang['recipeDetails'] ?></h2>
@@ -153,19 +153,20 @@
       </div>
       <div id="form__error" >
         <h2><i class="fas fa-exclamation-triangle"></i> <?= $lang['error'] ?></h2>
-        <p><?= $lang['errorMessage'] ?></p>
+        <p id="errorMessage"><?= $lang['errorMessage'] ?></p>
       </div>
       <div class="form__buttons">
         <input class="button button--reset-form" type="reset" />
         <button class="button button--submit-form" id="formSubmitBtn" name="submitButton" type="submit">Envoyer</button>
       </div>
     </form>
+    <script src="./javascript/form.js"></script>
     <?php include "backend/form.php";?>
+    
 
     <!--Modal reglages-->
     <?php include "backend/components/settings.php";?>
 
-    <script src="./javascript/form.js"></script>
     <script src="./javascript/ingrediants.js"></script>
     <script src="./javascript/language.js"></script>
     <script src="./javascript/theme.js"></script>

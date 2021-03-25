@@ -29,24 +29,22 @@
     <form class="search" action="index.php" method="get" class="form" enctype="multipart/form-data">
       <input
         class="search__input"
+        id="searchInput"
         type="text"
         placeholder="<?= $lang['searchRecipe']?>"
         maxlength="60"
         name ="search"
       />
       <div class="search__button-list">
-        <button class="search__button" type="submit" aria-label="search">
+        <button id="searchButton" class="search__button" type="submit" aria-label="search">
           <i class="fas fa-search"></i>
         </button>
-        <!--<button class="search__button" type="submit">
-          <i class="fas fa-sliders-h"></i>
-        </button>!-->
       </div>
     </form>
 
     <!--Liste de recettes-->
     <div class="recipe-list" id="recipeList">
-      <?php include "backend/recipeSearch.php"?>
+      <?php include "backend/recipeSearch.php" ?>
     </div>
 
     <!--Modal reglages-->
