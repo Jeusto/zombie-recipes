@@ -1,5 +1,6 @@
 <?php 
 
+// On verifie s'il y a une requete POST
 if(!empty($_POST)) {
   $noError = true;
 
@@ -30,6 +31,7 @@ if(!empty($_POST)) {
   $userOrganisation = $_POST["userOrganisation"];
   $ingrediantsNames = "";
   $ingrediantsQuantities = "";
+  $currentDate = date("d-M-Y");
   for ($i=0; $i < 15 ; $i++) { 
     if ((isset($_POST["ingrediantName".$i]))) {
       $ingrediantsNames = $ingrediantsNames . $_POST["ingrediantName".$i] . ";"; 
@@ -53,8 +55,8 @@ if(!empty($_POST)) {
   // On ajoute tout dans la base de donnees si y'a pas d'erreur
   if ($noError) {
     $idNumber = count($rows)+1;
-    $add = $recipeDataBase -> exec("INSERT INTO Recipes (Id, RecipeName, RecipeType, ImageUrl, RecipeDescription, Difficulty, PreparationTime, Details, FirstName, LastName, Email, Organisation, Ingrediants, Quantities) 
-    VALUES ('$idNumber', '$_POST[recipeName]','$_POST[recipeType]','$recipeImageUrl','$_POST[recipeDescription]','$_POST[recipeDifficulty]','$_POST[recipePreparationTime]','$_POST[recipeDetails]','$_POST[userFirstName]','$_POST[userLastName]','$_POST[userEmail]','$_POST[userOrganisation]','$ingrediantsNames', '$ingrediantsQuantities')"); 
+    $add = $recipeDataBase -> exec("INSERT INTO Recipes (Id, RecipeName, RecipeType, ImageUrl, RecipeDescription, Difficulty, PreparationTime, Details, FirstName, LastName, Email, Organisation, Ingrediants, Quantities, PublishDate) 
+    VALUES ('$idNumber', '$_POST[recipeName]','$_POST[recipeType]','$recipeImageUrl','$_POST[recipeDescription]','$_POST[recipeDifficulty]','$_POST[recipePreparationTime]','$_POST[recipeDetails]','$_POST[userFirstName]','$_POST[userLastName]','$_POST[userEmail]','$_POST[userOrganisation]','$ingrediantsNames', '$ingrediantsQuantities', '$currentDate')"); 
   }
   // On affiche le message de succes
   echo "<script type=\"text/javascript\">successMessage();</script>";

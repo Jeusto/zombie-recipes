@@ -1,4 +1,4 @@
-// Si le cookie existe pas, on le cree
+// Si le cookie de langue existe pas, on le cree
 if ((allCookies = document.cookie).includes("language") == false) {
   setCookie("language", "fr", 10000);
 }

@@ -9,6 +9,7 @@ $lang = array (
   "aboutPage" => "About sitename",
   "formPage" => "Submit a recipe",
   "bookmarkPage" => "Your bookmarks",
+  "detailsPage" => "Recipe details",
 
   // Navigation
   "about" => "About",
@@ -68,7 +69,8 @@ $lang = array (
   "success" => "Success",
   "error" => "Error",
   "successMessage" => "The form has been sent successfully.",
-  "errorMessage" => "Please verify your informations and try again."
+  "errorMessage" => "Please verify your informations and try again.",
+  "send" => "Send",
 );
 
 ?>

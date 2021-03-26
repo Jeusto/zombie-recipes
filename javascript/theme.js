@@ -1,10 +1,10 @@
-var darkmodeCheckbox = document.getElementById("darkmodeCheckbox");
-darkmodeCheckbox.addEventListener("click", switchTheme);
-
-// Si le cookie existe pas, on le cree
+// Si le cookie du theme existe pas, on le cree
 if ((allCookies = document.cookie).includes("theme") == false) {
   setCookie("theme", "light", 10000);
 }
+
+var darkmodeCheckbox = document.getElementById("darkmodeCheckbox");
+darkmodeCheckbox.addEventListener("click", switchTheme);
 
 // Fonction pour changer le theme
 function switchTheme() {

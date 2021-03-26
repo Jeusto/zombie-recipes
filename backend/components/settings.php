@@ -1,3 +1,4 @@
+<!--Modal parametres-->
 <div class="settings" id="settingsModal">
   <div class="settings__content">
     <div class="settings__closebtn" id="settingsModalClose">
@@ -7,7 +8,7 @@
     <div class="settings__item">
       <h3 class="settings__item-texte"><?= $lang['darkMode'] ?></h3>
       <label class="switch">
-        <input id="darkmodeCheckbox" type="checkbox"         
+        <input id="darkmodeCheckbox" type="checkbox" aria-label="Switch dark mode button"         
         <?php 
         if (isset($_COOKIE['theme']) && ($_COOKIE['theme']== "dark")) {
           echo ("checked=\"checked\"");
@@ -27,14 +28,14 @@
           echo ("settings__flag--active");
         } 
         ?>" 
-        src="./images/assets/fr.svg" alt="" />
+        src="./images/assets/flagFR.svg" alt="French flag" />
         <img
           id="enLanguage"
           class="settings__flag <?php if (isset($_COOKIE['language']) && ($_COOKIE['language']== "en")) { echo ("settings__flag--active"); }?>"
-          src="./images/assets/gb.svg"
-          alt=""
+          src="./images/assets/flagGB.svg"
+          alt="English flag"
         />
-        <img id="esLanguage" class="settings__flag <?php if (isset($_COOKIE['language']) && ($_COOKIE['language']== "es")) { echo ("settings__flag--active"); }?>" src="./images/assets/es.svg" alt="" />
+        <img id="esLanguage" class="settings__flag <?php if (isset($_COOKIE['language']) && ($_COOKIE['language']== "es")) { echo ("settings__flag--active"); }?>" src="./images/assets/flagES.svg" alt="Spanish flag" />
       </div>
     </div>
   </div>

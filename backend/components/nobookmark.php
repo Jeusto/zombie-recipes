@@ -1,10 +1,10 @@
 <!--Sauvegardes vide-->
-  <div class="nobookmark">
+<div class="nobookmark">
   <h3 class="nobookmark__texte">
     <?= $lang['noBookmark'] ?>
     <a href="index.php"
       ><span class="nobookmark__link"><?= $lang['noBookmarkLink'] ?></span></a
     >
   </h3>
-  <img class="nobookmark__image" src="images/assets/bookmarks-empty.svg" alt="" />
+  <img class="nobookmark__image" src="images/assets/emptyBookmarks.svg" alt="No bookmark" />
 </div>

@@ -1,8 +1,5 @@
 <?php
-function error($msg) {
-  $response = array("success" => false, "message" => $msg);
-  return json_encode($response);
-}
+
 // On ouvre la base de donnees
 $recipeDataBase = new PDO('sqlite:backend/database/recipes.db');
 
@@ -41,7 +38,7 @@ if (!empty($_GET["search"])) {
   }
 }
 
-// On charge toutes les recettes si y a pas de recherche
+// Si y a pas de recherche, on charge toutes les recettes
 else { 
   $statement = $recipeDataBase -> query("SELECT * FROM Recipes");
   $rows = $statement -> fetchAll(PDO::FETCH_ASSOC); 
@@ -55,7 +52,8 @@ else {
     $recipeDifficulty = ($rows[$i]['Difficulty']);
     $recipePreparationTime = ($rows[$i]['PreparationTime']);
     $recipeDetails = ($rows[$i]['Details']);
-    // On met l'icon en fonction de si la recette est sauvegarde ou non
+
+    // On met l'icon bookmark en fonction de si la recette est sauvegarde ou non
     $tmp = "bookmarkBtn" . $recipeId;
     if (isset($_COOKIE["bookmarks"]) && strpos($_COOKIE["bookmarks"], $tmp)) {
       $recipeIconName = "fas fa-bookmark";
@@ -66,6 +64,5 @@ else {
     include "backend/components/recipeCard.php";
   }
 }
-
 
 ?>

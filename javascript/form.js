@@ -1,3 +1,4 @@
+// On empeche l'envoi du formulaire pour verifier les inputs
 document.querySelector("#formSubmitBtn").addEventListener("click", function (event) {
   event.preventDefault();
   let hasError = false;
@@ -21,6 +22,10 @@ document.querySelector("#formSubmitBtn").addEventListener("click", function (eve
   let firstName = document.getElementById("userFirstName");
   inputVerif1.call(firstName, regexName);
   firstName.addEventListener("input", inputVerif2(regexName));
+
+  let email = document.getElementById("userEmail");
+  inputVerif1.call(email, regexMail);
+  email.addEventListener("input", inputVerif2(regexMail));
 
   let organisation = document.getElementById("userOrganisation");
   inputVerif1.call(organisation, regexOrganisation);
@@ -63,26 +68,26 @@ document.querySelector("#formSubmitBtn").addEventListener("click", function (eve
       "Un ou plusieurs champs ne sont pas valides, veuillez vérifier vos informations et essayer à nouveau!"
     );
   }
+});
 
-  // La fonction pour verifier qu'un input est valide
-  function inputVerif1(regexArg) {
+// La fonction pour verifier qu'un input est valide
+function inputVerif1(regexArg) {
+  if (this.value.match(regexArg) === null) {
+    hasError = true;
+    this.classList.add("error");
+  } else {
+    this.classList.remove("error");
+  }
+}
+function inputVerif2(regexArg) {
+  return function executeOnEvent(event) {
     if (this.value.match(regexArg) === null) {
-      hasError = true;
       this.classList.add("error");
     } else {
       this.classList.remove("error");
     }
-  }
-  function inputVerif2(regexArg) {
-    return function executeOnEvent(event) {
-      if (this.value.match(regexArg) === null) {
-        this.classList.add("error");
-      } else {
-        this.classList.remove("error");
-      }
-    };
-  }
-});
+  };
+}
 
 // La fonction pour afficher un message d'erreur
 function errorMessage(message) {

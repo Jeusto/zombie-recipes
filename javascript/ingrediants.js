@@ -44,7 +44,7 @@ deleteBtn.addEventListener("click", function () {
   }
 });
 
-// Fonction pour lire le nombre d'input ingrediants
+// Fonction pour lire le nombre d'inputs 'ingrediant'
 function getCount(parent, getChildrensChildren) {
   var relevantChildren = 0;
   var children = parent.childNodes.length;

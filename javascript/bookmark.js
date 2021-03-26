@@ -1,4 +1,4 @@
-// Si le cookie existe pas, on le cree
+// Si le cookie des bookmarks existe pas, on le cree
 if ((allCookies = document.cookie).includes("bookmarks") == false) {
   setCookie("bookmarks", "", 10000);
 }

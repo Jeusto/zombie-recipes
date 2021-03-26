@@ -1,8 +1,8 @@
 <!--Une recette-->
 <div class="recipe" data-id="recipe<?= $recipeId ?>">
   <div class="recipe__top">
-    <img src="images/recipes/<?= $recipeImageUrl ?>" alt="" class="recipe__image" />
-    <button id="bookmarkBtn<?= $recipeId ?>" class="recipe__bookmark-btn <?= $recipeIconName ?>"></button>
+    <img src="images/recipes/<?= $recipeImageUrl ?>" alt="Recipe image" class="recipe__image" />
+    <button id="bookmarkBtn<?= $recipeId ?>" class="recipe__bookmark-btn <?= $recipeIconName ?>" aria-label="Bookmark button"></button>
   </div>
   <div class="recipe__bottom">
     <h3 class="recipe__title"><?= $recipeName ?></h3>

@@ -1,4 +1,4 @@
-<!--Charger la langue en fonction du cookie-->
+<!--On charge la langue en fonction du cookie s'il existe--> 
 <?php include "backend/language.php";?>
 
 <!DOCTYPE html>
@@ -7,19 +7,16 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Description du site" />
+    <meta name="description" content="Site de recettes pour zombies" />
     <link rel="icon" href="./images/assets/favicon.png" type="image/gif" sizes="16x16" />
-    <link
-      rel="preconnect"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
-    />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
     />
-    <link rel="stylesheet" href="./style/style.css" />
-    <?php if (isset($_COOKIE['theme']) && $_COOKIE["theme"]=="dark") {echo "<link rel=\"stylesheet\" href=\"./style/darktheme.css\" />";}?>
-    <title>Test</title>
+    <link rel="stylesheet" href="./style/css/style.css" />
+    <!--On charge la feuille de style du mode nuit si c'est le theme choisi par l'utilisateur--> 
+    <?php if (isset($_COOKIE['theme']) && $_COOKIE["theme"]=="dark") {echo "<link rel=\"stylesheet\" href=\"./style/css/dark.css\" />";}?>    
+    <title><?=$lang["detailsPage"]?></title>
   </head>
   <body>
     <!--Navigation-->
@@ -27,8 +24,8 @@
 
     <!--Details du recette -->
     <?php include "backend/recipeDetails.php";?>
-    <div class="details" data-id="recipe<?= $recipeId ?>">
-      <div class="details__top">
+    <main class="details" data-id="recipe<?= $recipeId ?>">
+      <section class="details__top">
         <button class="details__backBtn" onclick="history.go(-1);">
           <i class="details__backIcon fas fa-arrow-left"></i><?= $lang["backLastPage"] ?>
         </button>
@@ -40,13 +37,14 @@
             <i class="details__shareIcon fab fa-twitter-square"></i>
           </a>
         </div>
-      </div>
-      <div class="details__img">
+      </section>
+      <figure class="details__img">
         <img src="images/recipes/<?= $recipeImageUrl ?>" alt="Recipe image" />
-      </div>
-      <div class="">
+      </figure>
+      <section class="">
         <div class="details__infolist">
           <div class="details__info"><i class="fas fa-user"></i> <span><?= $lang['by'] ." ". $userFirstName." ".$userLastName?></span></div>
+          <div class="details__info"><i class="fas fa-calendar"></i> <span><?= $publishedDate ?></span></div>
           <div class="details__info"><i class="fas fa-utensils"></i> <span><?= $lang[$recipeType] ?></span></div>
           <div class="details__info"><i class="fas fa-brain"></i> <span><?= $lang[$recipeDifficulty] ?></span></div>
           <div class="details__info">
@@ -57,6 +55,7 @@
         <h2 class="details__title"><?= $recipeName ?></h2>
         <h4 class="details__header"><?= $lang["recipeRealization"] ?></h4>
         <p><?= $recipeDescription ?></p>
+        <hr>
         <h4 class="details__header"><?= $lang["ingrediants"] ?></h4>
         <table class="styled-table">
           <thead>
@@ -72,12 +71,9 @@
             ?>
           </tbody>
         </table>
-        <?php if (!empty($recipeDetails)) 
-        {echo "<h4 class=\"details__header\">" . $lang["precisions"] . "</h4><p>" . $recipeDetails . "</p>";}
-        ?>
-        
-      </div>
-    </div>
+        <?php if (!empty($recipeDetails)) {echo "<h4 class=\"details__header\">" . $lang["precisions"] . "</h4><p>" . $recipeDetails . "</p>";}?>
+      </section>
+    </main>
 
     <!--Modal reglages-->
     <?php include "backend/components/settings.php";?>

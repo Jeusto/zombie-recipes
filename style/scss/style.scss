@@ -1,19 +1,49 @@
 // Feuille de style principale
-@import "./normalize";
-@import "./resetperso";
-@import "./library";
-@import "./utility";
+@import "./utility/animations";
+@import "./utility/colors";
+@import "./utility/responsive";
+@import "./utility/rounded";
+@import "./utility/select";
+@import "./utility/shadow";
+@import "./utility/spacing";
+@import "./utility/text";
+@import "./utility/transition";
+
+@import "./utility/normalize";
+@import "./utility/resetperso";
 
 // Styles generales
 body {
   @extend .font-sans;
   background-color: color($gray, 100);
 }
+hr {
+  margin-top: $space-8;
+  margin-bottom: $space-8;
+}
+
+// Bouton
+.button {
+  @extend .text-sm, .rounded-md, .transition;
+  background-color: color($gray, 200);
+  color: color($gray, 700);
+  padding: $space-2 $space-3;
+  cursor: pointer;
+  &:hover {
+    @extend .transition;
+    background-color: color($gray, 300);
+    color: color($gray, 900);
+  }
+  &:active {
+    @extend .animation-shrink;
+    transition: 100ms;
+  }
+}
 
 // Image de header
 .header-image {
   background: linear-gradient(180deg, rgba(0, 23, 36, 0) 0%, rgba(0, 0, 0, 0.3695166925465838) 49%),
-    url("../images/assets/header-xs.jpg");
+    url("../../images/assets/headerSM.jpg");
   height: 300px;
   background-position: center;
   background-size: cover;
@@ -23,7 +53,7 @@ body {
         rgba(0, 23, 36, 0) 0%,
         rgba(0, 0, 0, 0.3695166925465838) 49%
       ),
-      url("../images/assets/header-md.jpg");
+      url("../../images/assets/headerMD.jpg");
     height: 300px;
     background-position: center;
     background-size: cover;
@@ -34,7 +64,7 @@ body {
         rgba(0, 23, 36, 0) 0%,
         rgba(0, 0, 0, 0.3695166925465838) 49%
       ),
-      url("../images/assets/header-lg.jpg");
+      url("../../images/assets/headerLG.jpg");
     height: 300px;
     background-position: center;
     background-size: cover;
@@ -53,7 +83,6 @@ body {
   background-color: rgb(255, 255, 255);
   overflow: hidden;
   width: 100%;
-  height: 50px;
   .topnav__link {
     &:not(.topnav__logo) {
       @extend .text-lg, .font-bold;
@@ -148,7 +177,7 @@ body {
   .sidenav__close {
     @extend .text-3xl;
     cursor: pointer;
-    margin-left: $space-2-5;
+    margin-left: 95%;
     margin-top: $space-1-5;
     background-color: transparent;
     color: color($gray, 700);
@@ -165,7 +194,6 @@ body {
   overflow: hidden;
   margin: auto;
   margin-top: -$space-5;
-  margin-bottom: $space-5;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -174,6 +202,7 @@ body {
   height: 3rem;
   background-color: $white;
   position: relative;
+  margin-bottom: -$space-6;
   .search__input {
     padding: 0px;
     border-radius: 1rem 1rem 1rem 1rem;
@@ -276,6 +305,7 @@ body {
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
+  padding-top: $space-20;
 }
 .recipe {
   @extend .rounded-lg, .shadow-md;
@@ -399,7 +429,7 @@ body {
     height: 3rem;
     display: flex;
     &:hover {
-      background-color: color($gray, 200);
+      background-color: color($gray, 100);
     }
     span {
       margin: auto;
@@ -758,7 +788,6 @@ body {
   }
   .details__infolist {
     @extend .rounded-md;
-    margin-top: $space-2;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -770,10 +799,14 @@ body {
     flex-wrap: wrap;
   }
   .details__info {
+    @extend .rounded-full;
     margin-right: $space-4;
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    background-color: color($gray, 200);
+    margin-top: $space-2;
+    padding: $space-1 $space-2 $space-1 $space-2;
   }
 }
 .bookmark__header {

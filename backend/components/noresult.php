@@ -6,5 +6,5 @@
       ><span class="noresult__link"><?= $lang['noResultsLink'] ?></span></a
     >
   </h3>
-  <img class="noresult__image" src="images/assets/result-empty.svg" alt="" />
+  <img class="noresult__image" src="images/assets/emptyResults.svg" alt="No results" />
 </div>
