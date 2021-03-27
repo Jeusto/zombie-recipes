@@ -26,7 +26,7 @@
     <div class="header-image"></div>
 
     <!--Barre de recherche-->
-    <form class="search form" action="index.php" method="get" enctype="multipart/form-data">
+    <form class="search form">
       <input
         class="search__input"
         id="searchInput"
@@ -37,7 +37,7 @@
         aria-label="Search recipe input"
       />
       <div class="search__button-list">
-        <button id="searchButton" class="search__button" type="submit" aria-label="search">
+        <button onclick="showResults()" id="searchButton" class="search__button" type="submit" aria-label="search">
           <i class="fas fa-search"></i>
         </button>
       </div>
@@ -45,17 +45,18 @@
 
     <!--Liste de recettes-->
     <main class="recipe-list" id="recipeList">
-      <?php include "backend/recipeSearch.php" ?>
+      <?php include "backend/recipeAll.php"?>
     </main>
-    
-    <script></script>
 
     <!--Modal reglages-->
     <?php include "backend/components/settings.php";?>
 
+    <script src="./javascript/searchAjax.js"></script>
     <script src="./javascript/bookmark.js"></script>
     <script src="./javascript/language.js"></script>
     <script src="./javascript/theme.js"></script>
-    <script src="./javascript/userinterface.js"></script>
+    <script src="./javascript/settingsModal.js"></script>
+    <script src="./javascript/sidebarNav.js"></script>
+
   </body>
 </html>

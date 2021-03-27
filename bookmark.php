@@ -33,6 +33,7 @@
     <script src="./javascript/bookmark.js"></script>
     <script src="./javascript/language.js"></script>
     <script src="./javascript/theme.js"></script>
-    <script src="./javascript/userinterface.js"></script>
+    <script src="./javascript/settingsModal.js"></script>
+    <script src="./javascript/sidebarNav.js"></script>
   </body>
 </html>

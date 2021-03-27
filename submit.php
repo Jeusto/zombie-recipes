@@ -125,8 +125,8 @@
           ><i class="form__label-icon fas fa-lemon"></i><?= $lang['ingrediants'] ?></label
         >
         <div class="form__ingrediants-buttons">
-          <button type="button" class="form__ingrediant-add" id="addBtn"><i class="fas fa-plus"></i> Ajouter</button>
-          <button type="button" class="form__ingrediant-delete" id="deleteBtn"><i class="fas fa-trash-alt"></i> Supprimer</button>
+          <button type="button" class="form__ingrediant-add" id="addBtn" aria-label="Add ingrediant input"><i class="fas fa-plus"></i> <?=$lang['add']?></button>
+          <button type="button" class="form__ingrediant-delete" id="deleteBtn" aria-label="Remove ingrediant input"><i class="fas fa-trash-alt"></i> <?=$lang['remove']?></button>
         </div>
         <div class="form__ingrediants-div" id="formIngrediants">  
           <div class="form__ingrediant">       
@@ -156,7 +156,7 @@
         <p id="errorMessage"><?= $lang['errorMessage'] ?></p>
       </div>
       <div class="form__buttons">
-        <input class="button button--reset-form" type="reset" />
+        <button class="button button--reset-form" type="reset"><?=$lang['reset']?></button>
         <button class="button button--submit-form" id="formSubmitBtn" name="submitButton" type="submit"><?= $lang['send'] ?></button>
       </div>
     </form>
@@ -170,7 +170,8 @@
     <script src="./javascript/ingrediants.js"></script>
     <script src="./javascript/language.js"></script>
     <script src="./javascript/theme.js"></script>
-    <script src="./javascript/userinterface.js"></script>
+    <script src="./javascript/settingsModal.js"></script>
+    <script src="./javascript/sidebarNav.js"></script>
   </body>
 </html>
 

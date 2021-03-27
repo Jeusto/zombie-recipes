@@ -1,18 +1,11 @@
 <?php
 
-// On ouvre la base de donnees
-$recipeDataBase = new PDO('sqlite:backend/database/recipes.db');
-
-// Si y a pas de sauvegardes dans le cookie, on affiche le message qui l'indique 
-if (!isset($_COOKIE["bookmarks"]) || empty($_COOKIE["bookmarks"])) {
-  include "backend/components/noBookmark.php";
-}
-
-// Si y a des sauvegardes, on les affiche
-else {
+// Si y a pas de recherche, on charge toutes les recettes
+if (empty($_GET["search"])) { 
+  $recipeDataBase = new PDO('sqlite:backend/database/recipes.db');
   $statement = $recipeDataBase -> query("SELECT * FROM Recipes");
   $rows = $statement -> fetchAll(PDO::FETCH_ASSOC); 
-
+  
   for ($i = 0; $i < count($rows); $i++) {
     $recipeId = ($rows[$i]['Id']);
     $recipeName = ($rows[$i]['RecipeName']);
@@ -22,16 +15,16 @@ else {
     $recipeDifficulty = ($rows[$i]['Difficulty']);
     $recipePreparationTime = ($rows[$i]['PreparationTime']);
     $recipeDetails = ($rows[$i]['Details']);
-    
-    // Si la recette est sauvegarde on l'affiche
+
+    // On met l'icon bookmark en fonction de si la recette est sauvegarde ou non
     $tmp = "bookmarkBtn" . $recipeId;
-    if (strpos($_COOKIE["bookmarks"], $tmp)) {
+    if (isset($_COOKIE["bookmarks"]) && strpos($_COOKIE["bookmarks"], $tmp)) {
       $recipeIconName = "fas fa-bookmark";
-      include "backend/components/recipeCard.php";
     }
     else {
-      continue;
+      $recipeIconName = "far fa-bookmark";
     }
+    include "components/recipeCard.php";
   }
 }
 

@@ -86,32 +86,37 @@ function imageUpload() {
   $target_file = $target_dir . basename($_FILES["recipeImage"]["name"]);
   $fileName = htmlspecialchars( basename( $_FILES["recipeImage"]["name"]));
   $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+
   // On verifie que c'est une image
   if(isset($_POST["submit"])) {
     $check = getimagesize($_FILES["recipeImage"]["tmp_name"]);
     if($check !== false) {
       echo "Le fichier est au format " . $check["mime"] . ".";
     } else {
-      $errorMessage = "Le fichier " .$fileName. " n'est pas une image";
+      $errorMessage = "Le fichier " .$fileName. " n'est pas une image.";
       printError($errorMessage);
     }
   }
+
   // On verifie que le fichier existe
   if (file_exists($target_file)) {
-    $errorMessage = "Le fichier " .$fileName. " existe deja";
+    $errorMessage = "Le fichier " .$fileName. " existe deja.";
     printError($errorMessage);
   }
+
   // On verifie taille du fichier
   if ($_FILES["recipeImage"]["size"] > 500000) {
-    $errorMessage = "Le fichier " .$fileName. " est trop large (superieur a 50mo)";
+    $errorMessage = "Le fichier " .$fileName. " est trop large (superieur a 50mo).";
     printError($errorMessage);
   }
+
   // On verifie le format du fichier
   if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg") {
     $errorMessage = "Le fichier " .$fileName. " n'est pas au format jpeg, jpg ou png.";
     printError($errorMessage);
   }
-  // On telecharge si c'est bon
+
+  // On telecharge l'image si c'est bon
   if (move_uploaded_file($_FILES["recipeImage"]["tmp_name"], $target_file)) {
   } else {
     $errorMessage = "Le fichier " .$fileName. " n'as pas pu etre enregistree.";

@@ -71,6 +71,9 @@ $lang = array (
   "successMessage" => "Le formulaire a été envoyé avec succès.",
   "errorMessage" => "Merci de vérifier vos informations et d'essayer à nouveau.",
   "send" => "Envoyer",
+  "add" => "Ajouter",
+  "remove" => "Supprimer",
+  "reset" => "Réinitaliser"
 );
 
 ?>
