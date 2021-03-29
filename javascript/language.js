@@ -4,22 +4,14 @@ if ((allCookies = document.cookie).includes("language") == false) {
 }
 
 // On change le cookie et on rafraichit la page quand on clique sur les drapeaux
-var frLanguage = document.getElementById("frLanguage");
-var enLanguage = document.getElementById("enLanguage");
-var esLanguage = document.getElementById("esLanguage");
+let frLanguage = document.getElementById("frLanguage");
+let enLanguage = document.getElementById("enLanguage");
+let esLanguage = document.getElementById("esLanguage");
 frLanguage.addEventListener("click", frenchSwitch);
 enLanguage.addEventListener("click", englishSwitch);
 esLanguage.addEventListener("click", spanishSwitch);
 
-// Fonction pour mettre le cookie
-function setCookie(name, cvalue, expiration) {
-  var d = new Date();
-  d.setTime(d.getTime() + expiration * 24 * 60 * 60 * 1000);
-  var expires = "expires=" + d.toUTCString();
-  document.cookie = name + "=" + cvalue + ";" + expires + ";path=/";
-}
-
-// Fonctions pour mettre a jour les drapeaux visuellement
+// Fonctions pour changer le cookie
 function frenchSwitch() {
   frLanguage.classList.add("settings__flag--active");
   enLanguage.classList.remove("settings__flag--active");
@@ -40,4 +32,12 @@ function spanishSwitch() {
   enLanguage.classList.remove("settings__flag--active");
   setCookie("language", "es", 10000);
   location.reload();
+}
+
+// Fonction pour mettre le cookie
+function setCookie(name, cvalue, expiration) {
+  let d = new Date();
+  d.setTime(d.getTime() + expiration * 24 * 60 * 60 * 1000);
+  let expires = "expires=" + d.toUTCString();
+  document.cookie = name + "=" + cvalue + ";" + expires + ";path=/";
 }

@@ -22,9 +22,9 @@ wrapper.addEventListener("click", (event) => {
       document.getElementById(event.target.id).classList.add("far");
     }
     // On recupere les bookmarks dans le cookie sous forme de tableau
-    var arrayBookmarks = getCookie("bookmarks").split(",");
+    let arrayBookmarks = getCookie("bookmarks").split(",");
     // Si le bookmark est dans le cookie, on le supprime
-    var indexBookmark = arrayBookmarks.indexOf(event.target.id);
+    let indexBookmark = arrayBookmarks.indexOf(event.target.id);
     if (indexBookmark > -1) {
       arrayBookmarks.splice(indexBookmark, 1);
       // Si la page actuelle est les sauvegardes, on rafraichit la page apres avoir supprime
@@ -37,7 +37,7 @@ wrapper.addEventListener("click", (event) => {
       arrayBookmarks.push(event.target.id);
     }
     // On retransforme en string
-    var stringBookmarks = arrayBookmarks.join();
+    let stringBookmarks = arrayBookmarks.join();
     // On met le string dans le cookie
     setCookie("bookmarks", stringBookmarks, 10000);
   }
@@ -45,19 +45,19 @@ wrapper.addEventListener("click", (event) => {
 
 // Fonction pour mettre le cookie
 function setCookie(name, cvalue, expiration) {
-  var d = new Date();
+  let d = new Date();
   d.setTime(d.getTime() + expiration * 24 * 60 * 60 * 1000);
-  var expires = "expires=" + d.toUTCString();
+  let expires = "expires=" + d.toUTCString();
   document.cookie = name + "=" + cvalue + ";" + expires + ";path=/";
 }
 
 // Fonction pour lire un cookie
 function getCookie(cname) {
-  var name = cname + "=";
-  var decodedCookie = decodeURIComponent(document.cookie);
-  var ca = decodedCookie.split(";");
+  let name = cname + "=";
+  let decodedCookie = decodeURIComponent(document.cookie);
+  let ca = decodedCookie.split(";");
   for (var i = 0; i < ca.length; i++) {
-    var c = ca[i];
+    let c = ca[i];
     while (c.charAt(0) == " ") {
       c = c.substring(1);
     }

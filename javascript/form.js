@@ -5,14 +5,13 @@ document.querySelector("#formSubmitBtn").addEventListener("click", function (eve
   let imageHasError = false;
 
   // Regex pour les différents inputs
-  const regexName = /^[\S]{1,50}$/;
+  const regexName = /^[A-Za-z]|[A-Za-z][A-Za-z\s]*[A-Za-z]$/;
   const regexMail = /^$|[^@]+@[^\.]+\..+/;
-  const regexOrganisation = /^$|^[A-Za-z0-9 -]*[A-Za-z0-9][A-Za-z0-9 _]*$/;
+  const regexOrganisation = /^$|^[A-Za-z0-9 -.]*[A-Za-z0-9][A-Za-z0-9 _]*$/;
   const regexRecipeName = /^[A-Za-z']+( [A-Za-z']+)*$/;
-  const regexRecipeRealization = /^[A-Za-z']+( [A-Za-z']+)*$/;
+  const regexRecipeRealization = /^[A-Za-z'.0-9]+( [A-Za-z'.0-9]+)*$/;
   const regexRecipeDetails = /^$|[A-Za-z']+( [A-Za-z']+)*$/;
-  const regexIngrediant = /^[A-Za-z']+( [A-Za-z']+)*$/;
-  const regexQuantity = /^[A-Za-z']+( [A-Za-z']+)*$/;
+  const regexIngrediant = /^[A-Za-z'.0-9]+( [A-Za-z'.0-9]+)*$/;
 
   // On verifie les valeurs des differents inputs
   let lastName = document.getElementById("userLastName");
@@ -43,6 +42,7 @@ document.querySelector("#formSubmitBtn").addEventListener("click", function (eve
   inputVerif1.call(description, regexRecipeRealization);
   description.addEventListener("input", inputVerif2(regexRecipeRealization));
 
+  // On verifie l'image
   let recipeImage = document.getElementById("recipeImage");
   if (recipeImage.value == "") {
     imageHasError = true;
@@ -58,8 +58,15 @@ document.querySelector("#formSubmitBtn").addEventListener("click", function (eve
     }
   });
 
-  // Si y a pas d'erreur on envoie le formulaire et on affiche un mesage
-  if (hasError == false && imageHasError == false) {
+  // On verifie les inputs ingrediants
+  var ingrediants = document.querySelectorAll(".form__ingrediant-name, .form__ingrediant-quantity");
+  ingrediants.forEach(function (ingrediant) {
+    inputVerif1.call(ingrediant, regexIngrediant);
+    ingrediant.addEventListener("input", inputVerif2(regexIngrediant));
+  });
+
+  // Si y a pas d'erreur on envoie le formulaire
+  if (!hasError && !imageHasError) {
     document.getElementById("recipeForm").submit();
   }
   // Si y a une erreur on l'affiche
@@ -82,6 +89,7 @@ function inputVerif1(regexArg) {
 function inputVerif2(regexArg) {
   return function executeOnEvent(event) {
     if (this.value.match(regexArg) === null) {
+      hasError = true;
       this.classList.add("error");
     } else {
       this.classList.remove("error");

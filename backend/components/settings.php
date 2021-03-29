@@ -1,4 +1,4 @@
-<!--Modal parametres-->
+<!--Modal reglages-->
 <div class="settings" id="settingsModal">
   <div class="settings__content">
     <div class="settings__closebtn" id="settingsModalClose">

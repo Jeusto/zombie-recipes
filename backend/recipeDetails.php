@@ -1,6 +1,6 @@
 <?php
   // On ouvre la base de donnees
-  $recipeDataBase = new PDO('sqlite:backend/database/recipes.db');
+  $recipeDataBase = new PDO('sqlite:backend/database/recipes.sqlite');
 
   // On recupere la recette qui correspond 
   $currentRecipe = $_GET["recipe"];

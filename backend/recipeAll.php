@@ -2,7 +2,7 @@
 
 // Si y a pas de recherche, on charge toutes les recettes
 if (empty($_GET["search"])) { 
-  $recipeDataBase = new PDO('sqlite:backend/database/recipes.db');
+  $recipeDataBase = new PDO('sqlite:backend/database/recipes.sqlite');
   $statement = $recipeDataBase -> query("SELECT * FROM Recipes");
   $rows = $statement -> fetchAll(PDO::FETCH_ASSOC); 
   

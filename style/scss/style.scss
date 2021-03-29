@@ -20,6 +20,9 @@ body {
 hr {
   margin-top: $space-8;
   margin-bottom: $space-8;
+  background-color: color($gray, 300);
+  border: none;
+  height: 1px;
 }
 
 // Bouton
@@ -143,7 +146,6 @@ hr {
   margin-left: 50%;
   height: 100%;
   overflow: auto;
-  background-color: rgb(0, 0, 0);
   background-color: rgba(0, 0, 0, 0.5);
   .sidenav__content {
     padding-top: $space-12;
@@ -207,7 +209,7 @@ hr {
   height: 3rem;
   background-color: $white;
   position: relative;
-  margin-bottom: -$space-6;
+  margin-bottom: -$space-12;
   .search__input {
     padding: 0px;
     border-radius: 1rem 1rem 1rem 1rem;
@@ -685,24 +687,24 @@ hr {
     width: 100%;
     display: flex;
     justify-content: center;
-    .form__ingrediant-name {
-      @extend .rounded-lg;
-      border: 1px solid color($gray, 200);
-      background-color: color($gray, 100);
-      width: 80%;
-      padding: $space-2;
-      margin: $space-1;
-      margin-top: $space-2;
-    }
-    .form__ingrediant-quantity {
-      @extend .rounded-lg;
-      border: 1px solid color($gray, 200);
-      background-color: color($gray, 100);
-      width: 20%;
-      padding: $space-2;
-      margin: $space-1;
-      margin-top: $space-2;
-    }
+  }
+  .form__ingrediant-name {
+    @extend .rounded-lg;
+    border: 1px solid color($gray, 200);
+    background-color: color($gray, 100);
+    width: 80%;
+    padding: $space-2;
+    margin: $space-1;
+    margin-top: $space-2;
+  }
+  .form__ingrediant-quantity {
+    @extend .rounded-lg;
+    border: 1px solid color($gray, 200);
+    background-color: color($gray, 100);
+    width: 20%;
+    padding: $space-2;
+    margin: $space-1;
+    margin-top: $space-2;
   }
   #form__success {
     @extend .shadow-sm;
@@ -790,6 +792,7 @@ hr {
     text-align: left;
     padding: 0;
     margin: 0px;
+    color: color($gray, 800);
   }
   .details__infolist {
     @extend .rounded-md;
@@ -812,6 +815,9 @@ hr {
     background-color: color($gray, 200);
     margin-top: $space-2;
     padding: $space-1 $space-2 $space-1 $space-2;
+  }
+  .details__text {
+    color: color($gray, 700);
   }
   .styled-table {
     @extend .text-lg, .shadow-md;
@@ -842,46 +848,5 @@ hr {
   .styled-table tbody tr.active-row {
     font-weight: bold;
     color: color($green, 700);
-  }
-}
-
-// Modal alerte
-.formAlert {
-  display: none;
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  padding-top: 20vh;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgb(0, 0, 0);
-  background-color: rgba(0, 0, 0, 0.5);
-  .formAlert__content {
-    @extend .rounded-lg, .shadow-xl;
-    position: relative;
-    background-color: $white;
-    margin: auto;
-    width: 90%;
-    max-width: 30rem;
-    height: 60%;
-    max-height: 20rem;
-    overflow: auto;
-  }
-  .formAlert__closebtn {
-    position: absolute;
-    right: 0px;
-    display: inline;
-    cursor: pointer;
-    width: 3rem;
-    height: 3rem;
-    display: flex;
-    &:hover {
-      background-color: color($gray, 100);
-    }
-    span {
-      margin: auto;
-    }
   }
 }

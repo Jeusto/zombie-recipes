@@ -6,6 +6,9 @@ body {
   background-color: color($gray, 900);
   color: color($gray, 200);
 }
+hr {
+  background-color: color($gray, 800);
+}
 
 // Outline personnalise
 * {
@@ -42,8 +45,7 @@ body {
 
 // Barre de navigation sur le cote
 .sidenav {
-  background-color: rgb(0, 0, 0);
-  background-color: rgba(0, 0, 0, 0.75);
+  background-color: rgba(50, 50, 50, 0.75);
   .sidenav__content {
     background-color: color($gray, 900);
   }
@@ -91,7 +93,7 @@ body {
     &:hover {
       color: color($green, 400);
     }
-    &:focus {
+    &:focus-visible {
       box-shadow: inset 0px 0px 0px 2.5px rgba(200, 200, 200, 0.5);
     }
   }
@@ -164,17 +166,16 @@ body {
 
 // Modal reglages
 .settings {
-  background-color: rgb(0, 0, 0);
-  background-color: rgba(0, 0, 0, 0.75);
+  background-color: rgba(50, 50, 50, 0.75);
   .settings__content {
-    background-color: color($gray, 800);
+    background-color: color($gray, 900);
   }
   .settings__title {
-    color: color($gray, 200);
+    color: $white;
   }
   .settings__closebtn {
     &:hover {
-      background-color: color($gray, 700);
+      background-color: color($gray, 800);
     }
     span {
       color: color($gray, 200);
@@ -184,7 +185,7 @@ body {
     color: color($gray, 200);
   }
   .settings__item:not(:last-child):after {
-    background: color($gray, 700);
+    background: color($gray, 800);
   }
   .settings__flag--active {
     box-shadow: 0px 0px 0px 0.2rem rgba(54, 182, 71, 0.5);
@@ -205,14 +206,14 @@ body {
   }
   .form__section {
     background-color: color($gray, 800);
-    .form__section-title {
-      color: color($gray, 200);
-    }
-    .form__input-text {
-      color: color($gray, 200);
-      border: 1px solid color($gray, 800);
-      background-color: color($gray, 700);
-    }
+  }
+  .form__section-title {
+    color: color($gray, 200);
+  }
+  .form__input-text {
+    color: color($gray, 200);
+    border: 1px solid color($gray, 800);
+    background-color: color($gray, 700);
   }
   .form__selection {
     border: 1px solid color($gray, 800);
@@ -264,5 +265,84 @@ body {
     border: 1px solid color($gray, 800);
     background-color: color($gray, 700);
     color: color($gray, 200);
+  }
+  .form__ingrediant-name {
+    border: 1px solid color($gray, 800);
+    background-color: color($gray, 700);
+    color: color($gray, 200);
+  }
+  .form__ingrediant-quantity {
+    border: 1px solid color($gray, 800);
+    background-color: color($gray, 700);
+    color: color($gray, 200);
+  }
+  .error {
+    border: 1px solid color($red, 200);
+    background-color: color($red, 100);
+    &::placeholder {
+      color: color($gray, 700);
+    }
+    color: color($gray, 700);
+  }
+}
+
+// Details de recette
+.details {
+  .details__backBtn {
+    color: color($gray, 300);
+    &:hover {
+      color: color($green, 500);
+    }
+  }
+  .details__shareIcon {
+    color: color($gray, 300);
+    &:hover {
+      color: color($gray, 400);
+    }
+  }
+  .details__infolist {
+    i {
+      color: color($green, 600);
+    }
+  }
+  .details__header {
+    color: color($gray, 200);
+  }
+  .details__info {
+    background-color: color($gray, 800);
+    color: color($gray, 300);
+  }
+  .details__text {
+    color: color($gray, 300);
+  }
+  .styled-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    min-width: 400px;
+  }
+  .styled-table thead tr {
+    background-color: color($green, 700);
+    color: #ffffff;
+    text-align: left;
+  }
+  .styled-table th,
+  .styled-table td {
+    padding: 12px 15px;
+  }
+  .styled-table tbody tr {
+    border-bottom: 1px solid color($gray, 700);
+    background-color: #27272a;
+  }
+
+  .styled-table tbody tr:nth-of-type(even) {
+    background-color: #303035;
+  }
+
+  .styled-table tbody tr:last-of-type {
+    border-bottom: 2px solid color($green, 700);
+  }
+  .styled-table tbody tr.active-row {
+    font-weight: bold;
+    color: color($green, 700);
   }
 }

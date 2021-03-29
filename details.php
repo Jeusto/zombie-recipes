@@ -1,22 +1,9 @@
-<!--On charge la langue en fonction du cookie s'il existe--> 
-<?php include "backend/language.php";?>
-
 <!DOCTYPE html>
-<html lang="<?= $lang['language'] ?>">
+  <html lang="<?php if (isset($_COOKIE['language'])) {echo $_COOKIE['language'];} else {echo 'fr';}?>">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Site de recettes pour zombies" />
-    <link rel="icon" href="./images/assets/favicon.png" type="image/gif" sizes="16x16" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
-    />
-    <link rel="stylesheet" href="./style/css/style.css" />
-    <!--On charge la feuille de style du mode nuit si c'est le theme choisi par l'utilisateur--> 
-    <?php if (isset($_COOKIE['theme']) && $_COOKIE["theme"]=="dark") {echo "<link rel=\"stylesheet\" href=\"./style/css/dark.css\" />";}?>    
-    <title><?=$lang["detailsPage"]?></title>
+    <!--La langue et les tags-->
+    <?php $pageName = "detailsPage"; 
+    include "backend/components/head.php";?>
   </head>
   <body>
     <!--Navigation-->
@@ -54,7 +41,7 @@
         </div>
         <h2 class="details__title"><?= $recipeName ?></h2>
         <h4 class="details__header"><?= $lang["recipeRealization"] ?></h4>
-        <p><?= $recipeDescription ?></p>
+        <p class="details__text"><?= $recipeDescription ?></p>
         <hr>
         <h4 class="details__header"><?= $lang["ingrediants"] ?></h4>
         <table class="styled-table">
@@ -71,7 +58,7 @@
             ?>
           </tbody>
         </table>
-        <?php if (!empty($recipeDetails)) {echo "<h4 class=\"details__header\">" . $lang["precisions"] . "</h4><p>" . $recipeDetails . "</p>";}?>
+        <?php if (!empty($recipeDetails)) {echo "<h4 class=\"details__header\">" . $lang["precisions"] . "</h4><p class=\"details__text\">" . $recipeDetails . "</p>";}?>
       </section>
     </main>
 

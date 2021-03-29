@@ -5,7 +5,7 @@ ingrediantsDiv = document.getElementById("formIngrediants");
 // On cree un input ingrediant en cliquant sur un bouton
 addBtn.addEventListener("click", function () {
   const div = document.createElement("div");
-  var numberOfIngrediants = getCount(ingrediantsDiv, false);
+  let numberOfIngrediants = getCount(ingrediantsDiv, false);
   if (numberOfIngrediants >= 15) {
     alert("Too many ingrediants, 15 max :)");
     return;
@@ -46,9 +46,9 @@ deleteBtn.addEventListener("click", function () {
 
 // Fonction pour lire le nombre d'inputs 'ingrediant'
 function getCount(parent, getChildrensChildren) {
-  var relevantChildren = 0;
-  var children = parent.childNodes.length;
-  for (var i = 0; i < children; i++) {
+  let relevantChildren = 0;
+  let children = parent.childNodes.length;
+  for (let i = 0; i < children; i++) {
     if (parent.childNodes[i].nodeType != 3) {
       if (getChildrensChildren) relevantChildren += getCount(parent.childNodes[i], true);
       relevantChildren++;

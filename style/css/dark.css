@@ -3,6 +3,10 @@ body {
   color: #e4e4e7;
 }
 
+hr {
+  background-color: #27272a;
+}
+
 * {
   border: none;
   outline: none;
@@ -38,8 +42,7 @@ body {
 }
 
 .sidenav {
-  background-color: black;
-  background-color: rgba(0, 0, 0, 0.75);
+  background-color: rgba(50, 50, 50, 0.75);
 }
 
 .sidenav .sidenav__content {
@@ -118,7 +121,7 @@ body {
   color: #4ade80;
 }
 
-.search .search__button:focus {
+.search .search__button:focus-visible {
   -webkit-box-shadow: inset 0px 0px 0px 2.5px rgba(200, 200, 200, 0.5);
           box-shadow: inset 0px 0px 0px 2.5px rgba(200, 200, 200, 0.5);
 }
@@ -192,20 +195,19 @@ body {
 }
 
 .settings {
-  background-color: black;
-  background-color: rgba(0, 0, 0, 0.75);
+  background-color: rgba(50, 50, 50, 0.75);
 }
 
 .settings .settings__content {
-  background-color: #27272a;
+  background-color: #18181b;
 }
 
 .settings .settings__title {
-  color: #e4e4e7;
+  color: #fff;
 }
 
 .settings .settings__closebtn:hover {
-  background-color: #3f3f46;
+  background-color: #27272a;
 }
 
 .settings .settings__closebtn span {
@@ -217,7 +219,7 @@ body {
 }
 
 .settings .settings__item:not(:last-child):after {
-  background: #3f3f46;
+  background: #27272a;
 }
 
 .settings .settings__flag--active {
@@ -257,11 +259,11 @@ body {
   background-color: #27272a;
 }
 
-.form .form__section .form__section-title {
+.form .form__section-title {
   color: #e4e4e7;
 }
 
-.form .form__section .form__input-text {
+.form .form__input-text {
   color: #e4e4e7;
   border: 1px solid #27272a;
   background-color: #3f3f46;
@@ -326,5 +328,107 @@ body {
   border: 1px solid #27272a;
   background-color: #3f3f46;
   color: #e4e4e7;
+}
+
+.form .form__ingrediant-name {
+  border: 1px solid #27272a;
+  background-color: #3f3f46;
+  color: #e4e4e7;
+}
+
+.form .form__ingrediant-quantity {
+  border: 1px solid #27272a;
+  background-color: #3f3f46;
+  color: #e4e4e7;
+}
+
+.form .error {
+  border: 1px solid #fecaca;
+  background-color: #fee2e2;
+  color: #3f3f46;
+}
+
+.form .error::-webkit-input-placeholder {
+  color: #3f3f46;
+}
+
+.form .error:-ms-input-placeholder {
+  color: #3f3f46;
+}
+
+.form .error::-ms-input-placeholder {
+  color: #3f3f46;
+}
+
+.form .error::placeholder {
+  color: #3f3f46;
+}
+
+.details .details__backBtn {
+  color: #d4d4d8;
+}
+
+.details .details__backBtn:hover {
+  color: #22c55e;
+}
+
+.details .details__shareIcon {
+  color: #d4d4d8;
+}
+
+.details .details__shareIcon:hover {
+  color: #a1a1aa;
+}
+
+.details .details__infolist i {
+  color: #16a34a;
+}
+
+.details .details__header {
+  color: #e4e4e7;
+}
+
+.details .details__info {
+  background-color: #27272a;
+  color: #d4d4d8;
+}
+
+.details .details__text {
+  color: #d4d4d8;
+}
+
+.details .styled-table {
+  border-collapse: collapse;
+  margin: 25px 0;
+  min-width: 400px;
+}
+
+.details .styled-table thead tr {
+  background-color: #15803d;
+  color: #ffffff;
+  text-align: left;
+}
+
+.details .styled-table th,
+.details .styled-table td {
+  padding: 12px 15px;
+}
+
+.details .styled-table tbody tr {
+  border-bottom: 1px solid #3f3f46;
+  background-color: #27272a;
+}
+
+.details .styled-table tbody tr:nth-of-type(even) {
+  background-color: #303035;
+}
+
+.details .styled-table tbody tr:last-of-type {
+  border-bottom: 2px solid #15803d;
+}
+
+.details .styled-table tbody tr.active-row {
+  font-weight: bold;
+  color: #15803d;
 }
 /*# sourceMappingURL=dark.css.map */

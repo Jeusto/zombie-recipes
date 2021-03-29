@@ -12,8 +12,8 @@ else {include ("languages/fr.php");}
 
 
 // Si y a une recherche, on charge les recettes correspondantes 
-$recipeDataBase = new PDO('sqlite:database/recipes.db');
-$search = $_GET["search"];
+$recipeDataBase = new PDO('sqlite:database/recipes.sqlite');
+$search = htmlspecialchars($_GET["search"]);
 $statement = $recipeDataBase -> query("SELECT * FROM Recipes WHERE RecipeName LIKE '%$search%' ");
 $rows = $statement -> fetchAll(PDO::FETCH_ASSOC); 
 
@@ -33,6 +33,7 @@ else  {
     $recipeDifficulty = ($rows[$i]['Difficulty']);
     $recipePreparationTime = ($rows[$i]['PreparationTime']);
     $recipeDetails = ($rows[$i]['Details']);
+    
     // On met l'icon en fonction de si la recette est sauvegarde ou non
     $tmp = "bookmarkBtn" . $recipeId;
     if (strpos($_COOKIE["bookmarks"], $tmp)) {
