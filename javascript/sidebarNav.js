@@ -3,6 +3,7 @@ let sidebarOuvert = false;
 let backgroundSidenav = document.getElementById("sidenav");
 let menuTopnav = document.getElementById("topnavHamburger");
 let sidenavClose = document.getElementById("sidenavClose");
+let sidenavContent = document.getElementById("sidenavContent");
 
 menuTopnav.addEventListener("click", sidebar);
 sidenavClose.addEventListener("click", sidebar);

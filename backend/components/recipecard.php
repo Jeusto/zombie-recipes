@@ -11,9 +11,7 @@
         <i class="fas fa-star"></i><i class="<?php if ($recipeDifficulty=="intermediate" || $recipeDifficulty=="advanced") {echo "fas";} else { echo"far";} ?> fa-star"></i><i class="<?php if ($recipeDifficulty=="advanced") {echo "fas";} else { echo"far";} ?> fa-star"></i>
       </div>
       <div class="recipe__time"><i class="far fa-clock"></i><span> <?= $recipePreparationTime ?> min</span></div>
-      <form action="details.php" method="get" class="form" enctype="multipart/form-data">
-        <button type="submit" name="recipe" value="<?= $recipeId ?>" class="recipe__btn" aria-label="search"><?= $lang['details'] ?><i class="fas fa-chevron-right"></i></button></a>
-      </form>
+      <a href="/details.php?recipe=<?= $recipeId ?>" name="recipe" value="<?= $recipeId ?>" class="recipe__btn" aria-label="search"><?= $lang['details'] ?><i class="fas fa-chevron-right"></i></a></a>
     </div>
   </div>
 </div>

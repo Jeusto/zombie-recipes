@@ -6,8 +6,8 @@ document.querySelector("#formSubmitBtn").addEventListener("click", function (eve
 
   // Regex pour les différents inputs
   const regexName = /^[A-Za-z]|[A-Za-z][A-Za-z\s]*[A-Za-z]$/;
-  const regexMail = /^$|[^@]+@[^\.]+\..+/;
-  const regexOrganisation = /^$|^[A-Za-z0-9 -.]*[A-Za-z0-9][A-Za-z0-9 _]*$/;
+  const regexMail = /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,5})$/;
+  const regexOrganisation = /^[a-zA-Z0-9- ]*$/;
   const regexRecipeName = /^[A-Za-z']+( [A-Za-z']+)*$/;
   const regexRecipeRealization = /^[A-Za-z'.0-9]+( [A-Za-z'.0-9]+)*$/;
   const regexRecipeDetails = /^$|[A-Za-z']+( [A-Za-z']+)*$/;

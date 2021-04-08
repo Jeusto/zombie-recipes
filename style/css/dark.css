@@ -156,14 +156,6 @@ hr {
   background-color: #27272a;
 }
 
-.recipe .recipe__top .recipe__bookmark-btn {
-  color: #fff;
-}
-
-.recipe .recipe__top .recipe__bookmark-btn:hover {
-  color: #e4e4e7;
-}
-
 .recipe .recipe__bottom .recipe__title {
   color: #d4d4d8;
 }
@@ -204,6 +196,10 @@ hr {
 
 .settings .settings__title {
   color: #fff;
+}
+
+.settings .settings__closebtn {
+  background: #18181b;
 }
 
 .settings .settings__closebtn:hover {
@@ -266,18 +262,18 @@ hr {
 .form .form__input-text {
   color: #e4e4e7;
   border: 1px solid #27272a;
-  background-color: #3f3f46;
+  background-color: #18181b;
 }
 
 .form .form__selection {
   border: 1px solid #27272a;
-  background-color: #3f3f46;
+  background-color: #18181b;
   color: #e4e4e7;
 }
 
 .form .form__file-input {
   border: 1px solid #27272a;
-  background-color: #3f3f46;
+  background-color: #18181b;
   color: #a1a1aa;
 }
 
@@ -320,25 +316,25 @@ hr {
 
 .form .form__text-area {
   border: 1px solid #27272a;
-  background-color: #3f3f46;
+  background-color: #18181b;
   color: #e4e4e7;
 }
 
 .form .form__number-input {
   border: 1px solid #27272a;
-  background-color: #3f3f46;
+  background-color: #18181b;
   color: #e4e4e7;
 }
 
 .form .form__ingrediant-name {
   border: 1px solid #27272a;
-  background-color: #3f3f46;
+  background-color: #18181b;
   color: #e4e4e7;
 }
 
 .form .form__ingrediant-quantity {
   border: 1px solid #27272a;
-  background-color: #3f3f46;
+  background-color: #18181b;
   color: #e4e4e7;
 }
 

@@ -3,14 +3,14 @@
   <head>
     <!--La langue et les tags-->
     <?php $pageName = "aboutPage"; 
-    include "backend/components/head.php";?>
+    include "backend/components/headHtml.php";?>
   </head>
   <body>
     <!--Navigation-->
     <?php include "backend/components/navigation.php";?>
     
     <!--Modal reglages-->
-    <?php include "backend/components/settings.php";?>
+    <?php include "backend/components/settingsModal.php";?>
 
     <script src="./javascript/language.js"></script>
     <script src="./javascript/theme.js"></script>

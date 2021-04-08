@@ -45,28 +45,20 @@ hr {
 
 // Image de header
 .header-image {
-  background: linear-gradient(180deg, rgba(0, 23, 36, 0) 0%, rgba(0, 0, 0, 0.3695166925465838) 49%),
+  background: linear-gradient(180deg, rgba(0, 23, 36, 0) 0%, rgba(0, 0, 0, 0.2) 49%),
     url("../../images/assets/headerSM.jpg");
   height: 300px;
   background-position: center;
   background-size: cover;
   @include responsive(md) {
-    background: linear-gradient(
-        180deg,
-        rgba(0, 23, 36, 0) 0%,
-        rgba(0, 0, 0, 0.3695166925465838) 49%
-      ),
+    background: linear-gradient(180deg, rgba(0, 23, 36, 0) 0%, rgba(0, 0, 0, 0.2) 49%),
       url("../../images/assets/headerMD.jpg");
     height: 300px;
     background-position: center;
     background-size: cover;
   }
   @include responsive(lg) {
-    background: linear-gradient(
-        180deg,
-        rgba(0, 23, 36, 0) 0%,
-        rgba(0, 0, 0, 0.3695166925465838) 49%
-      ),
+    background: linear-gradient(180deg, rgba(0, 23, 36, 0) 0%, rgba(0, 0, 0, 0.2) 49%),
       url("../../images/assets/headerLG.jpg");
     height: 300px;
     background-position: center;
@@ -249,6 +241,7 @@ hr {
 
 // Resultat vide
 .noresult {
+  @extend .animation-shake;
   margin: auto;
   .noresult__image {
     display: block;
@@ -278,6 +271,7 @@ hr {
 
 // Sauvegardes vide
 .nobookmark {
+  @extend .animation-shake;
   .nobookmark__image {
     display: block;
     margin: auto;
@@ -315,7 +309,7 @@ hr {
   padding-top: $space-20;
 }
 .recipe {
-  @extend .rounded-lg, .shadow-md;
+  @extend .rounded-lg, .shadow-md, .animation-bounce;
   background-color: $white;
   overflow: hidden;
   display: flex;
@@ -329,20 +323,28 @@ hr {
     position: relative;
     overflow: hidden;
     height: 60%;
+    width: 100%;
+    background: rgb(0, 23, 36);
+    background: linear-gradient(
+      225deg,
+      rgba(0, 23, 36, 0) 0%,
+      rgba(0, 0, 1, 1) 0%,
+      rgba(224, 223, 223, 0.3883928571428571) 100%
+    );
     .recipe__image {
       width: 100%;
       position: center;
     }
     .recipe__bookmark-btn {
       @extend .text-2xl;
-      color: $white;
+      color: color($gray, 200);
       position: absolute;
       top: $space-2;
       right: $space-2;
       background: none;
       &:hover {
         @extend .transition;
-        color: color($gray, 200);
+        color: color($gray, 400);
       }
       &:active {
         @extend .animation-shrink;
@@ -376,13 +378,13 @@ hr {
     }
     .recipe__time {
       @extend .text-sm;
-      margin-left: $space-4;
+      margin-left: $space-2;
       color: color($gray, 600);
     }
     .recipe__btn {
       @extend .button;
       display: inline-block;
-      margin-left: $space-4;
+      margin-left: $space-2;
       background-color: color($gray, 300);
       color: $black;
       i {
@@ -435,6 +437,7 @@ hr {
     width: 3rem;
     height: 3rem;
     display: flex;
+    background-color: white;
     &:hover {
       background-color: color($gray, 100);
     }
@@ -612,7 +615,7 @@ hr {
       max-width: 30rem;
     }
     .button--submit-form {
-      background-color: color($green, 600);
+      background-color: color($green, 700);
       color: $white;
       margin-left: $space-3;
       &:hover {

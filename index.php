@@ -3,7 +3,7 @@
   <head>
     <!--La langue et les tags-->
     <?php $pageName = "mainPage"; 
-    include "backend/components/head.php";?>
+    include "backend/components/headHtml.php";?>
   </head>
   <body>
     <!--Navigation-->
@@ -36,7 +36,7 @@
     </main>
 
     <!--Modal reglages-->
-    <?php include "backend/components/settings.php";?>
+    <?php include "backend/components/settingsModal.php";?>
 
     <script src="./javascript/searchAjax.js"></script>
     <script src="./javascript/bookmark.js"></script>
@@ -44,6 +44,5 @@
     <script src="./javascript/theme.js"></script>
     <script src="./javascript/settingsModal.js"></script>
     <script src="./javascript/sidebarNav.js"></script>
-
   </body>
 </html>

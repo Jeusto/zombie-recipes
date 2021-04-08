@@ -3,7 +3,7 @@
   <head>
     <!--La langue et les tags-->
     <?php $pageName = "bookmarkPage"; 
-    include "backend/components/head.php";?>
+    include "backend/components/headHtml.php";?>
   </head>
   <body>
     <!--Navigation-->
@@ -15,7 +15,7 @@
     </main>
     
     <!--Modal reglages-->
-    <?php include "backend/components/settings.php";?>
+    <?php include "backend/components/settingsModal.php";?>
 
     <script src="./javascript/bookmark.js"></script>
     <script src="./javascript/language.js"></script>

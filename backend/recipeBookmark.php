@@ -1,8 +1,5 @@
 <?php
 
-// On ouvre la base de donnees
-$recipeDataBase = new PDO('sqlite:backend/database/recipes.sqlite');
-
 // Si y a pas de sauvegardes dans le cookie, on affiche le message qui l'indique 
 if (!isset($_COOKIE["bookmarks"]) || empty($_COOKIE["bookmarks"])) {
   include "backend/components/noBookmark.php";
@@ -10,7 +7,8 @@ if (!isset($_COOKIE["bookmarks"]) || empty($_COOKIE["bookmarks"])) {
 
 // Si y a des sauvegardes, on les affiche
 else {
-  $statement = $recipeDataBase -> query("SELECT * FROM Recipes");
+  $pdo = new PDO('sqlite:backend/database/recipes.sqlite');
+  $statement = $pdo -> query("SELECT * FROM Recipes");
   $rows = $statement -> fetchAll(PDO::FETCH_ASSOC); 
 
   for ($i = 0; $i < count($rows); $i++) {
@@ -22,7 +20,7 @@ else {
     $recipeDifficulty = ($rows[$i]['Difficulty']);
     $recipePreparationTime = ($rows[$i]['PreparationTime']);
     $recipeDetails = ($rows[$i]['Details']);
-    
+      
     // Si la recette est sauvegarde on l'affiche
     $tmp = "bookmarkBtn" . $recipeId;
     if (strpos($_COOKIE["bookmarks"], $tmp)) {

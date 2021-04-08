@@ -127,16 +127,9 @@ hr {
   }
 }
 
+// Recette
 .recipe {
   background-color: color($gray, 800);
-  .recipe__top {
-    .recipe__bookmark-btn {
-      color: $white;
-      &:hover {
-        color: color($gray, 200);
-      }
-    }
-  }
   .recipe__bottom {
     .recipe__title {
       color: color($gray, 300);
@@ -174,6 +167,7 @@ hr {
     color: $white;
   }
   .settings__closebtn {
+    background: color($gray, 900);
     &:hover {
       background-color: color($gray, 800);
     }
@@ -213,16 +207,16 @@ hr {
   .form__input-text {
     color: color($gray, 200);
     border: 1px solid color($gray, 800);
-    background-color: color($gray, 700);
+    background-color: color($gray, 900);
   }
   .form__selection {
     border: 1px solid color($gray, 800);
-    background-color: color($gray, 700);
+    background-color: color($gray, 900);
     color: color($gray, 200);
   }
   .form__file-input {
     border: 1px solid color($gray, 800);
-    background-color: color($gray, 700);
+    background-color: color($gray, 900);
     color: color($gray, 400);
   }
   .form__checkbox {
@@ -258,22 +252,22 @@ hr {
   }
   .form__text-area {
     border: 1px solid color($gray, 800);
-    background-color: color($gray, 700);
+    background-color: color($gray, 900);
     color: color($gray, 200);
   }
   .form__number-input {
     border: 1px solid color($gray, 800);
-    background-color: color($gray, 700);
+    background-color: color($gray, 900);
     color: color($gray, 200);
   }
   .form__ingrediant-name {
     border: 1px solid color($gray, 800);
-    background-color: color($gray, 700);
+    background-color: color($gray, 900);
     color: color($gray, 200);
   }
   .form__ingrediant-quantity {
     border: 1px solid color($gray, 800);
-    background-color: color($gray, 700);
+    background-color: color($gray, 900);
     color: color($gray, 200);
   }
   .error {

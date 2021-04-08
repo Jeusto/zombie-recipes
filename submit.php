@@ -3,7 +3,7 @@
   <head>
     <!--La langue et les tags-->
     <?php $pageName = "formPage"; 
-    include "backend/components/head.php";?>
+    include "backend/components/headHtml.php";?>
   </head>
   <body>
     <!--Navigation-->
@@ -67,7 +67,7 @@
           <option value="dessert"><?= $lang['dessert'] ?></option>
           <option value="mainDish"><?= $lang['mainDish'] ?></option>
         </select>
-        <label class="form__label" for="recipeName"
+        <label class="form__label" for="recipeImage"
           ><i class="form__label-icon fas fa-image"></i><?= $lang['recipePresentationPhoto']." *" ?></label
         >
         <input class="form__file-input" type="file" name="recipeImage" id="recipeImage" accept=".jpg, .png, .jpeg" required/>
@@ -152,7 +152,7 @@
     
 
     <!--Modal reglages-->
-    <?php include "backend/components/settings.php";?>
+    <?php include "backend/components/settingsModal.php";?>
 
     <script src="./javascript/ingrediants.js"></script>
     <script src="./javascript/language.js"></script>

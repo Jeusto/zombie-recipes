@@ -4,9 +4,9 @@
 if (!empty($_POST)) {
   $noError = true;
   $currentDate = date("d-M-Y");
-  $regexName = "/^[A-Za-z]|[A-Za-z][A-Za-z\s]*[A-Za-z]$/";
-  $regexMail = "/^$|[^@]+@[^\.]+\..+/";
-  $regexOrganisation = "/^$|^[A-Za-z0-9 -]*[A-Za-z0-9][A-Za-z0-9 _]*$/";
+  $regexName = "/^[a-zA-Z]*$/";
+  $regexMail = "/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,5})$/";
+  $regexOrganisation = "/^[a-zA-Z0-9- ]*$/";
   $regexRecipeName = "/^[A-Za-z']+( [A-Za-z']+)*$/";
   $regexRecipeRealization = "/^[A-Za-z']+( [A-Za-z']+)*$/";
   $regexRecipeDetails = "/^$|[A-Za-z']+( [A-Za-z']+)*$/";
@@ -53,39 +53,13 @@ if (!empty($_POST)) {
   if ($noError) {
     try {
       $pdo = new PDO('sqlite:backend/database/recipes.sqlite');
-
-      $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
-      $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-      $pdo->query(
-        'CREATE TABLE IF NOT EXISTS "Recipes" (
-        "Id"	INTEGER NOT NULL UNIQUE,
-        "RecipeName"	TEXT,
-        "RecipeType"	TEXT,
-        "ImageUrl"	TEXT,
-        "RecipeDescription"	TEXT,
-        "Difficulty"	TEXT,
-        "PreparationTime"	INTEGER,
-        "Details"	TEXT,
-        "FirstName"	TEXT,
-        "LastName"	TEXT,
-        "Email"	TEXT,
-        "Organisation"	TEXT,
-        "Ingrediants"	TEXT,
-        "Quantities"	TEXT,
-        "PublishDate"	TEXT,
-        PRIMARY KEY("Id" AUTOINCREMENT))'
-      );
+      $pdo -> setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+      $pdo -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     
-      // On recupere le nombre d'elements pour mettre l'id
-      $statement = $pdo->query("SELECT * FROM Recipes");
-      $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
-      $idNumber = count($rows) + 1;
-
-      $statement = $pdo->prepare("INSERT INTO Recipes (Id, RecipeName, RecipeType, ImageUrl, RecipeDescription, Difficulty, PreparationTime, Details, FirstName, LastName, Email, Organisation, Ingrediants, Quantities, PublishDate) 
-      VALUES (:Id, :RecipeName, :RecipeType, :ImageUrl, :RecipeDescription, :Difficulty, :PreparationTime, :Details, :FirstName, :LastName, :Email, :Organisation, :Ingrediants, :Quantities, :PublishDate)");
+      // On prepare la commande
+      $statement = $pdo->prepare("INSERT INTO Recipes (RecipeName, RecipeType, ImageUrl, RecipeDescription, Difficulty, PreparationTime, Details, FirstName, LastName, Email, Organisation, Ingrediants, Quantities, PublishDate) 
+      VALUES (:RecipeName, :RecipeType, :ImageUrl, :RecipeDescription, :Difficulty, :PreparationTime, :Details, :FirstName, :LastName, :Email, :Organisation, :Ingrediants, :Quantities, :PublishDate)");
       
-      $statement->bindValue('Id',$idNumber, PDO::PARAM_STR);
       $statement->bindValue('RecipeName',$recipeName,PDO::PARAM_STR);
       $statement->bindValue('RecipeType',$recipeType,PDO::PARAM_STR);
       $statement->bindValue('ImageUrl',$recipeImageUrl,PDO::PARAM_STR);
@@ -101,12 +75,13 @@ if (!empty($_POST)) {
       $statement->bindValue('Quantities',$ingrediantsQuantities,PDO::PARAM_STR);
       $statement->bindValue('PublishDate',$currentDate,PDO::PARAM_STR);
       
+      // On execute
       $statement->execute();
 
       // On affiche le message de succes
       echo "<script type=\"text/javascript\">successMessage();</script>";
     }
-    catch (PDOException $e) {
+    catch (PDOException $exception) {
       printError($exception);
     }
   }
@@ -128,7 +103,7 @@ function regexVerification($regex, $object)
   }
 }
 
-// La fonction pour verifier et upload 
+// La fonction pour verifier et upload une image
 function imageUpload()
 {
   // On sauvegarde l'image envoye dans le formulaire
