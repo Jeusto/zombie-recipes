@@ -1,12 +1,12 @@
-// Tourne
-.animation-spin {
+// Tourne infinement
+.animation-spinInfinite {
   animation-name: spin;
   animation-duration: 5s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
   transition: 10s linear;
 }
-@keyframes spin {
+@keyframes spinInfinite {
   from {
     transform: rotate(0deg);
   }
@@ -43,38 +43,20 @@
 
 // Rebondi
 .animation-bounce {
-  animation: bounce 800ms ease-in-out;
+  animation: bounce 400ms ease-in-out;
 }
 @keyframes bounce {
-  0%,
-  60%,
-  75%,
-  90%,
-  to {
-    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
-    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
-  }
   0% {
-    opacity: 0;
-    -webkit-transform: translate3d(0, 3000px, 0) scaleY(5);
-    transform: translate3d(0, 3000px, 0) scaleY(5);
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
   }
-  60% {
-    opacity: 1;
-    -webkit-transform: translate3d(0, -20px, 0) scaleY(0.9);
-    transform: translate3d(0, -20px, 0) scaleY(0.9);
-  }
-  75% {
-    -webkit-transform: translate3d(0, 10px, 0) scaleY(0.95);
-    transform: translate3d(0, 10px, 0) scaleY(0.95);
-  }
-  90% {
-    -webkit-transform: translate3d(0, -5px, 0) scaleY(0.985);
-    transform: translate3d(0, -5px, 0) scaleY(0.985);
+  50% {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1);
+    transform: scale3d(1.1, 1.1, 1.1);
   }
   to {
-    -webkit-transform: translateZ(0);
-    transform: translateZ(0);
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
   }
 }
 
@@ -106,6 +88,49 @@
   50% {
     -webkit-transform: translateX(0);
     transform: translateX(0);
+  }
+}
+
+// Fondu
+.animation-fade {
+  animation: fade 400ms ease-in-out;
+}
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+// Fondu de gauche
+.animation-fadeLeft {
+  animation: fadeLeft 400ms ease-in-out;
+}
+@keyframes fadeLeft {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+  }
+}
+
+// Tourne
+.animation-spin {
+  animation: spin 500ms ease-in-out;
+}
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
   }
 }
 

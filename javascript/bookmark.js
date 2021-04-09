@@ -14,12 +14,15 @@ wrapper.addEventListener("click", (event) => {
   // Si on a clique sur un bouton bookmark, on continue
   else {
     // On remplace l'icon du bouton bookmark
-    if (document.getElementById(event.target.id).classList.contains("far")) {
-      document.getElementById(event.target.id).classList.remove("far");
-      document.getElementById(event.target.id).classList.add("fas");
+    let target = document.getElementById(event.target.id);
+    if (target.classList.contains("far")) {
+      target.classList.remove("far");
+      target.classList.add("fas");
+      target.classList.add("animation-spin");
     } else {
-      document.getElementById(event.target.id).classList.remove("fas");
-      document.getElementById(event.target.id).classList.add("far");
+      target.classList.remove("fas");
+      target.classList.add("far");
+      target.classList.remove("animation-spin");
     }
     // On recupere les bookmarks dans le cookie sous forme de tableau
     let arrayBookmarks = getCookie("bookmarks").split(",");

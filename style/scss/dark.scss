@@ -270,6 +270,24 @@ hr {
     background-color: color($gray, 900);
     color: color($gray, 200);
   }
+  .form__ingrediants-buttons {
+    .form__ingrediant-add {
+      background-color: color($blue, 200);
+      color: color($blue, 900);
+      &:hover {
+        background-color: color($blue, 300);
+        color: color($blue, 900);
+      }
+    }
+    .form__ingrediant-delete {
+      background-color: color($orange, 200);
+      color: color($orange, 900);
+      &:hover {
+        background-color: color($orange, 300);
+        color: color($orange, 900);
+      }
+    }
+  }
   .error {
     border: 1px solid color($red, 200);
     background-color: color($red, 100);

@@ -80,7 +80,7 @@ hr {
   width: 100%;
   .topnav__link {
     &:not(.topnav__logo) {
-      @extend .text-lg, .font-bold;
+      @extend .text-lg, .font-bold, .transition;
       color: color($gray, 600);
       display: none;
       @include responsive(lg) {
@@ -97,7 +97,7 @@ hr {
     vertical-align: baseline;
   }
   .topnav__hamburger {
-    @extend .text-3xl;
+    @extend .text-3xl, .transition;
     cursor: pointer;
     position: absolute;
     left: $space-2-5;
@@ -118,7 +118,7 @@ hr {
     color: color($gray, 700);
     background-color: transparent;
     &:hover {
-      @extend .animation-spin;
+      @extend .animation-spinInfinite;
       color: color($gray, 500);
     }
     @include responsive(lg) {
@@ -171,7 +171,7 @@ hr {
     vertical-align: baseline;
   }
   .sidenav__close {
-    @extend .text-3xl;
+    @extend .text-3xl, .transition;
     position: absolute;
     display: block;
     right: 1rem;
@@ -224,7 +224,7 @@ hr {
     height: 2.5rem;
   }
   .search__button {
-    @extend .text-xl, .rounded-full;
+    @extend .text-xl, .rounded-full, .transition;
     color: color($gray, 400);
     background-color: $white;
     width: 50%;
@@ -309,7 +309,7 @@ hr {
   padding-top: $space-20;
 }
 .recipe {
-  @extend .rounded-lg, .shadow-md, .animation-bounce;
+  @extend .rounded-lg, .shadow-md, .animation-fade;
   background-color: $white;
   overflow: hidden;
   display: flex;
@@ -345,10 +345,6 @@ hr {
       &:hover {
         @extend .transition;
         color: color($gray, 400);
-      }
-      &:active {
-        @extend .animation-shrink;
-        transition: 100ms;
       }
     }
   }
@@ -416,7 +412,7 @@ hr {
   background-color: rgb(0, 0, 0);
   background-color: rgba(0, 0, 0, 0.5);
   .settings__content {
-    @extend .rounded-lg, .shadow-xl;
+    @extend .rounded-lg, .shadow-xl, .animation-bounce;
     position: relative;
     background-color: $white;
     margin: auto;

@@ -17,10 +17,10 @@
           <i class="details__backIcon fas fa-arrow-left"></i><?= $lang["backLastPage"] ?>
         </button>
         <div class="details__share">        
-          <a class="details__shareLink" href="https://facebook.com/sharer/sharer.php?u=<?= $currentLink ?>" target="_blank" rel="noopener" aria-label="Share on Facebook">
+          <a class="details__shareLink" href="https://www.facebook.com/sharer/sharer.php?u=<?= $currentLink ?>" target="_blank" rel="noopener" aria-label="Share on Facebook">
             <i class="details__shareIcon fab fa-facebook-square"></i>
           </a>
-          <a class="details__shareLink" href="https://twitter.com/intent/tweet/?text=Message%20ici:&amp;url=<?= $currentLink ?>" target="_blank" rel="noopener" aria-label="Share on Twitter">
+          <a class="details__shareLink" href="https://twitter.com/intent/tweet/?text=Une recette pour zombie appelé ''<?= $recipeName ?>'':&amp;url=<?= $currentLink ?>" target="_blank" rel="noopener" aria-label="Share on Twitter">
             <i class="details__shareIcon fab fa-twitter-square"></i>
           </a>
         </div>

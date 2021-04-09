@@ -338,6 +338,26 @@ hr {
   color: #e4e4e7;
 }
 
+.form .form__ingrediants-buttons .form__ingrediant-add {
+  background-color: #bfdbfe;
+  color: #1e3a8a;
+}
+
+.form .form__ingrediants-buttons .form__ingrediant-add:hover {
+  background-color: #93c5fd;
+  color: #1e3a8a;
+}
+
+.form .form__ingrediants-buttons .form__ingrediant-delete {
+  background-color: #fed7aa;
+  color: #7c2d12;
+}
+
+.form .form__ingrediants-buttons .form__ingrediant-delete:hover {
+  background-color: #fdba74;
+  color: #7c2d12;
+}
+
 .form .error {
   border: 1px solid #fecaca;
   background-color: #fee2e2;

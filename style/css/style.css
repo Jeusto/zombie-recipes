@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-.animation-spin, .topnav .topnav__cogs:hover {
+.animation-spinInfinite, .topnav .topnav__cogs:hover {
   -webkit-animation-name: spin;
           animation-name: spin;
   -webkit-animation-duration: 5s;
@@ -13,7 +13,7 @@
   transition: 10s linear;
 }
 
-@-webkit-keyframes spin {
+@-webkit-keyframes spinInfinite {
   from {
     -webkit-transform: rotate(0deg);
             transform: rotate(0deg);
@@ -24,7 +24,7 @@
   }
 }
 
-@keyframes spin {
+@keyframes spinInfinite {
   from {
     -webkit-transform: rotate(0deg);
             transform: rotate(0deg);
@@ -83,74 +83,38 @@
   }
 }
 
-.animation-bounce, .recipe {
-  -webkit-animation: bounce 800ms ease-in-out;
-          animation: bounce 800ms ease-in-out;
+.animation-bounce, .settings .settings__content {
+  -webkit-animation: bounce 400ms ease-in-out;
+          animation: bounce 400ms ease-in-out;
 }
 
 @-webkit-keyframes bounce {
-  0%,
-  60%,
-  75%,
-  90%,
-  to {
-    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
-    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
-  }
   0% {
-    opacity: 0;
-    -webkit-transform: translate3d(0, 3000px, 0) scaleY(5);
-    transform: translate3d(0, 3000px, 0) scaleY(5);
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
   }
-  60% {
-    opacity: 1;
-    -webkit-transform: translate3d(0, -20px, 0) scaleY(0.9);
-    transform: translate3d(0, -20px, 0) scaleY(0.9);
-  }
-  75% {
-    -webkit-transform: translate3d(0, 10px, 0) scaleY(0.95);
-    transform: translate3d(0, 10px, 0) scaleY(0.95);
-  }
-  90% {
-    -webkit-transform: translate3d(0, -5px, 0) scaleY(0.985);
-    transform: translate3d(0, -5px, 0) scaleY(0.985);
+  50% {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1);
+    transform: scale3d(1.1, 1.1, 1.1);
   }
   to {
-    -webkit-transform: translateZ(0);
-    transform: translateZ(0);
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
   }
 }
 
 @keyframes bounce {
-  0%,
-  60%,
-  75%,
-  90%,
-  to {
-    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
-    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
-  }
   0% {
-    opacity: 0;
-    -webkit-transform: translate3d(0, 3000px, 0) scaleY(5);
-    transform: translate3d(0, 3000px, 0) scaleY(5);
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
   }
-  60% {
-    opacity: 1;
-    -webkit-transform: translate3d(0, -20px, 0) scaleY(0.9);
-    transform: translate3d(0, -20px, 0) scaleY(0.9);
-  }
-  75% {
-    -webkit-transform: translate3d(0, 10px, 0) scaleY(0.95);
-    transform: translate3d(0, 10px, 0) scaleY(0.95);
-  }
-  90% {
-    -webkit-transform: translate3d(0, -5px, 0) scaleY(0.985);
-    transform: translate3d(0, -5px, 0) scaleY(0.985);
+  50% {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1);
+    transform: scale3d(1.1, 1.1, 1.1);
   }
   to {
-    -webkit-transform: translateZ(0);
-    transform: translateZ(0);
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
   }
 }
 
@@ -213,7 +177,88 @@
   }
 }
 
-.animation-shrink, .button:active, .recipe .recipe__bottom .recipe__btn:active, .form .form__ingrediants-buttons .form__ingrediant-add:active, .form .form__ingrediants-buttons .form__ingrediant-delete:active, .recipe .recipe__top .recipe__bookmark-btn:active {
+.animation-fade, .recipe {
+  -webkit-animation: fade 400ms ease-in-out;
+          animation: fade 400ms ease-in-out;
+}
+
+@-webkit-keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animation-fadeLeft {
+  -webkit-animation: fadeLeft 400ms ease-in-out;
+          animation: fadeLeft 400ms ease-in-out;
+}
+
+@-webkit-keyframes fadeLeft {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+  }
+}
+
+@keyframes fadeLeft {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+  }
+}
+
+.animation-spin {
+  -webkit-animation: spin 500ms ease-in-out;
+          animation: spin 500ms ease-in-out;
+}
+
+@-webkit-keyframes spin {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+.animation-shrink, .button:active, .recipe .recipe__bottom .recipe__btn:active, .form .form__ingrediants-buttons .form__ingrediant-add:active, .form .form__ingrediants-buttons .form__ingrediant-delete:active {
   -webkit-transform: scale(0.8);
   transform: scale(0.8);
 }
@@ -468,9 +513,9 @@
   line-height: 2;
 }
 
-.transition, .button, .recipe .recipe__bottom .recipe__btn, .form .form__ingrediants-buttons .form__ingrediant-add, .form .form__ingrediants-buttons .form__ingrediant-delete, .button:hover, .recipe .recipe__top .recipe__bookmark-btn:hover, .settings .settings__flag:hover {
-  -webkit-transition: 150ms ease-in-out;
-  transition: 150ms ease-in-out;
+.transition, .button, .recipe .recipe__bottom .recipe__btn, .form .form__ingrediants-buttons .form__ingrediant-add, .form .form__ingrediants-buttons .form__ingrediant-delete, .button:hover, .topnav .topnav__link:not(.topnav__logo), .topnav .topnav__hamburger, .sidenav .sidenav__close, .search .search__button, .recipe .recipe__top .recipe__bookmark-btn:hover, .settings .settings__flag:hover {
+  -webkit-transition: 100ms ease-in-out;
+  transition: 100ms ease-in-out;
 }
 
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
@@ -1244,11 +1289,6 @@ hr {
 
 .recipe .recipe__top .recipe__bookmark-btn:hover {
   color: #a1a1aa;
-}
-
-.recipe .recipe__top .recipe__bookmark-btn:active {
-  -webkit-transition: 100ms;
-  transition: 100ms;
 }
 
 .recipe .recipe__bottom {
