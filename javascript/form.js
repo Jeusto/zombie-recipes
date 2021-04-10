@@ -6,8 +6,6 @@ document.querySelector("#formSubmitBtn").addEventListener("click", function (eve
 
   // Regex pour les différents inputs
   const regexName = /^[A-Za-z]|[A-Za-z][A-Za-z\s]*[A-Za-z]$/;
-  const regexMail = /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,5})$/;
-  const regexOrganisation = /^[a-zA-Z0-9- ]*$/;
   const regexRecipeName = /^[A-Za-z']+( [A-Za-z']+)*$/;
   const regexRecipeRealization = /^[A-Za-z'.0-9]+( [A-Za-z'.0-9]+)*$/;
   const regexRecipeDetails = /^$|[A-Za-z']+( [A-Za-z']+)*$/;
@@ -21,14 +19,6 @@ document.querySelector("#formSubmitBtn").addEventListener("click", function (eve
   let firstName = document.getElementById("userFirstName");
   inputVerif1.call(firstName, regexName);
   firstName.addEventListener("input", inputVerif2(regexName));
-
-  let email = document.getElementById("userEmail");
-  inputVerif1.call(email, regexMail);
-  email.addEventListener("input", inputVerif2(regexMail));
-
-  let organisation = document.getElementById("userOrganisation");
-  inputVerif1.call(organisation, regexOrganisation);
-  organisation.addEventListener("input", inputVerif2(regexOrganisation));
 
   let recipeName = document.getElementById("recipeName");
   inputVerif1.call(recipeName, regexRecipeName);

@@ -30,14 +30,12 @@ $lang = array (
   "noResults" => "No results, please try again or",
   "noResultsLink" => "find our best recipes here.",
 
-  // Formulaire,
-  "personalInfo" => "Personal info",
+  // Formulaire
+  "lastAndFirstName" => "Last and first name",
   "lastName" => "Last name",
   "firstName" => "First name",
-  "email" => "Email",
-  "organisation" => "Organisation",
 
-  "recipeGeneralInfo" => "Recipe - General info",
+  "recipeGeneralInfo" => "General info",
   "recipeName" => "Recipe name",
   "recipeType" => "Recipe type",
   "appetizer" => "Appetizer",
@@ -46,7 +44,7 @@ $lang = array (
   "mainDish" => "Main dish",
   "recipePresentationPhoto" => "Presentation photo for the recipe",
 
-  "recipeDetails" => "Recipe - Details",
+  "recipeDetails" => "Recipe details",
   "recipeRealization" => "Recipe realization",
   "recipeRealizationPlaceholder" => "Please detail here the different steps and instructions to follow to realize the recipe.",
   "difficultyLevel" => "Difficulty level",

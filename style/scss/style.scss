@@ -32,14 +32,11 @@ hr {
   color: color($gray, 700);
   padding: $space-2 $space-3;
   cursor: pointer;
+  overflow: visible;
   &:hover {
-    @extend .transition;
+    @extend .hover-grow;
     background-color: color($gray, 300);
     color: color($gray, 900);
-  }
-  &:active {
-    @extend .animation-shrink;
-    transition: 100ms;
   }
 }
 
@@ -260,6 +257,7 @@ hr {
     margin-bottom: $space-5;
   }
   .noresult__link {
+    @extend .transition;
     cursor: pointer;
     color: color($green, 800);
     border-bottom: 3px solid color($green, 500);
@@ -289,6 +287,7 @@ hr {
     margin-bottom: $space-5;
   }
   .nobookmark__link {
+    @extend .transition;
     cursor: pointer;
     color: color($green, 800);
     border-bottom: 3px solid color($green, 500);
@@ -336,7 +335,7 @@ hr {
       position: center;
     }
     .recipe__bookmark-btn {
-      @extend .text-2xl;
+      @extend .text-2xl, .transition;
       color: color($gray, 200);
       position: absolute;
       top: $space-2;
@@ -344,7 +343,7 @@ hr {
       background: none;
       &:hover {
         @extend .transition;
-        color: color($gray, 400);
+        color: color($gray, 300);
       }
     }
   }
@@ -362,7 +361,7 @@ hr {
     }
     .recipe__info {
       margin: $space-2;
-      overflow: hidden;
+      overflow: visible;
       display: flex;
       flex-direction: row;
       flex-wrap: wrap;
@@ -391,7 +390,7 @@ hr {
         background-color: color($gray, 400);
       }
       &:active {
-        @extend .animation-shrink;
+        @extend .hover-shrink;
         transition: 100ms;
       }
     }
@@ -426,6 +425,7 @@ hr {
     padding-left: $space-5;
   }
   .settings__closebtn {
+    @extend .transition;
     position: absolute;
     right: 0px;
     display: inline;
@@ -465,12 +465,13 @@ hr {
     margin-right: $space-3;
   }
   .settings__flag {
+    @extend .transition;
     width: 2rem;
     cursor: pointer;
     margin-right: $space-3;
     border-radius: 0.25rem;
     &:hover {
-      @extend .animation-grow, .transition;
+      @extend .hover-grow, .transition;
     }
   }
   .settings__flag--active {
@@ -615,7 +616,7 @@ hr {
       color: $white;
       margin-left: $space-3;
       &:hover {
-        background-color: color($green, 700);
+        background-color: color($green, 800);
         color: $white;
       }
     }
@@ -747,8 +748,8 @@ hr {
     flex-wrap: wrap;
   }
   .details__backBtn {
+    @extend .transition, .font-bold;
     background: none;
-    @extend .font-bold;
     color: color($gray, 800);
     &:hover {
       color: color($green, 700);
@@ -763,6 +764,7 @@ hr {
     padding: 0;
   }
   .details__shareIcon {
+    @extend .transition;
     font-size: 2rem;
     padding: 0.5rem;
     color: color($gray, 700);

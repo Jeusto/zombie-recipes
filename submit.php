@@ -14,8 +14,12 @@
 
     <!--Formulaire-->
     <form action="submit.php" method="post" class="form" id="recipeForm" enctype="multipart/form-data">
+
       <div class="form__section">
-        <h2 class="form__section-title"><?= $lang['personalInfo']?></h2>
+        <h2 class="form__section-title"><?= $lang['recipeGeneralInfo'] ?></h2>
+        <label class="form__label" for="userLastName"
+          ><i class="form__label-icon fas fa-signature"></i><?= $lang['lastAndFirstName']." *" ?></label
+        >
         <input
           class="form__input-text"
           type="text"
@@ -34,18 +38,6 @@
           required
           maxlength="40"
         />
-        <input class="form__input-text" type="text" id="userEmail" name="userEmail" placeholder="<?= $lang['email'] ?>"/>
-        <input
-          class="form__input-text"
-          type="text"
-          id="userOrganisation"
-          name="userOrganisation"
-          placeholder="<?= $lang['organisation'] ?>"
-          maxlength="40"
-        />
-      </div>
-      <div class="form__section">
-        <h2 class="form__section-title"><?= $lang['recipeGeneralInfo'] ?></h2>
         <label class="form__label" for="recipeName"
           ><i class="form__label-icon fas fa-paragraph"></i><?= $lang['recipeName']." *" ?></label
         >

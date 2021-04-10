@@ -135,15 +135,15 @@
 }
 
 // Retreci apres survol
-.animation-shrink {
+.hover-shrink {
   -webkit-transform: scale(0.8);
   -ms-transform: scale(0.8);
   transform: scale(0.8);
 }
 
 // Agrandi apres survol
-.animation-grow {
-  -webkit-transform: scale(1.2);
-  -ms-transform: scale(1.2);
-  transform: scale(1.2);
+.hover-grow {
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
 }

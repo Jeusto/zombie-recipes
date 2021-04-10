@@ -5,8 +5,6 @@ if (!empty($_POST)) {
   $noError = true;
   $currentDate = date("d-M-Y");
   $regexName = "/^[a-zA-Z]*$/";
-  $regexMail = "/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,5})$/";
-  $regexOrganisation = "/^[a-zA-Z0-9- ]*$/";
   $regexRecipeName = "/^[A-Za-z']+( [A-Za-z']+)*$/";
   $regexRecipeRealization = "/^[A-Za-z']+( [A-Za-z']+)*$/";
   $regexRecipeDetails = "/^$|[A-Za-z']+( [A-Za-z']+)*$/";
@@ -22,8 +20,6 @@ if (!empty($_POST)) {
   $recipeDetails = isset($_POST["recipeDetails"]) ? htmlspecialchars($_POST["recipeDetails"]): null;
   $userFirstName = isset($_POST["userFirstName"]) ? htmlspecialchars(($_POST["userFirstName"])): null;
   $userLastName = isset($_POST["userLastName"]) ? htmlspecialchars($_POST["userLastName"]): null;
-  $userEmail = isset($_POST["userEmail"]) ? htmlspecialchars($_POST["userEmail"]): null;
-  $userOrganisation = isset($_POST["userOrganisation"]) ? htmlspecialchars($_POST["userOrganisation"]): null;
   $ingrediantsNames = "";
   $ingrediantsQuantities = "";
 
@@ -40,8 +36,6 @@ if (!empty($_POST)) {
   // On verifie les inputs avec des regex
   regexVerification($regexName, $userFirstName);
   regexVerification($regexName, $userLastName);
-  regexVerification($regexMail, $userEmail);
-  regexVerification($regexOrganisation, $userOrganisation);
   regexVerification($regexRecipeName, $recipeName);
   regexVerification($regexRecipeRealization, $recipeDescription);
   regexVerification($regexRecipeDetails, $recipeDetails);
@@ -57,8 +51,8 @@ if (!empty($_POST)) {
       $pdo -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     
       // On prepare la commande
-      $statement = $pdo->prepare("INSERT INTO Recipes (RecipeName, RecipeType, ImageUrl, RecipeDescription, Difficulty, PreparationTime, Details, FirstName, LastName, Email, Organisation, Ingrediants, Quantities, PublishDate) 
-      VALUES (:RecipeName, :RecipeType, :ImageUrl, :RecipeDescription, :Difficulty, :PreparationTime, :Details, :FirstName, :LastName, :Email, :Organisation, :Ingrediants, :Quantities, :PublishDate)");
+      $statement = $pdo->prepare("INSERT INTO Recipes (RecipeName, RecipeType, ImageUrl, RecipeDescription, Difficulty, PreparationTime, Details, FirstName, LastName, Ingrediants, Quantities, PublishDate) 
+      VALUES (:RecipeName, :RecipeType, :ImageUrl, :RecipeDescription, :Difficulty, :PreparationTime, :Details, :FirstName, :LastName, :Ingrediants, :Quantities, :PublishDate)");
       
       $statement->bindValue('RecipeName',$recipeName,PDO::PARAM_STR);
       $statement->bindValue('RecipeType',$recipeType,PDO::PARAM_STR);
@@ -69,8 +63,6 @@ if (!empty($_POST)) {
       $statement->bindValue('Details',$recipeDetails,PDO::PARAM_STR);
       $statement->bindValue('FirstName',$userFirstName,PDO::PARAM_STR);
       $statement->bindValue('LastName',$userLastName,PDO::PARAM_STR);
-      $statement->bindValue('Email',$userEmail,PDO::PARAM_STR);
-      $statement->bindValue('Organisation',$userOrganisation,PDO::PARAM_STR);
       $statement->bindValue('Ingrediants',$ingrediantsNames,PDO::PARAM_STR);
       $statement->bindValue('Quantities',$ingrediantsQuantities,PDO::PARAM_STR);
       $statement->bindValue('PublishDate',$currentDate,PDO::PARAM_STR);
