@@ -263,7 +263,7 @@
   transform: scale(0.8);
 }
 
-.hover-grow, .button:hover, .recipe .recipe__bottom .recipe__btn:hover, .form .form__ingrediants-buttons .form__ingrediant-add:hover, .form .form__ingrediants-buttons .form__ingrediant-delete:hover, .settings .settings__flag:hover {
+.hover-grow, .button:hover, .recipe .recipe__bottom .recipe__btn:hover, .form .form__ingrediants-buttons .form__ingrediant-add:hover, .form .form__ingrediants-buttons .form__ingrediant-delete:hover, .settings .settings__flag:hover, .details .details__backBtn:hover, .details .details__shareIcon:hover {
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
 }
@@ -1048,6 +1048,7 @@ hr {
   position: relative;
   height: 100%;
   width: 50%;
+  min-width: 240px;
   position: fixed;
   z-index: 1;
   top: 0;
@@ -1808,7 +1809,7 @@ hr {
 }
 
 .details .details__shareIcon:hover {
-  color: #71717a;
+  color: #52525b;
 }
 
 .details .details__img {
