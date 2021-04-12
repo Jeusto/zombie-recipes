@@ -1,9 +1,9 @@
-addBtn = document.getElementById("addBtn");
-deleteBtn = document.getElementById("deleteBtn");
-ingrediantsDiv = document.getElementById("formIngrediants");
+addIngrediantBtn = document.getElementById("addIngrediantBtn");
+deleteIngrediantBtn = document.getElementById("deleteIngrediantBtn");
+ingrediantsDiv = document.getElementById("ingrediantsDiv");
 
 // On cree un input ingrediant en cliquant sur un bouton
-addBtn.addEventListener("click", function () {
+addIngrediantBtn.addEventListener("click", function () {
   const div = document.createElement("div");
   let numberOfIngrediants = getCount(ingrediantsDiv, false);
   if (numberOfIngrediants >= 15) {
@@ -14,7 +14,7 @@ addBtn.addEventListener("click", function () {
   div.innerHTML =
     `
     <input
-      class="form__ingrediant-name"
+      class="form__ingrediantName"
       type="text"
       name="ingrediantName` +
     (numberOfIngrediants + 1) +
@@ -23,7 +23,7 @@ addBtn.addEventListener("click", function () {
       maxlength="40"
     />
     <input
-      class="form__ingrediant-quantity"
+      class="form__ingrediantQuantity"
       type="text"
       name="ingrediantQuantity` +
     (numberOfIngrediants + 1) +
@@ -36,7 +36,7 @@ addBtn.addEventListener("click", function () {
 });
 
 // On supprime un input ingrediant en cliquant sur un bouton
-deleteBtn.addEventListener("click", function () {
+deleteIngrediantBtn.addEventListener("click", function () {
   if (getCount(ingrediantsDiv, false) > 1) {
     ingrediantsDiv.removeChild(ingrediantsDiv.lastChild);
   } else {

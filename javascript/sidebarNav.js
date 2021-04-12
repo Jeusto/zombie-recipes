@@ -1,23 +1,23 @@
 // Gestion du sidebar
-let sidebarOuvert = false;
-let backgroundSidenav = document.getElementById("sidenav");
-let menuTopnav = document.getElementById("topnavHamburger");
-let sidenavClose = document.getElementById("sidenavClose");
+let sidebarIsOpen = false;
+let sidenav = document.getElementById("sidenav");
 let sidenavContent = document.getElementById("sidenavContent");
+let openSidenavBtn = document.getElementById("openSidenavBtn");
+let closeSidenavBtn = document.getElementById("sidenavCloseBtn");
 
-menuTopnav.addEventListener("click", sidebar);
-sidenavClose.addEventListener("click", sidebar);
-backgroundSidenav.addEventListener("click", (e) => {
+openSidenavBtn.addEventListener("click", sidebar);
+closeSidenavBtn.addEventListener("click", sidebar);
+sidenav.addEventListener("click", (e) => {
   if (e.target !== e.currentTarget) return;
   else sidebar();
 });
 
 function sidebar() {
-  if (sidebarOuvert) {
-    document.getElementById("sidenav").style.display = "none";
-    sidebarOuvert = false;
+  if (sidebarIsOpen) {
+    sidenav.style.display = "none";
+    sidebarIsOpen = false;
   } else {
-    document.getElementById("sidenav").style.display = "block";
-    sidebarOuvert = true;
+    sidenav.style.display = "block";
+    sidebarIsOpen = true;
   }
 }

@@ -5,8 +5,8 @@ $lang = array (
   "language" => "en",
 
   // Titre du site
-  "mainPage" => "Site name",
-  "aboutPage" => "About sitename",
+  "mainPage" => "Fresh & Flesh",
+  "aboutPage" => "About Fresh & Flesh",
   "formPage" => "Submit a recipe",
   "bookmarkPage" => "Your bookmarks",
   "detailsPage" => "Recipe details",
@@ -27,8 +27,8 @@ $lang = array (
   // Etats vides
   "noBookmark" => "You will find your saved recipes here,",
   "noBookmarkLink" => "start by searching a few.",
-  "noResults" => "No results, please try again or",
-  "noResultsLink" => "find our best recipes here.",
+  "noRecipe" => "No results, please try again or",
+  "noRecipeLink" => "find our best recipes here.",
 
   // Formulaire
   "lastAndFirstName" => "Last and first name",
@@ -58,6 +58,7 @@ $lang = array (
   "ingrediants" => "Ingrediants and quantities",
   "formCheckbox" => "English lorem ipsum dolor sit amet consectetur.",
 
+  // Autre
   "details" => "Check this recipe",
   "by" => "by",
   "ingrediantsTable" => "Ingrediants",
@@ -71,7 +72,11 @@ $lang = array (
   "send" => "Send",
   "add" => "Add",
   "remove" => "Delete",
-  "reset" => "Reset"
+  "reset" => "Reset",
+  "famousChiefs" => "Famous chiefs",
+  "bestRecipes" => "Best recipes",
+  "communityDriven" => "Community driven",
+  "aboutTitle" => "Fresh & flesh, the leading website for zombie food recipes!"  
 );
 
 ?>

@@ -10,18 +10,18 @@
     <?php include "backend/components/navigation.php";?>
     
     <!--Image de formulaire-->
-    <img class="submit-image" src="images/assets/submitRecipe.svg" alt="Submit form image" />
+    <img class="submitImage" src="images/assets/submitRecipe.svg" alt="Submit form image" />
 
     <!--Formulaire-->
     <form action="submit.php" method="post" class="form" id="recipeForm" enctype="multipart/form-data">
 
       <div class="form__section">
-        <h2 class="form__section-title"><?= $lang['recipeGeneralInfo'] ?></h2>
+        <h2 class="form__sectionTitle"><?= $lang['recipeGeneralInfo'] ?></h2>
         <label class="form__label" for="userLastName"
-          ><i class="form__label-icon fas fa-signature"></i><?= $lang['lastAndFirstName']." *" ?></label
+          ><i class="form__labelIcon fas fa-signature"></i><?= $lang['lastAndFirstName']." *" ?></label
         >
         <input
-          class="form__input-text"
+          class="form__inputText"
           type="text"
           id="userLastName"
           name="userLastName"
@@ -30,7 +30,7 @@
           maxlength="40"
         />
         <input
-          class="form__input-text"
+          class="form__inputText"
           type="text"
           id="userFirstName"
           name="userFirstName"
@@ -39,10 +39,10 @@
           maxlength="40"
         />
         <label class="form__label" for="recipeName"
-          ><i class="form__label-icon fas fa-paragraph"></i><?= $lang['recipeName']." *" ?></label
+          ><i class="form__labelIcon fas fa-paragraph"></i><?= $lang['recipeName']." *" ?></label
         >
         <input
-          class="form__input-text"
+          class="form__inputText form__recipeName"
           type="text"
           id="recipeName"
           name="recipeName"
@@ -51,7 +51,7 @@
           maxlength="40"
         />
         <label class="form__label" for="recipeName"
-          ><i class="form__label-icon fas fa-folder-open"></i><?= $lang['recipeType'] ?></label
+          ><i class="form__labelIcon fas fa-folder-open"></i><?= $lang['recipeType'] ?></label
         >
         <select class="form__selection" name="recipeType" id="recipeType">
           <option value="appetizer"><?= $lang['appetizer'] ?></option>
@@ -60,17 +60,17 @@
           <option value="mainDish"><?= $lang['mainDish'] ?></option>
         </select>
         <label class="form__label" for="recipeImage"
-          ><i class="form__label-icon fas fa-image"></i><?= $lang['recipePresentationPhoto']." *" ?></label
+          ><i class="form__labelIcon fas fa-image"></i><?= $lang['recipePresentationPhoto']." *" ?></label
         >
-        <input class="form__file-input" type="file" name="recipeImage" id="recipeImage" accept=".jpg, .png, .jpeg" required/>
+        <input class="form__fileInput" type="file" name="recipeImage" id="recipeImage" accept=".jpg, .png, .jpeg" required/>
       </div>
       <div class="form__section">
-        <h2 class="form__section-title"><?= $lang['recipeDetails'] ?></h2>
+        <h2 class="form__sectionTitle"><?= $lang['recipeDetails'] ?></h2>
         <label class="form__label" for="recipeDescription"
-          ><i class="form__label-icon fas fa-utensils"></i><?= $lang['recipeRealization']." *" ?></label
+          ><i class="form__labelIcon fas fa-utensils"></i><?= $lang['recipeRealization']." *" ?></label
         >
         <textarea
-          class="form__text-area"
+          class="form__textArea"
           id="recipeDescription"
           name="recipeDescription"
           rows="4"
@@ -80,7 +80,7 @@
           placeholder="<?= $lang['recipeRealizationPlaceholder']?>"
         ></textarea>
         <label class="form__label" for="recipeDifficulty"
-          ><i class="form__label-icon fas fa-brain"></i><?= $lang['difficultyLevel'] ?></label
+          ><i class="form__labelIcon fas fa-brain"></i><?= $lang['difficultyLevel'] ?></label
         >
         <select class="form__selection" name="recipeDifficulty" id="recipeDifficulty">
           <option value="beginner"><?= $lang['beginner'] ?></option>
@@ -88,12 +88,12 @@
           <option value="advanced"><?= $lang['advanced'] ?></option>
         </select>
         <label class="form__label" for="recipePreparationTime"
-          ><i class="form__label-icon fas fa-clock"></i><?= $lang['preparationTime'] ?> </label
+          ><i class="form__labelIcon fas fa-clock"></i><?= $lang['preparationTime'] ?> </label
         >
-        <input class="form__number-input" id="recipePreparationTime" name="recipePreparationTime" type="number" min="0" value="0" max="960" />
-        <label class="form__label" for="recipeRealization"><i class="form__label-icon fas fa-sticky-note"></i><?= $lang['precisions'] ?></label>
+        <input class="form__numberInput" id="recipePreparationTime" name="recipePreparationTime" type="number" min="0" value="0" max="960" />
+        <label class="form__label" for="recipeRealization"><i class="form__labelIcon fas fa-sticky-note"></i><?= $lang['precisions'] ?></label>
         <textarea
-          class="form__text-area"
+          class="form__textArea"
           id="recipeDetails"
           name="recipeDetails"
           rows="4"
@@ -101,23 +101,23 @@
           maxlength="1000"
           placeholder="<?= $lang['precisionsPlaceholder'] ?>"></textarea>
         <label class="form__label" for="recipeRealization"
-          ><i class="form__label-icon fas fa-lemon"></i><?= $lang['ingrediants'] ?></label
+          ><i class="form__labelIcon fas fa-lemon"></i><?= $lang['ingrediants'] ?></label
         >
-        <div class="form__ingrediants-buttons">
-          <button type="button" class="form__ingrediant-add" id="addBtn" aria-label="Add ingrediant input"><i class="fas fa-plus"></i> <?=$lang['add']?></button>
-          <button type="button" class="form__ingrediant-delete" id="deleteBtn" aria-label="Remove ingrediant input"><i class="fas fa-trash-alt"></i> <?=$lang['remove']?></button>
+        <div class="form__ingrediantsBtns">
+          <button type="button" class="button--ingrediantAdd" id="addIngrediantBtn" aria-label="Add ingrediant input"><i class="fas fa-plus"></i> <?=$lang['add']?></button>
+          <button type="button" class="button--ingrediantDelete" id="deleteIngrediantBtn" aria-label="Remove ingrediant input"><i class="fas fa-trash-alt"></i> <?=$lang['remove']?></button>
         </div>
-        <div class="form__ingrediants-div" id="formIngrediants">  
+        <div class="form__ingrediantsDiv" id="ingrediantsDiv">  
           <div class="form__ingrediant">       
             <input
-              class="form__ingrediant-name"
+              class="form__ingrediantName"
               type="text"
               name="ingrediantName1"
               placeholder="Ingrediant name"
               maxlength="40"
             />
             <input
-              class="form__ingrediant-quantity"
+              class="form__ingrediantQuantity"
               type="text"
               name="ingrediantQuantity1"
               placeholder="Quantity"
@@ -126,17 +126,17 @@
           </div>
         </div>
       </div>
-      <div id="form__success">
+      <div class="form__successMsg" id="successMessage">
         <h2><i class="fas fa-check"></i> <?= $lang['success'] ?></h2>
         <p><?= $lang['successMessage'] ?></p>
       </div>
-      <div id="form__error" >
+      <div class="form__errorMsg" id="errorMessage" >
         <h2><i class="fas fa-exclamation-triangle"></i> <?= $lang['error'] ?></h2>
-        <p id="errorMessage"><?= $lang['errorMessage'] ?></p>
+        <p id="errorText"><?= $lang['errorMessage'] ?></p>
       </div>
       <div class="form__buttons">
-        <button class="button button--reset-form" type="reset"><?=$lang['reset']?></button>
-        <button class="button button--submit-form" id="formSubmitBtn" name="submitButton" type="submit"><?= $lang['send'] ?></button>
+        <button class="button button--resetForm" id="formResetBtn" type="reset"><?=$lang['reset']?></button>
+        <button class="button button--submitForm" id="formSubmitBtn" name="submitButton" type="submit"><?= $lang['send'] ?></button>
       </div>
     </form>
     <script src="./javascript/form.js"></script>

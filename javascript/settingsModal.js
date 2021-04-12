@@ -1,22 +1,22 @@
 // Gestion du modal parametres
-let modalSettings = document.getElementById("settingsModal");
-let buttonModal = document.getElementById("settingsModal__button");
-let buttonModalMobile = document.getElementById("topnavCogs");
-let span = document.getElementById("settingsModalClose");
+let modal = document.getElementById("modal");
+let openModalBtn = document.getElementById("openModalBtn");
+let openModalBtnMobile = document.getElementById("openModalBtnMobile");
+let closeModalBtn = document.getElementById("closeModalBtn");
 
-buttonModal.addEventListener("click", ouvreModal);
-buttonModalMobile.addEventListener("click", ouvreModal);
-span.addEventListener("click", fermeModal);
+openModalBtn.addEventListener("click", ouvreModal);
+openModalBtnMobile.addEventListener("click", ouvreModal);
+closeModalBtn.addEventListener("click", fermeModal);
 
 window.onclick = function (event) {
-  if (event.target == settingsModal) {
-    modalSettings.style.display = "none";
+  if (event.target == modal) {
+    modal.style.display = "none";
   }
 };
 
 function ouvreModal() {
-  modalSettings.style.display = "block";
+  modal.style.display = "block";
 }
 function fermeModal() {
-  modalSettings.style.display = "none";
+  modal.style.display = "none";
 }

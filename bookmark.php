@@ -10,7 +10,7 @@
     <?php include "backend/components/navigation.php";?>
     
     <!--Liste de recettes-->
-    <main class="recipe-list" id="recipeList">
+    <main class="recipeList" id="recipeList">
       <?php include "backend/recipeBookmark.php";?>
     </main>
     

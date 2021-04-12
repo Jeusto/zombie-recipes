@@ -29,7 +29,7 @@
         <img src="images/recipes/<?= $recipeImageUrl ?>" alt="Recipe image" />
       </figure>
       <section class="">
-        <div class="details__infolist">
+        <div class="details__infoList">
           <div class="details__info"><i class="fas fa-user"></i> <span><?= $lang['by'] ." ". $userFirstName." ".$userLastName?></span></div>
           <div class="details__info"><i class="fas fa-calendar"></i> <span><?= $publishedDate ?></span></div>
           <div class="details__info"><i class="fas fa-utensils"></i> <span><?= $lang[$recipeType] ?></span></div>
@@ -44,7 +44,7 @@
         <p class="details__text"><?= $recipeDescription ?></p>
         <hr>
         <h4 class="details__header"><?= $lang["ingrediants"] ?></h4>
-        <table class="styled-table">
+        <table class="details__table">
           <thead>
             <tr>
               <th><?= $lang["ingrediantsTable"] ?></th>

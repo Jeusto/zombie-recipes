@@ -20,6 +20,7 @@ try {
 
   // Si le resultat est vide, on charge le composant qui l'indique
   if (count($rows) == 0) {
+    $text = "noRecipe";
     include "components/noResult.php";
   }
 

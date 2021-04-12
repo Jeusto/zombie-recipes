@@ -5,8 +5,8 @@ $lang = array (
   "language" => "fr",
 
   // Titre du site
-  "mainPage" => "Nom du site",
-  "aboutPage" => "A propos de nomdusite",
+  "mainPage" => "Fresh & flesh",
+  "aboutPage" => "A propos de Fresh & Flesh",
   "formPage" => "Soumettre une recette",
   "bookmarkPage" => "Vos sauvegardes",
   "detailsPage" => "Détails d'une recette",
@@ -27,8 +27,8 @@ $lang = array (
   // Etats vides
   "noBookmark" => "Vous retrouverez vos recettes sauvegardés ici,",
   "noBookmarkLink" => "commencez par en chercher quelques-uns.",
-  "noResults" => "Résultat introuvable, veuillez réessayer ou",
-  "noResultsLink" => "retrouvez nos meilleures recettes ici.",
+  "noRecipe" => "Résultat introuvable, veuillez réessayer ou",
+  "noRecipeLink" => "retrouvez nos meilleures recettes ici.",
 
   // Formulaire
   "lastAndFirstName" => "Nom et prénom",
@@ -58,6 +58,7 @@ $lang = array (
   "ingrediants" => "Ingrédients et quantités",
   "formCheckbox" => "Francais lorem ipsum dolor sit amet consectetur.",
 
+  // Autre
   "details" => "Voir cette recette",
   "by" => "par",
   "ingrediantsTable" => "Ingrédiants",
@@ -71,7 +72,11 @@ $lang = array (
   "send" => "Envoyer",
   "add" => "Ajouter",
   "remove" => "Supprimer",
-  "reset" => "Réinitaliser"
+  "reset" => "Réinitaliser",
+  "famousChiefs" => "Chefs connues",
+  "bestRecipes" => "Meilleures recettes",
+  "communityDriven" => "Poussé par la communauté",
+  "aboutTitle" => "Fresh & flesh, le site leader de recettes pour zombies!"  
 );
 
 ?>

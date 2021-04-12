@@ -10,7 +10,7 @@
     <?php include "backend/components/navigation.php";?>
     
     <!--Image de header-->
-    <div class="header-image"></div>
+    <div class="headerImage"></div>
 
     <!--Barre de recherche-->
     <form class="search form">
@@ -23,15 +23,13 @@
         name ="search"
         aria-label="Search recipe input"
       />
-      <div class="search__button-list">
-        <button onclick="showResults()" id="searchButton" class="search__button" type="submit" aria-label="search">
-          <i class="fas fa-search"></i>
-        </button>
-      </div>
+      <button onclick="showResults()" id="searchButton" class="search__button" type="submit" aria-label="search">
+        <i class="fas fa-search"></i>
+      </button>
     </form>
 
     <!--Liste de recettes-->
-    <main class="recipe-list" id="recipeList">
+    <main class="recipeList" id="recipeList">
       <?php include "backend/recipeAll.php"?>
     </main>
 

@@ -2,7 +2,8 @@
 
 // Si y a pas de sauvegardes dans le cookie, on affiche le message qui l'indique 
 if (!isset($_COOKIE["bookmarks"]) || empty($_COOKIE["bookmarks"])) {
-  include "backend/components/noBookmark.php";
+  $text = "noBookmark";
+  include "backend/components/noResult.php";
 }
 
 // Si y a des sauvegardes, on les affiche

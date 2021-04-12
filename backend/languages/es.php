@@ -5,8 +5,8 @@ $lang = array (
   "language" => "en",
 
   // Titre du site
-  "mainPage" => "Nombre del sitio",
-  "aboutPage" => "Sobre sitename",
+  "mainPage" => "Fresh & Flesh",
+  "aboutPage" => "Sobre Fresh & Flesh",
   "formPage" => "Envíe una receta",
   "bookmarkPage" => "Tus marcadores",
   "detailsPage" => "Detalles de la receta ",
@@ -27,8 +27,8 @@ $lang = array (
   // Etats vides
   "noBookmark" => "Aquí encontrará sus recetas guardadas,",
   "noBookmarkLink" => "comience buscando algunos.",
-  "noResults" => "No hay resultados, inténtalo de nuevo o,",
-  "noResultsLink" => "encuentra nuestras mejores recetas aquí.",
+  "noRecipe" => "No hay resultados, inténtalo de nuevo o,",
+  "noRecipeLink" => "encuentra nuestras mejores recetas aquí.",
 
   // Formulaire
   "lastAndFirstName" => "Appellido y nombre",
@@ -58,6 +58,7 @@ $lang = array (
   "ingrediants" => "Ingredientes y cantidades",
   "formCheckbox" => "Espanol lorem ipsum dolor sit amet consectetur.",
 
+  // Autre
   "details" => "Ver esta receta",
   "by" => "por",
   "ingrediantsTable" => "Ingredientes",
@@ -71,7 +72,11 @@ $lang = array (
   "send" => "Enviar",
   "add" => "Agregar",
   "remove" => "Retirar",
-  "reset" => "Reiniciar"
+  "reset" => "Reiniciar",
+  "famousChiefs" => "Cocineros connues",
+  "bestRecipes" => "Mejores recetas",
+  "communityDriven" => "Impulsado por la comunidad",
+  "aboutTitle" => "Fresh & Flesh, el sitio web líder en recetas para zombis!"  
 );
 
 ?>

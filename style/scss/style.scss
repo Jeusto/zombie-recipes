@@ -8,9 +8,7 @@
 @import "./utility/spacing";
 @import "./utility/text";
 @import "./utility/transition";
-
 @import "./utility/normalize";
-@import "./utility/resetperso";
 
 // Styles generales
 body {
@@ -24,10 +22,33 @@ hr {
   border: none;
   height: 1px;
 }
+img:not([alt]) {
+  box-shadow: 0 0 5px red;
+}
+a {
+  color: black;
+  text-decoration: none;
+}
+button,
+a {
+  cursor: pointer;
+}
+* {
+  border: none;
+  outline: none;
+  &:focus-visible {
+    -webkit-box-shadow: 0px 0px 0px 2.5px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 0px 0px 0px 2.5px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 0px 0px 2.5px rgba(0, 0, 0, 0.5);
+  }
+}
+html {
+  line-height: 1.61803398875;
+}
 
 // Bouton
 .button {
-  @extend .text-sm, .rounded-md, .transition;
+  @extend .text-sm, .rounded, .transition;
   background-color: color($gray, 200);
   color: color($gray, 700);
   padding: $space-2 $space-3;
@@ -41,7 +62,7 @@ hr {
 }
 
 // Image de header
-.header-image {
+.headerImage {
   background: linear-gradient(180deg, rgba(0, 23, 36, 0) 0%, rgba(0, 0, 0, 0.2) 49%),
     url("../../images/assets/headerSM.jpg");
   height: 300px;
@@ -93,7 +114,7 @@ hr {
     margin-right: $space-2;
     vertical-align: baseline;
   }
-  .topnav__hamburger {
+  .topnav__hamburgerBtn {
     @extend .text-3xl, .transition;
     cursor: pointer;
     position: absolute;
@@ -107,7 +128,7 @@ hr {
       display: none;
     }
   }
-  .topnav__cogs {
+  .topnav__cogsBtn {
     @extend .text-3xl;
     cursor: pointer;
     position: absolute;
@@ -124,7 +145,7 @@ hr {
   }
 }
 
-// Barre de navigation sur le cote
+// Barre de navigation mobile
 .sidenav {
   display: none;
   position: fixed;
@@ -168,7 +189,7 @@ hr {
     margin-right: $space-2;
     vertical-align: baseline;
   }
-  .sidenav__close {
+  .sidenav__closeBtn {
     @extend .text-3xl, .transition;
     position: absolute;
     display: block;
@@ -197,7 +218,6 @@ hr {
   width: 80%;
   max-width: 50rem;
   height: 3rem;
-  background-color: $white;
   position: relative;
   margin-bottom: -$space-12;
   .search__input {
@@ -211,22 +231,13 @@ hr {
       box-shadow: inset 0px 0px 0px 2.5px rgba(0, 0, 0, 0.5);
     }
   }
-  .search__button-list {
-    position: absolute;
-    right: 0.05rem;
-    display: flex;
-    overflow: hidden;
-    align-items: center;
-    justify-content: center;
-    width: 5rem;
-    height: 2.5rem;
-  }
   .search__button {
     @extend .text-xl, .rounded-full, .transition;
+    position: absolute;
+    right: $space-3;
     color: color($gray, 400);
     background-color: $white;
-    width: 50%;
-    height: 100%;
+    height: 80%;
     cursor: pointer;
     &:hover {
       color: color($green, 700);
@@ -248,7 +259,7 @@ hr {
     max-width: 40rem;
     margin-bottom: $space-12;
   }
-  .noresult__texte {
+  .noresult__text {
     @extend .text-2xl;
     width: 80%;
     max-width: 40rem;
@@ -263,43 +274,13 @@ hr {
     color: color($green, 800);
     border-bottom: 3px solid color($green, 500);
     &:hover {
-      color: color($green, 700);
+      color: color($green, 600);
     }
   }
 }
 
-// Sauvegardes vide
-.nobookmark {
-  @extend .animation-shake;
-  .nobookmark__image {
-    display: block;
-    margin: auto;
-    width: 80%;
-    max-width: 40rem;
-    margin-bottom: $space-12;
-  }
-  .nobookmark__texte {
-    @extend .text-2xl;
-    width: 75%;
-    max-width: 40rem;
-    display: block;
-    margin: auto;
-    text-align: center;
-    margin-bottom: $space-5;
-  }
-  .nobookmark__link {
-    @extend .transition;
-    cursor: pointer;
-    color: color($green, 800);
-    border-bottom: 3px solid color($green, 500);
-    &:hover {
-      color: color($green, 700);
-    }
-  }
-}
-
-// Liste des recettes
-.recipe-list {
+// Liste de recettes
+.recipeList {
   overflow: hidden;
   display: flex;
   flex-direction: row;
@@ -308,6 +289,8 @@ hr {
   justify-content: center;
   padding-top: $space-20;
 }
+
+// Recette
 .recipe {
   @extend .rounded-lg, .shadow-md, .animation-fade;
   background-color: $white;
@@ -335,7 +318,7 @@ hr {
       width: 100%;
       position: center;
     }
-    .recipe__bookmark-btn {
+    .recipe__bookmarkBtn {
       @extend .text-2xl, .transition;
       color: color($gray, 200);
       position: absolute;
@@ -367,32 +350,34 @@ hr {
       flex-direction: row;
       flex-wrap: wrap;
       align-items: center;
-    }
-    .recipe__difficulty {
-      @extend .text-sm;
-      color: color($gray, 500);
-    }
-    .recipe__time {
-      @extend .text-sm;
-      margin-left: $space-2;
-      color: color($gray, 600);
-    }
-    .recipe__btn {
-      @extend .button;
-      display: inline-block;
-      margin-left: $space-2;
-      background-color: color($gray, 300);
-      color: $black;
-      i {
-        color: color($gray, 700);
-        margin-left: $space-1;
+
+      .recipe__difficulty {
+        @extend .text-sm;
+        color: color($gray, 500);
       }
-      &:hover {
-        background-color: color($gray, 400);
+      .recipe__time {
+        @extend .text-sm;
+        margin-left: $space-2;
+        color: color($gray, 600);
       }
-      &:active {
-        @extend .hover-shrink;
-        transition: 100ms;
+      .recipe__detailsBtn {
+        @extend .button;
+        display: inline-block;
+        margin-left: $space-2;
+        background-color: color($gray, 300);
+        color: $black;
+
+        i {
+          color: color($gray, 700);
+          margin-left: $space-1;
+        }
+        &:hover {
+          background-color: color($gray, 400);
+        }
+        &:active {
+          @extend .hover-shrink;
+          transition: 100ms;
+        }
       }
     }
   }
@@ -425,7 +410,7 @@ hr {
   .settings__title {
     padding-left: $space-5;
   }
-  .settings__closebtn {
+  .settings__closeBtn {
     @extend .transition;
     position: absolute;
     right: 0px;
@@ -457,7 +442,7 @@ hr {
     height: 2px;
     width: 90%;
   }
-  .settings__item-texte {
+  .settings__itemText {
     margin: $space-2 $space-4 $space-2 0;
   }
   .settings__language {
@@ -479,61 +464,61 @@ hr {
     box-shadow: 0px 0px 0px 0.2rem rgba(16, 119, 30, 0.5);
     transform: scale(1.2);
   }
-}
-.switch {
-  margin-right: 0.5rem;
-  position: relative;
-  display: inline-block;
-  width: 45px;
-  height: 25.5px;
-  input {
-    opacity: 0;
-    width: 0;
-    height: 0;
-  }
-  .slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #ccc;
-    -webkit-transition: 0.4s;
-    transition: 0.4s;
-  }
-  .slider:before {
-    position: absolute;
-    content: "";
-    height: 19.5px;
-    width: 19.5px;
-    left: 3px;
-    bottom: 3px;
-    background-color: white;
-    -webkit-transition: 0.4s;
-    transition: 0.4s;
-  }
-  input:checked + .slider {
-    background-color: color($green, 600);
-  }
-  input:focus + .slider {
-    box-shadow: 0 0 1px color($green, 600);
-  }
-  input:checked + .slider:before {
-    -webkit-transform: translateX(19.5px);
-    -ms-transform: translateX(19.5px);
-    transform: translateX(19.5px);
-  }
-  .slider.round {
-    border-radius: 25.5px;
-  }
-  .slider.round:before {
-    border-radius: 50%;
+  .settings__switch {
+    margin-right: 0.5rem;
+    position: relative;
+    display: inline-block;
+    width: 45px;
+    height: 25.5px;
+    input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      -webkit-transition: 0.4s;
+      transition: 0.4s;
+    }
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 19.5px;
+      width: 19.5px;
+      left: 3px;
+      bottom: 3px;
+      background-color: white;
+      -webkit-transition: 0.4s;
+      transition: 0.4s;
+    }
+    input:checked + .slider {
+      background-color: color($green, 600);
+    }
+    input:focus + .slider {
+      box-shadow: 0 0 1px color($green, 600);
+    }
+    input:checked + .slider:before {
+      -webkit-transform: translateX(19.5px);
+      -ms-transform: translateX(19.5px);
+      transform: translateX(19.5px);
+    }
+    .slider.round {
+      border-radius: 25.5px;
+    }
+    .slider.round:before {
+      border-radius: 50%;
+    }
   }
 }
 
-// Formulaire
-.submit-image {
+// Image de formulaire
+.submitImage {
   padding-top: $space-20;
   display: block;
   margin: auto;
@@ -544,6 +529,8 @@ hr {
     max-width: 30rem;
   }
 }
+
+// Formulaire
 .form {
   .form__section {
     @extend .shadow-md;
@@ -552,21 +539,18 @@ hr {
     justify-content: center;
     align-items: center;
     width: 100%;
+    max-width: 30rem;
     margin: auto;
     background-color: $white;
     margin-bottom: $space-5;
     padding: $space-2 0 $space-4 0;
-    @include responsive(sm) {
-      width: 100%;
-      max-width: 30rem;
-    }
   }
-  .form__section-title {
+  .form__sectionTitle {
     width: 100%;
     text-align: center;
     margin: 0;
   }
-  .form__input-text {
+  .form__inputText {
     @extend .rounded-lg;
     border: 1px solid color($gray, 200);
     background-color: color($gray, 100);
@@ -578,7 +562,7 @@ hr {
       width: 11rem;
     }
   }
-  #recipeName {
+  .form__recipeName {
     width: 80%;
   }
   .form__selection {
@@ -590,7 +574,7 @@ hr {
     padding: $space-2;
     margin: $space-1;
   }
-  .form__file-input {
+  .form__fileInput {
     @extend .rounded-lg;
     box-sizing: content-box;
     border: 1px solid color($gray, 200);
@@ -605,23 +589,23 @@ hr {
   }
   .form__buttons {
     display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-start;
+    align-items: center;
     margin: auto;
     width: 100%;
+    max-width: 30rem;
     margin-bottom: $space-5;
-    @include responsive(sm) {
-      width: 90%;
-      max-width: 30rem;
-    }
-    .button--submit-form {
+    .button--submitForm {
       background-color: color($green, 700);
       color: $white;
-      margin-left: $space-3;
+      margin-right: $space-3;
       &:hover {
         background-color: color($green, 800);
         color: $white;
       }
     }
-    .button--reset-form {
+    .button--resetForm {
       background-color: color($gray, 500);
       color: $white;
       margin: 0;
@@ -636,18 +620,18 @@ hr {
     color: color($gray, 700);
     width: 80%;
   }
-  .form__label-icon {
+  .form__labelIcon {
     color: color($gray, 500);
     margin-right: $space-2;
   }
-  .form__text-area {
+  .form__textArea {
     @extend .rounded-lg, .text-sm;
     border: 1px solid color($gray, 200);
     background-color: color($gray, 100);
     padding: $space-2;
     width: 80%;
   }
-  .form__number-input {
+  .form__numberInput {
     @extend .rounded-lg, .text-sm;
     border: 1px solid color($gray, 200);
     background-color: color($gray, 100);
@@ -656,14 +640,14 @@ hr {
     @include responsive(sm) {
     }
   }
-  .form__ingrediants-div {
+  .form__ingrediantsDiv {
     width: 85%;
   }
-  .form__ingrediants-buttons {
+  .form__ingrediantsBtns {
     width: 85%;
     display: flex;
     justify-content: space-around;
-    .form__ingrediant-add {
+    .button--ingrediantAdd {
       @extend .button;
       width: 48%;
       background-color: color($blue, 100);
@@ -673,7 +657,7 @@ hr {
         color: color($blue, 900);
       }
     }
-    .form__ingrediant-delete {
+    .button--ingrediantDelete {
       @extend .button;
       width: 48%;
       background-color: color($orange, 100);
@@ -689,7 +673,7 @@ hr {
     display: flex;
     justify-content: center;
   }
-  .form__ingrediant-name {
+  .form__ingrediantName {
     @extend .rounded-lg;
     border: 1px solid color($gray, 200);
     background-color: color($gray, 100);
@@ -698,7 +682,7 @@ hr {
     margin: $space-1;
     margin-top: $space-2;
   }
-  .form__ingrediant-quantity {
+  .form__ingrediantQuantity {
     @extend .rounded-lg;
     border: 1px solid color($gray, 200);
     background-color: color($gray, 100);
@@ -707,7 +691,7 @@ hr {
     margin: $space-1;
     margin-top: $space-2;
   }
-  #form__success {
+  .form__successMsg {
     @extend .shadow-sm;
     box-sizing: border-box;
     display: none;
@@ -724,13 +708,13 @@ hr {
       max-width: 30rem;
     }
   }
-  #form__error {
-    @extend #form__success;
+  .form__errorMsg {
+    @extend .form__successMsg;
     display: none;
     background-color: color($red, 100);
     color: color($red, 900);
   }
-  .error {
+  .form__errorOutline {
     border: 1px solid color($red, 200);
     background-color: color($red, 100);
   }
@@ -798,7 +782,7 @@ hr {
     margin: 0px;
     color: color($gray, 800);
   }
-  .details__infolist {
+  .details__infoList {
     @extend .rounded-md;
     display: flex;
     justify-content: center;
@@ -823,34 +807,137 @@ hr {
   .details__text {
     color: color($gray, 700);
   }
-  .styled-table {
+  .details__table {
     @extend .text-lg, .shadow-md;
     border-collapse: collapse;
     margin: 25px 0;
     min-width: 400px;
   }
-  .styled-table thead tr {
+  .details__table thead tr {
     background-color: color($green, 700);
     color: #ffffff;
     text-align: left;
   }
-  .styled-table th,
-  .styled-table td {
+  .details__table th,
+  .details__table td {
     padding: 12px 15px;
   }
-  .styled-table tbody tr {
+  .details__table tbody tr {
     border-bottom: 1px solid #dddddd;
   }
 
-  .styled-table tbody tr:nth-of-type(even) {
+  .details__table tbody tr:nth-of-type(even) {
     background-color: #eeeeee;
   }
 
-  .styled-table tbody tr:last-of-type {
+  .details__table tbody tr:last-of-type {
     border-bottom: 2px solid color($green, 700);
   }
-  .styled-table tbody tr.active-row {
+  .details__table tbody tr.active-row {
     font-weight: bold;
     color: color($green, 700);
+  }
+}
+
+// Image a propos
+.aboutImage {
+  display: block;
+  margin: auto;
+  width: 80%;
+  max-width: 40rem;
+  margin-bottom: $space-8;
+  padding-top: $space-6;
+}
+
+// A propos
+.about {
+  display: block;
+  margin: auto;
+  width: 80%;
+  max-width: 60rem;
+  @include responsive(md) {
+    width: 70%;
+  }
+  @include responsive(lg) {
+    width: 90%;
+  }
+  .about__title {
+    margin: 0;
+    text-align: center;
+  }
+  .about__text {
+    text-align: center;
+  }
+}
+
+// Fonctionnalites
+.features {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  margin-top: $space-0;
+  padding: $space-4;
+  padding-top: $space-1;
+  width: 90%;
+  max-width: 60rem;
+  .features__icon {
+    @extend .text-6xl, .transition;
+    color: color($gray, 600);
+  }
+  .features__title {
+    @extend .text-3xl;
+    text-align: center;
+    margin: 0;
+    margin-bottom: $space-4;
+  }
+  .features__description {
+    @extend .text-sm;
+    text-align: center;
+    margin: 0;
+  }
+  .features__card {
+    @extend .rounded-lg, .shadow-sm, .transition;
+    background-color: white;
+    min-height: 17rem;
+    width: 80%;
+    max-width: 25rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    padding: 1rem;
+    * {
+      display: grid;
+      place-items: center;
+      width: 100%;
+      height: 33.33%;
+    }
+  }
+  .features__card:nth-child(even) {
+    &:hover {
+      @extend .shadow-lg;
+      transform: rotate(3deg) scale(1.15);
+    }
+  }
+  .features__card:nth-child(odd) {
+    &:hover {
+      @extend .shadow-lg;
+      transform: rotate(-3deg) scale(1.15);
+    }
+  }
+  .features__card:not(:first-child) {
+    margin-top: $space-4;
+  }
+  @include responsive(lg) {
+    flex-direction: row;
+    .features__card:first-child {
+      margin-top: $space-4;
+    }
+    .features__card:not(:last-child) {
+      margin-right: $space-4;
+    }
   }
 }

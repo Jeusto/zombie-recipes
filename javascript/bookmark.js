@@ -6,7 +6,7 @@ if ((allCookies = document.cookie).includes("bookmarks") == false) {
 // On verifie quel bouton de bookmark est clique
 const wrapper = document.getElementById("recipeList");
 wrapper.addEventListener("click", (event) => {
-  const isBookmarkButton = event.target.classList.contains("recipe__bookmark-btn");
+  const isBookmarkButton = event.target.classList.contains("recipe__bookmarkBtn");
   // On verifie qu'on a clique sur un bouton bookmark
   if (!isBookmarkButton) {
     return;

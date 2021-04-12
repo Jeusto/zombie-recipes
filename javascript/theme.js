@@ -19,11 +19,11 @@ function switchTheme() {
 }
 
 // Fonction pour mettre le cookie
-function setCookie(name, cvalue, expiration) {
+function setCookie(cname, cvalue, expiration) {
   let d = new Date();
   d.setTime(d.getTime() + expiration * 24 * 60 * 60 * 1000);
   let expires = "expires=" + d.toUTCString();
-  document.cookie = name + "=" + cvalue + ";" + expires + ";path=/";
+  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
 }
 
 // Fonction pour lire un cookie
