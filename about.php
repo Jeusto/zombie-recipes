@@ -8,9 +8,9 @@
   <body>
     <!--Navigation-->
     <?php include "backend/components/navigation.php";?>
-    <img class="aboutImage" src="images/assets/aboutSite.svg" alt="About site image" />
+    <img class="aboutImage" src="images/assets/aboutSite.svg" alt="Food truck" />
     <section class="about">
-      <h1 class="about__title"><?=$lang["aboutTitle"]?></h1>
+      <h2 class="about__title">Fresh & flesh<?=$lang["aboutTitle"]?></h2>
       <p class="about__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil expedita hic, voluptatibus, minus distinctio neque reprehenderit molestiae dolorum rem similique enim minima. Laborum quod possimus labore veritatis distinctio, eaque ipsam reiciendis ullam consequatur quos. Eius ab delectus officiis quam ipsam qui repellendus debitis in quas perferendis mollitia fuga quos doloribus quo optio ullam nostrum consequatur tenetur, aut nam blanditiis molestias.</p>
     </section>
     <section class="features">

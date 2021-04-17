@@ -6,5 +6,5 @@
       ><span class="noresult__link"><?= $lang[$text."Link"] ?></span></a
     >
   </h3>
-  <img class="noresult__image" src="images/assets/emptyResults.svg" alt="No results" />
+  <img class="noresult__image" src="images/assets/emptyResults.svg" alt="Girl looking through binoculars" />
 </div>

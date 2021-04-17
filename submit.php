@@ -10,7 +10,7 @@
     <?php include "backend/components/navigation.php";?>
     
     <!--Image de formulaire-->
-    <img class="submitImage" src="images/assets/submitRecipe.svg" alt="Submit form image" />
+    <img class="submitImage" src="images/assets/submitRecipe.svg" alt="Chief and a plant" />
 
     <!--Formulaire-->
     <form action="submit.php" method="post" class="form" id="recipeForm" enctype="multipart/form-data">
@@ -50,7 +50,7 @@
           required
           maxlength="40"
         />
-        <label class="form__label" for="recipeName"
+        <label class="form__label" for="recipeType"
           ><i class="form__labelIcon fas fa-folder-open"></i><?= $lang['recipeType'] ?></label
         >
         <select class="form__selection" name="recipeType" id="recipeType">
@@ -91,7 +91,7 @@
           ><i class="form__labelIcon fas fa-clock"></i><?= $lang['preparationTime'] ?> </label
         >
         <input class="form__numberInput" id="recipePreparationTime" name="recipePreparationTime" type="number" min="0" value="0" max="960" />
-        <label class="form__label" for="recipeRealization"><i class="form__labelIcon fas fa-sticky-note"></i><?= $lang['precisions'] ?></label>
+        <label class="form__label" for="recipeDetails"><i class="form__labelIcon fas fa-sticky-note"></i><?= $lang['precisions'] ?></label>
         <textarea
           class="form__textArea"
           id="recipeDetails"
@@ -100,8 +100,8 @@
           cols="50"
           maxlength="1000"
           placeholder="<?= $lang['precisionsPlaceholder'] ?>"></textarea>
-        <label class="form__label" for="recipeRealization"
-          ><i class="form__labelIcon fas fa-lemon"></i><?= $lang['ingrediants'] ?></label
+        <p class="form__label"
+          ><i class="form__labelIcon fas fa-lemon"></i><?= $lang['ingrediants'] ?></p
         >
         <div class="form__ingrediantsBtns">
           <button type="button" class="button--ingrediantAdd" id="addIngrediantBtn" aria-label="Add ingrediant input"><i class="fas fa-plus"></i> <?=$lang['add']?></button>
@@ -135,8 +135,8 @@
         <p id="errorText"><?= $lang['errorMessage'] ?></p>
       </div>
       <div class="form__buttons">
-        <button class="button button--resetForm" id="formResetBtn" type="reset"><?=$lang['reset']?></button>
         <button class="button button--submitForm" id="formSubmitBtn" name="submitButton" type="submit"><?= $lang['send'] ?></button>
+        <button class="button button--resetForm" id="formResetBtn" type="reset"><?=$lang['reset']?></button>
       </div>
     </form>
     <script src="./javascript/form.js"></script>

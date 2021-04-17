@@ -40,6 +40,7 @@ try {
       $tmp = "bookmarkBtn" . $recipeId;
       if (strpos($_COOKIE["bookmarks"], $tmp)) {$recipeIconName = "fas fa-bookmark";}
       else {$recipeIconName = "far fa-bookmark";}
+      
       include "components/recipeCard.php";
     }
   }

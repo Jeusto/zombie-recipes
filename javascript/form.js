@@ -65,9 +65,6 @@ document.querySelector("#formSubmitBtn").addEventListener("click", function (eve
       "Un ou plusieurs champs ne sont pas valides, veuillez vérifier vos informations et essayer à nouveau!"
     );
   }
-
-  // On scroll a la fin du page pour que l'utilisateur voit bien le message
-  window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
 });
 
 // On enleve tout les erreurs si on clique sur le bouton "reinitialiser"
@@ -106,10 +103,12 @@ function errorMessage(message) {
   document.getElementById("successMessage").style.display = "none";
   document.getElementById("errorMessage").style.display = "block";
   document.getElementById("errorText").innerHTML = message;
+  window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
 }
 
 // La fonction pour afficher un message de succes
 function successMessage() {
   document.getElementById("successMessage").style.display = "block";
   document.getElementById("errorMessage").style.display = "none";
+  window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
 }

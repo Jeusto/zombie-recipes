@@ -76,7 +76,7 @@ $lang = array (
   "famousChiefs" => "Chefs connues",
   "bestRecipes" => "Meilleures recettes",
   "communityDriven" => "Poussé par la communauté",
-  "aboutTitle" => "Fresh & flesh, le site leader de recettes pour zombies!"  
+  "aboutTitle" => "le site leader de recettes pour zombies!"  
 );
 
 ?>

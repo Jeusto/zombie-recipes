@@ -12,21 +12,21 @@
     <!--Details du recette -->
     <?php include "backend/recipeDetails.php";?>
     <main class="details" data-id="recipe<?= $recipeId ?>">
-      <section class="details__top">
+      <div class="details__top">
         <button class="details__backBtn" onclick="history.go(-1);">
           <i class="details__backIcon fas fa-arrow-left"></i><?= $lang["backLastPage"] ?>
         </button>
         <div class="details__share">        
+          <a class="details__shareLink" href="https://twitter.com/intent/tweet/?text=Une%20recette%20pour%20zombie%20appelé%20''<?= preg_replace('/[[:space:]]+/', '%20', $recipeName);?>''&amp;url=<?= $currentLink ?>" target="_blank" rel="noopener" aria-label="Share on Twitter">
+            <i class="details__shareIcon fab fa-twitter-square"></i>
+          </a>
           <a class="details__shareLink" href="https://www.facebook.com/sharer/sharer.php?u=<?= $currentLink ?>" target="_blank" rel="noopener" aria-label="Share on Facebook">
             <i class="details__shareIcon fab fa-facebook-square"></i>
           </a>
-          <a class="details__shareLink" href="https://twitter.com/intent/tweet/?text=Une recette pour zombie appelé ''<?= $recipeName ?>'':&amp;url=<?= $currentLink ?>" target="_blank" rel="noopener" aria-label="Share on Twitter">
-            <i class="details__shareIcon fab fa-twitter-square"></i>
-          </a>
         </div>
-      </section>
+      </div>
       <figure class="details__img">
-        <img src="images/recipes/<?= $recipeImageUrl ?>" alt="Recipe image" />
+        <img src="images/recipes/<?= $recipeImageUrl ?>" alt="<?= $recipeName ?> image" />
       </figure>
       <section class="">
         <div class="details__infoList">
@@ -40,10 +40,10 @@
           </div>
         </div>
         <h2 class="details__title"><?= $recipeName ?></h2>
-        <h4 class="details__header"><?= $lang["recipeRealization"] ?></h4>
+        <h3 class="details__header"><?= $lang["recipeRealization"] ?></h3>
         <p class="details__text"><?= $recipeDescription ?></p>
         <hr>
-        <h4 class="details__header"><?= $lang["ingrediants"] ?></h4>
+        <h3 class="details__header"><?= $lang["ingrediants"] ?></h3>
         <table class="details__table">
           <thead>
             <tr>
