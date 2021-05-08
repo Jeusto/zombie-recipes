@@ -11,15 +11,15 @@ if (!empty($_POST)) {
   $regexIngrediant = "/^[A-Za-z'.0-9]+( [A-Za-z'.0-9]+)*$/";
 
   // On recupere les reponses du formulaire
-  $recipeName = isset($_POST["recipeName"]) ? htmlspecialchars(($_POST["recipeName"])): null;
-  $recipeType = isset($_POST["recipeType"]) ? htmlspecialchars($_POST["recipeType"]): null;
-  $recipeImageUrl = isset($_FILES["recipeImage"]["name"]) ? htmlspecialchars($_FILES["recipeImage"]["name"]): null;
-  $recipeDescription = isset($_POST["recipeDescription"]) ? htmlspecialchars($_POST["recipeDescription"]): null;
-  $recipeDifficulty = isset($_POST["recipeDifficulty"]) ? htmlspecialchars($_POST["recipeDifficulty"]): null;
-  $recipePreparationTime = isset($_POST["recipePreparationTime"]) ? htmlspecialchars($_POST["recipePreparationTime"]): null;
-  $recipeDetails = isset($_POST["recipeDetails"]) ? htmlspecialchars($_POST["recipeDetails"]): null;
-  $userFirstName = isset($_POST["userFirstName"]) ? htmlspecialchars(($_POST["userFirstName"])): null;
-  $userLastName = isset($_POST["userLastName"]) ? htmlspecialchars($_POST["userLastName"]): null;
+  $recipeName = isset($_POST["recipeName"]) ? htmlspecialchars(($_POST["recipeName"])) : null;
+  $recipeType = isset($_POST["recipeType"]) ? htmlspecialchars($_POST["recipeType"]) : null;
+  $recipeImageUrl = isset($_FILES["recipeImage"]["name"]) ? htmlspecialchars($_FILES["recipeImage"]["name"]) : null;
+  $recipeDescription = isset($_POST["recipeDescription"]) ? htmlspecialchars($_POST["recipeDescription"]) : null;
+  $recipeDifficulty = isset($_POST["recipeDifficulty"]) ? htmlspecialchars($_POST["recipeDifficulty"]) : null;
+  $recipePreparationTime = isset($_POST["recipePreparationTime"]) ? htmlspecialchars($_POST["recipePreparationTime"]) : null;
+  $recipeDetails = isset($_POST["recipeDetails"]) ? htmlspecialchars($_POST["recipeDetails"]) : null;
+  $userFirstName = isset($_POST["userFirstName"]) ? htmlspecialchars(($_POST["userFirstName"])) : null;
+  $userLastName = isset($_POST["userLastName"]) ? htmlspecialchars($_POST["userLastName"]) : null;
   $ingrediantsNames = "";
   $ingrediantsQuantities = "";
 
@@ -32,48 +32,47 @@ if (!empty($_POST)) {
       $ingrediantsQuantities = $ingrediantsQuantities . htmlspecialchars($_POST["ingrediantQuantity" . $i]) . ";";
     }
   }
-  
+
   // On verifie les inputs avec des regex
   regexVerification($regexName, $userFirstName);
   regexVerification($regexName, $userLastName);
   regexVerification($regexRecipeName, $recipeName);
   regexVerification($regexRecipeRealization, $recipeDescription);
   regexVerification($regexRecipeDetails, $recipeDetails);
-  
+
   // On verifie et on upload l'image
   imageUpload();
-  
+
   // On ouvre la base de donnees et on ajoute tout si y a pas d'erreur
   if ($noError) {
     try {
       $pdo = new PDO('sqlite:backend/database/recipes.sqlite');
-      $pdo -> setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
-      $pdo -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    
+      $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+      $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
       // On prepare la commande
       $statement = $pdo->prepare("INSERT INTO Recipes (RecipeName, RecipeType, ImageUrl, RecipeDescription, Difficulty, PreparationTime, Details, FirstName, LastName, Ingrediants, Quantities, PublishDate) 
       VALUES (:RecipeName, :RecipeType, :ImageUrl, :RecipeDescription, :Difficulty, :PreparationTime, :Details, :FirstName, :LastName, :Ingrediants, :Quantities, :PublishDate)");
-      
-      $statement->bindValue('RecipeName',$recipeName,PDO::PARAM_STR);
-      $statement->bindValue('RecipeType',$recipeType,PDO::PARAM_STR);
-      $statement->bindValue('ImageUrl',$recipeImageUrl,PDO::PARAM_STR);
-      $statement->bindValue('RecipeDescription',$recipeDescription,PDO::PARAM_STR);
-      $statement->bindValue('Difficulty',$recipeDifficulty,PDO::PARAM_STR);
-      $statement->bindValue('PreparationTime',$recipePreparationTime,PDO::PARAM_STR);
-      $statement->bindValue('Details',$recipeDetails,PDO::PARAM_STR);
-      $statement->bindValue('FirstName',$userFirstName,PDO::PARAM_STR);
-      $statement->bindValue('LastName',$userLastName,PDO::PARAM_STR);
-      $statement->bindValue('Ingrediants',$ingrediantsNames,PDO::PARAM_STR);
-      $statement->bindValue('Quantities',$ingrediantsQuantities,PDO::PARAM_STR);
-      $statement->bindValue('PublishDate',$currentDate,PDO::PARAM_STR);
-      
+
+      $statement->bindValue('RecipeName', $recipeName, PDO::PARAM_STR);
+      $statement->bindValue('RecipeType', $recipeType, PDO::PARAM_STR);
+      $statement->bindValue('ImageUrl', $recipeImageUrl, PDO::PARAM_STR);
+      $statement->bindValue('RecipeDescription', $recipeDescription, PDO::PARAM_STR);
+      $statement->bindValue('Difficulty', $recipeDifficulty, PDO::PARAM_STR);
+      $statement->bindValue('PreparationTime', $recipePreparationTime, PDO::PARAM_STR);
+      $statement->bindValue('Details', $recipeDetails, PDO::PARAM_STR);
+      $statement->bindValue('FirstName', $userFirstName, PDO::PARAM_STR);
+      $statement->bindValue('LastName', $userLastName, PDO::PARAM_STR);
+      $statement->bindValue('Ingrediants', $ingrediantsNames, PDO::PARAM_STR);
+      $statement->bindValue('Quantities', $ingrediantsQuantities, PDO::PARAM_STR);
+      $statement->bindValue('PublishDate', $currentDate, PDO::PARAM_STR);
+
       // On execute
       $statement->execute();
 
       // On affiche le message de succes
       echo "<script type=\"text/javascript\">successMessage();</script>";
-    }
-    catch (PDOException $exception) {
+    } catch (PDOException $exception) {
       printError($exception);
     }
   }

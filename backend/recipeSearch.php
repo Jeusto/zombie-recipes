@@ -1,22 +1,29 @@
 <?php
 
 // On verifie que le cookie de la langue existe
-if(isset($_COOKIE['language'])) {
+if (isset($_COOKIE['language'])) {
   // On charge le fichier de langue en fonction du cookie
-  if($_COOKIE['language']=="en") {include ("languages/en.php");}
-  else if($_COOKIE['language']=="es") {include ("languages/es.php");}
-  else {include ("languages/fr.php");}
+  if ($_COOKIE['language'] == "en") {
+    include("languages/en.php");
+  } else if ($_COOKIE['language'] == "es") {
+    include("languages/es.php");
+  } else {
+    include("languages/fr.php");
+  }
 }
 // Si y a pas de cookie, on charge la langue francais
-else {include ("languages/fr.php");}
+else {
+  include("languages/fr.php");
+}
 
 
 // Si y a une recherche, on charge les recettes correspondantes 
 try {
-  $pdo = new PDO('sqlite:database/recipes.sqlite');
+  $dirPath = dirname(__FILE__);
+  $pdo = new PDO("sqlite:{$dirPath}/database/recipes.sqlite");
   $search = htmlspecialchars($_GET["search"]);
-  $statement = $pdo -> query("SELECT * FROM Recipes WHERE RecipeName LIKE '%$search%' ");
-  $rows = $statement -> fetchAll(PDO::FETCH_ASSOC); 
+  $statement = $pdo->query("SELECT * FROM Recipes WHERE RecipeName LIKE '%$search%' ");
+  $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
 
   // Si le resultat est vide, on charge le composant qui l'indique
   if (count($rows) == 0) {
@@ -25,7 +32,7 @@ try {
   }
 
   // Sinon, on affiche les resultats de la recherche
-  else  {
+  else {
     for ($i = 0; $i < count($rows); $i++) {
       $recipeId = ($rows[$i]['Id']);
       $recipeName = ($rows[$i]['RecipeName']);
@@ -35,18 +42,18 @@ try {
       $recipeDifficulty = ($rows[$i]['Difficulty']);
       $recipePreparationTime = ($rows[$i]['PreparationTime']);
       $recipeDetails = ($rows[$i]['Details']);
-      
+
       // On met l'icon en fonction de si la recette est sauvegarde ou non
       $tmp = "bookmarkBtn" . $recipeId;
-      if (strpos($_COOKIE["bookmarks"], $tmp)) {$recipeIconName = "fas fa-bookmark";}
-      else {$recipeIconName = "far fa-bookmark";}
-      
+      if (strpos($_COOKIE["bookmarks"], $tmp)) {
+        $recipeIconName = "fas fa-bookmark";
+      } else {
+        $recipeIconName = "far fa-bookmark";
+      }
+
       include "components/recipeCard.php";
     }
   }
-}
-catch (PDOException $exception) {
+} catch (PDOException $exception) {
   var_dump($exception);
-} 
-
-?>
+}

@@ -2,12 +2,13 @@
 
 try {
   // On ouvre la base de donnees
-  $pdo = new PDO('sqlite:backend/database/recipes.sqlite');
+  $dir = dirname(__FILE__);
+  $pdo = new PDO("sqlite:{$dir}/database/recipes.sqlite");
 
   // On recupere la recette qui correspond 
   $currentRecipe = $_GET["recipe"];
-  $statement = $pdo-> query("SELECT * FROM Recipes WHERE Id LIKE '%$currentRecipe%' ");
-  $rows = $statement -> fetchAll(PDO::FETCH_ASSOC); 
+  $statement = $pdo->query("SELECT * FROM Recipes WHERE Id LIKE '%$currentRecipe%' ");
+  $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
   $currentLink = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 
   // On met les donnees dans des variables pour les afficher
@@ -28,9 +29,6 @@ try {
     $userLastName = ($rows[$i]['LastName']);
     $publishedDate = ($rows[$i]['PublishDate']);
   }
-}
-catch (PDOException $exception) {
+} catch (PDOException $exception) {
   var_dump($exception);
 }
-
-?>

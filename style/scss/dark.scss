@@ -6,9 +6,6 @@ body {
   background-color: color($gray, 900);
   color: color($gray, 100);
 }
-p {
-  color: color($gray, 300);
-}
 hr {
   background-color: color($gray, 800);
 }
@@ -113,7 +110,6 @@ hr {
     }
     .recipe__info {
       color: color($gray, 300);
-
       .recipe__difficulty {
         color: color($gray, 300);
       }
@@ -260,8 +256,15 @@ hr {
       }
     }
   }
+  .form__successMsg {
+    background-color: color($green, 100);
+    color: color($green, 900);
+  }
+  .form__errorMsg {
+    background-color: color($red, 100);
+    color: color($red, 900);
+  }
   .form__errorOutline {
-    border: 1px solid color($red, 200);
     background-color: color($red, 100);
     &::placeholder {
       color: color($gray, 700);
@@ -309,25 +312,27 @@ hr {
     color: #ffffff;
     text-align: left;
   }
-  .details__table th,
-  .details__table td {
-    padding: 12px 15px;
-  }
   .details__table tbody tr {
-    border-bottom: 1px solid color($gray, 700);
     background-color: #27272a;
   }
-
   .details__table tbody tr:nth-of-type(even) {
     background-color: #303035;
   }
-
   .details__table tbody tr:last-of-type {
     border-bottom: 2px solid color($green, 700);
   }
   .details__table tbody tr.active-row {
-    font-weight: bold;
     color: color($green, 700);
+  }
+}
+
+// A propos
+.about {
+  .about__title {
+    text-align: center;
+  }
+  .about__text {
+    color: color($gray, 300);
   }
 }
 
@@ -338,5 +343,8 @@ hr {
   }
   .features__card {
     background-color: color($gray, 800);
+  }
+  .features__description {
+    color: color($gray, 300);
   }
 }

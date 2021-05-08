@@ -9,8 +9,8 @@ if (!isset($_COOKIE["bookmarks"]) || empty($_COOKIE["bookmarks"])) {
 // Si y a des sauvegardes, on les affiche
 else {
   $pdo = new PDO('sqlite:backend/database/recipes.sqlite');
-  $statement = $pdo -> query("SELECT * FROM Recipes");
-  $rows = $statement -> fetchAll(PDO::FETCH_ASSOC); 
+  $statement = $pdo->query("SELECT * FROM Recipes");
+  $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
 
   for ($i = 0; $i < count($rows); $i++) {
     $recipeId = ($rows[$i]['Id']);
@@ -21,17 +21,14 @@ else {
     $recipeDifficulty = ($rows[$i]['Difficulty']);
     $recipePreparationTime = ($rows[$i]['PreparationTime']);
     $recipeDetails = ($rows[$i]['Details']);
-      
+
     // Si la recette est sauvegarde on l'affiche
     $tmp = "bookmarkBtn" . $recipeId;
     if (strpos($_COOKIE["bookmarks"], $tmp)) {
       $recipeIconName = "fas fa-bookmark";
       include "backend/components/recipeCard.php";
-    }
-    else {
+    } else {
       continue;
     }
   }
 }
-
-?>

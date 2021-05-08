@@ -1,13 +1,14 @@
 <?php
 
 // Si y a pas de recherche, on charge toutes les recettes
-if (empty($_GET["search"])) { 
+if (empty($_GET["search"])) {
   try {
     // On ouvre la base de donnees
-    $pdo = new PDO('sqlite:backend/database/recipes.sqlite');
-    $pdo -> setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
-    $pdo -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-  
+    $dirPath = dirname(__FILE__);
+    $pdo = new PDO("sqlite:{$dirPath}/database/recipes.sqlite");
+    $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
     // On cree la table si elle existe pas
     $pdo->query(
       'CREATE TABLE IF NOT EXISTS "Recipes" (
@@ -30,8 +31,8 @@ if (empty($_GET["search"])) {
     );
 
     // On charge tout
-    $statement = $pdo -> query("SELECT * FROM Recipes");
-    $rows = $statement -> fetchAll(PDO::FETCH_ASSOC);
+    $statement = $pdo->query("SELECT * FROM Recipes");
+    $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
 
     // On affiche tout
     for ($i = 0; $i < count($rows); $i++) {
@@ -48,17 +49,13 @@ if (empty($_GET["search"])) {
       $tmp = "bookmarkBtn" . $recipeId;
       if (isset($_COOKIE["bookmarks"]) && strpos($_COOKIE["bookmarks"], $tmp)) {
         $recipeIconName = "fas fa-bookmark";
-      }
-      else {
+      } else {
         $recipeIconName = "far fa-bookmark";
       }
       // On affiche la recette
       include "components/recipeCard.php";
     }
-  }
-  catch (PDOException $exception) {
+  } catch (PDOException $exception) {
     var_dump($exception);
   }
 }
-
-?>
