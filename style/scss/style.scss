@@ -152,6 +152,9 @@ html {
         color: color($green, 700);
       }
     }
+    img {
+      width: 2.5rem;
+    }
   }
   .topnav__icon {
     margin-right: $space-2;

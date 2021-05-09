@@ -3,8 +3,7 @@
      id="modal">
   <div class="settings__content"
        id="modalContent">
-    <button style="background-color:none;"
-            class="settings__closeBtn"
+    <button class="settings__closeBtn"
             id="closeModalBtn"
             tabindex="0">
       <span class="fas fa-times"></span>

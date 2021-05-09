@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="<?php if (isset($_COOKIE['language'])) {
-              echo $_COOKIE['language'];
-            } else {
-              echo 'fr';
-            } ?>">
+                     echo $_COOKIE['language'];
+              } else {
+                     echo 'fr';
+              } ?>">
 
 <head>
   <!--La langue et les tags-->
   <?php $pageName = "formPage";
-  include "backend/components/headHtml.php"; ?>
+       include "backend/components/headHtml.php";
+       ?>
 </head>
 
 <body>
@@ -26,6 +27,7 @@
         class="form"
         id="recipeForm"
         enctype="multipart/form-data">
+
     <div class="form__section">
       <h2 class="form__sectionTitle"><?= $lang['recipeGeneralInfo'] ?></h2>
       <label class="form__label"
@@ -36,18 +38,14 @@
              name="userLastName"
              placeholder="<?= $lang['lastName'] . " *" ?>"
              required
-             aria-required='true'
-             maxlength="40"
-             aria-labelledby="userLastName" />
+             maxlength="40" />
       <input class="form__inputText"
              type="text"
              id="userFirstName"
              name="userFirstName"
              placeholder="<?= $lang['firstName'] . " *" ?>"
              required
-             aria-required='true'
-             maxlength="40"
-             aria-labelledby="userLastName" />
+             maxlength="40" />
       <label class="form__label"
              for="recipeName"><i class="form__labelIcon fas fa-paragraph"></i><?= $lang['recipeName'] . " *" ?></label>
       <input class="form__inputText form__recipeName"
@@ -56,15 +54,12 @@
              name="recipeName"
              placeholder="<?= $lang['recipeName'] ?>"
              required
-             aria-required='true'
-             maxlength="40"
-             aria-labelledby="recipeName" />
+             maxlength="40" />
       <label class="form__label"
              for="recipeType"><i class="form__labelIcon fas fa-folder-open"></i><?= $lang['recipeType'] ?></label>
       <select class="form__selection"
               name="recipeType"
-              id="recipeType"
-              aria-labelledby="recipeType">
+              id="recipeType">
         <option value="appetizer"><?= $lang['appetizer'] ?></option>
         <option value="drink"><?= $lang['drink'] ?></option>
         <option value="dessert"><?= $lang['dessert'] ?></option>
@@ -77,9 +72,7 @@
              name="recipeImage"
              id="recipeImage"
              accept=".jpg, .png, .jpeg"
-             required
-             aria-required='true'
-             aria-labelledby="recipeImage" />
+             required />
     </div>
     <div class="form__section">
       <h2 class="form__sectionTitle"><?= $lang['recipeDetails'] ?></h2>
@@ -92,15 +85,12 @@
                 cols="50"
                 maxlength="1000"
                 required
-                aria-required='true'
-                aria-labelledby="recipeDescription"
                 placeholder="<?= $lang['recipeRealizationPlaceholder'] ?>"></textarea>
       <label class="form__label"
              for="recipeDifficulty"><i class="form__labelIcon fas fa-brain"></i><?= $lang['difficultyLevel'] ?></label>
       <select class="form__selection"
               name="recipeDifficulty"
-              id="recipeDifficulty"
-              aria-labelledby="recipeDifficulty">
+              id="recipeDifficulty">
         <option value="beginner"><?= $lang['beginner'] ?></option>
         <option value="intermediate"><?= $lang['intermediate'] ?></option>
         <option value="advanced"><?= $lang['advanced'] ?></option>
@@ -113,8 +103,7 @@
              type="number"
              min="0"
              value="0"
-             max="960"
-             aria-labelledby="recipePreparationTime" />
+             max="960" />
       <label class="form__label"
              for="recipeDetails"><i class="form__labelIcon fas fa-sticky-note"></i><?= $lang['precisions'] ?></label>
       <textarea class="form__textArea"
@@ -123,14 +112,15 @@
                 rows="4"
                 cols="50"
                 maxlength="1000"
-                aria-labelledby="recipeDetails"
                 placeholder="<?= $lang['precisionsPlaceholder'] ?>"></textarea>
       <p class="form__label"><i class="form__labelIcon fas fa-lemon"></i><?= $lang['ingrediants'] ?></p>
       <div class="form__ingrediantsBtns">
-        <button class="button--ingrediantAdd"
+        <button type="button"
+                class="button--ingrediantAdd"
                 id="addIngrediantBtn"
                 aria-label="Add ingrediant input"><i class="fas fa-plus"></i> <?= $lang['add'] ?></button>
-        <button class="button--ingrediantDelete"
+        <button type="button"
+                class="button--ingrediantDelete"
                 id="deleteIngrediantBtn"
                 aria-label="Remove ingrediant input"><i class="fas fa-trash-alt"></i> <?= $lang['remove'] ?></button>
       </div>
@@ -176,6 +166,7 @@
 
   <!--Modal reglages-->
   <?php include "backend/components/settingsModal.php"; ?>
+
   <script src="./javascript/ingrediants.js"></script>
   <script src="./javascript/language.js"></script>
   <script src="./javascript/theme.js"></script>

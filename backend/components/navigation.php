@@ -8,9 +8,10 @@
           id="openSidenavBtn"
           aria-label="Menu button"></button>
   <a class="topnav__link topnav__logo"
-     href="index.php"><img style="width: 2.5rem"
-         src="images/assets/logoWebsite.png"
-         alt="Main page link" /></a>
+     href="index.php">
+    <img src="images/assets/logoWebsite.png"
+         alt="Main page link" />
+  </a>
   <button class="topnav__cogsBtn fas fa-cog"
           id="openModalBtnMobile"
           aria-label="Settings button"></button>

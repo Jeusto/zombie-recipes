@@ -302,16 +302,6 @@ hr {
   .details__text {
     color: color($gray, 300);
   }
-  .details__table {
-    border-collapse: collapse;
-    margin: 25px 0;
-    min-width: 400px;
-  }
-  .details__table thead tr {
-    background-color: color($green, 700);
-    color: #ffffff;
-    text-align: left;
-  }
   .details__table tbody tr {
     background-color: #27272a;
   }
