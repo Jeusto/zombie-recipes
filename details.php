@@ -45,7 +45,7 @@
       <img src="images/recipes/<?= $recipeImageUrl ?>"
            alt="<?= $recipeName ?> image" />
     </figure>
-    <section class="">
+    <section class="details__bottom">
       <div class="details__infoList">
         <div class="details__info"><i class="fas fa-user"></i> <span><?= $lang['by'] . " " . $userFirstName . " " . $userLastName ?></span></div>
         <div class="details__info"><i class="fas fa-calendar"></i> <span><?= $publishedDate ?></span></div>

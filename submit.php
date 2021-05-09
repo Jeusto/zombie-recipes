@@ -160,6 +160,7 @@
               type="reset"><?= $lang['reset'] ?></button>
     </div>
   </form>
+
   <script src="./javascript/form.js"></script>
   <?php include "backend/form.php"; ?>
 

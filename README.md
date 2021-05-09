@@ -12,7 +12,7 @@ Il y a en tout 5 pages différentes sur le site.
 - Une page "a propos" qui sert à présenter le site.
 - Une page "soumettre" où on peut remplir un formulaire et soumettre une recette.
 - Une page "sauvegardes" pour retrouver les recettes qu'on a aimé et qu'on a sauvegardé.
-- Une page "détails" qui s'ouvre quand on clique sur une recette pour en savoir plus sur la recette.
+- Une page "détails" qui s'ouvre quand on clique sur une recette pour en savoir plus.
 
 ### Feuilles de style & mode nuit
 
@@ -24,7 +24,7 @@ Dans le dossier javascript, chaque fichier correspond à une fonctionnalité dif
 
 ### Inclusions de composants
 
-Pour certains éléments redondants tel que la navigation, le modal de paramètres, j'ai utilisé le "include" de php pour ne pas avoir à les modifier dans 5 fichiers différents. J'ai également utilisé le système d'inclusions pour d'autres composants comme par exemple pour afficher les recettes ou pour afficher qu'il n'y a pas de résultat de recherce, ca rend le code beaucoup plus propre.
+Pour certains éléments redondants tel que la navigation et le modal de paramètres, j'ai utilisé le "include" de php pour ne pas avoir à les modifier dans 5 fichiers différents. J'ai également utilisé le système d'inclusions pour d'autres composants comme par exemple pour afficher les recettes ou pour afficher qu'il n'y a pas de résultat de recherche. Ca rend le code beaucoup plus propre.
 
 ### Système de traduction
 
@@ -32,4 +32,4 @@ J'ai fais 3 fichiers php différents correspondants aux 3 langues. Ces 3 fichier
 
 ### Base de données
 
-Je stocke dans la même table de la base de données, les informations liées à la personne qui soumet une recette (nom, prenom), les informations liées à la recette (nom, type, description, détails, difficulté de réalisation, temps de préparation, ingrédiants & quantités), le nom de l'image qui correspond à la recette et enfin la date de publication. Je pourrais potentiellement séparer la base de données en deux tables mais j'ai décidé de faire un truc simple pour ce projet. La plupart des données dans la base de données sont sous forme de texte sauf l'identifiant qui est un entier non nul qui s'auto incrémente et le temps de préparation d'une recette qui est également un entier.
+Je stocke dans la même table de la base de données, les informations liées à la personne qui soumet une recette (nom, prenom), les informations liées à la recette (nom, type, description, détails, difficulté de réalisation, temps de préparation, ingrédiants et quantités), le nom de l'image qui correspond à la recette et enfin la date de publication. Je pourrais potentiellement séparer la base de données en deux tables mais j'ai décidé de faire un truc simple pour ce projet. La plupart des données dans la base de données sont sous forme de texte sauf l'identifiant qui est un entier non nul qui s'auto incrémente et le temps de préparation d'une recette qui est également un entier.

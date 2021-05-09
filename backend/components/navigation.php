@@ -1,6 +1,8 @@
 <!--Navigation en haut-->
-<nav class="topnav">
-  <a class="topnav__link"
+<nav class="topnav"
+     aria-label="Barre de navigation en mode bureau">
+  <a class="
+     topnav__link"
      href="about.php"><i class="topnav__icon fas fa-info-circle fa-fw"></i><?= $lang['about'] ?></a>
   <a class="topnav__link"
      href="submit.php"><i class="topnav__icon fas fa-plus-square fa-fw"></i><?= $lang['submit'] ?></a>
@@ -24,6 +26,7 @@
 
 <!--Navigation mobile a gauche-->
 <nav class="sidenav"
+     aria-label="Barre de navigation en mode mobile"
      id="sidenav">
   <div class="sidenav__content"
        id="sidenavContent">

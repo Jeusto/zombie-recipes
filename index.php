@@ -16,10 +16,10 @@
   <?php include "backend/components/navigation.php"; ?>
 
   <!--Image de header-->
-  <div class="header">
+  <header class="header">
     <h1 class="header__text">Fresh & Flesh</h1>
     <h2 class="header__description"><?= $lang["aboutTitle"] ?></h2>
-  </div>
+  </header>
 
   <!--Barre de recherche-->
   <form class="search form">
