@@ -7,4 +7,4 @@ See a demo here: https://bit.ly/3ibVKgO
 - Enable dark mode and change the language of the website in the settings.
 - Click on a recipe to see the details or favorite it too see it in the favorites page.
 </br>
-![demo](https://i.imgur.com/PEqRlBu.png)
+![demo](./images/demo.png)
